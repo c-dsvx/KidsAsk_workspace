@@ -17,7 +17,7 @@ export default {
                 "La mise en conserve et la congélation sont d'autres moyens pour préserver les aliments",
               ],
               subtopic: [
-                "Mise en conserve","Congélation"
+                "Conserver","Vaccination","Maladie"
               ]
             },
             {
@@ -31,7 +31,7 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e : "Comment",
               subtopic: [
-                "Découvrir","Bactéries"
+                "Découvrir","Choléra","Conserver"
               ]
             },
             {
@@ -45,7 +45,7 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e : "Quel",
               subtopic: [
-                "Rôle","Institut de recherche"
+                "Vaccination","Maladie","Découvrir"
               ]
             },
             {
@@ -59,7 +59,7 @@ export default {
               starter_gpt3: "Quels .. autres",
               starter_gpt3_e : "Qu'est ce que/ Comment",
               subtopic: [
-                "Vaccination", "Immunisation"
+                "Vaccination","Choléra","Conserver"
               ]
             },
             {
@@ -73,7 +73,7 @@ export default {
               starter_gpt3: "Quels",
               starter_gpt3_e : "Qu'est ce que",
               subtopic: [
-                "Choléra", "Maladie"
+                "Choléra", "Maladie", "Vaccination"
               ]
             }
           ]
@@ -95,7 +95,7 @@ export default {
               starter_gpt3: "Quelle",
               starter_gpt3_e : "Quelle",
               subtopic: [
-                "ADN","Structure"
+                "ADN","Structure","Physiuqe"
               ]
             },
             {
@@ -109,7 +109,7 @@ export default {
               starter_gpt3: "Dans quelle",
               starter_gpt3_e : "Qu'est ce que",
               subtopic: [
-                "Physique","Chimie"
+                "Physique","Chimie","Prix Nobel"
               ]
             },
             {
@@ -123,7 +123,7 @@ export default {
               starter_gpt3: "Quelle/ Pourquoi",
               starter_gpt3_e : "Comment/ Qu'est ce que",
               subtopic: [
-                "Cancer","Rayons X"
+                "Cancer","Rôle","Biologie"
               ]
             },
             {
@@ -137,7 +137,7 @@ export default {
               starter_gpt3: "À quel/ Quand",
               starter_gpt3_e: "À quel/ Quand",
               subtopic: [
-                "Mort","Âge"
+                "Mort","Chimie","Structure"
               ]
             },
             {
@@ -150,7 +150,7 @@ export default {
               ],
               starter_gpt3: "Pourquoi",
               subtopic: [
-                "Prix Nobel","Rôle"
+                "Prix Nobel","Rôle","Physique"
               ]
             },
           ]
@@ -172,7 +172,7 @@ export default {
                    starter_gpt3: "Qu'a t-il .. autre",
                    starter_gpt3_e: "Qu'est ce que",
                    subtopic: [
-                     "Technologie", "Intelligence artificielle"
+                     "Premiers ordianteurs", "Génie", "Informatique"
                    ]
             },
             {
@@ -186,7 +186,7 @@ export default {
               starter_gpt3: "Quels .. autres",
               starter_gpt3_e: "Quels .. autres",
               subtopic: [
-                "Génie", "Mathématiques"
+                "Génie", "Mathématiques", "Alliés"
               ]
             },
             {
@@ -200,7 +200,7 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e: "Quand/ Qui",
               subtopic: [
-                "Seconde guerre mondiale", "Alliés"
+                "Seconde guerre mondiale", "Alliés", "Informatique"
               ]
             },
             {
@@ -214,7 +214,7 @@ export default {
               starter_gpt3: "Qu'est ce que",
               starter_gpt3_e: "Qu'est ce que",
               subtopic: [
-                "Test de Turing", "Langage naturel"
+                "Mathématiques", "Informatique", "Premiers ordinateurs"
               ]
             },
             {
@@ -228,23 +228,9 @@ export default {
               starter_gpt3: "Quels",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Premiers", "Ordinateurs"
+                "Informatique", "Ordinateurs", "Alliés"
               ]
             },
-            // {
-            //   starter: "Qui",
-            //   options: [
-            //     "Les alliés ont remporté la deuxième guerre mondiale",
-            //   ],
-            //   gpt3: [
-            //     "Il a également développé la machine de Turing, qui est un ordinateur théorique.",
-            //   ],
-            //   starter_gpt3: "Qu'a t-il .. autre",
-            //   starter_gpt3_e: "Qu'est ce que",
-            //   subtopic: [
-            //     "Technologie", "Intelligence artificielle"
-            //   ]
-            // },
           ]
         },
       ]
@@ -267,7 +253,7 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e: "Qu'est ce que" ,
               subtopic: [
-                "Ordinateur", "Processeur"
+                "Ordinateur", "Processeur", "Données"
               ]
             },
             {
@@ -281,7 +267,7 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Mémoriser", "Données"
+                "Mémoriser", "Données", "Ordinateur"
               ]
             },
             {
@@ -295,7 +281,7 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Adapter", "Corps"
+                "Adapter", "Corps", "prop3"
               ]
             },
             {
@@ -309,7 +295,7 @@ export default {
               starter_gpt3: "Quels",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Répondre", "Robot"
+                "Répondre", "Robot", "prop3"
               ]
             },
             {
@@ -323,7 +309,7 @@ export default {
               starter_gpt3: "Est ce que",
               starter_gpt3_e: "Quels",
               subtopic: [
-                "Niveaux", "Intelligence"
+                "Niveaux", "Intelligence", "prop3"
               ]
             },
           ]
@@ -344,7 +330,7 @@ export default {
               starter_gpt3: "Pourquoi",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Sécurité", "Mauvais usage", 
+                "Sécurité", "Mauvais usage", "prop3"
               ]
             },
             {
@@ -358,7 +344,7 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e: "Qu'est ce que",
               subtopic: [
-                "Ingénieur", "Force"
+                "Ingénieur", "Force", "prop3"
               ]
             },
             {
@@ -372,7 +358,7 @@ export default {
               starter_gpt3: "Pourquoi",
               starter_gpt3_e: "Quels",
               subtopic: [
-                "Composant", "Électronique"
+                "Composant", "Électronique", "prop3"
               ]
             },
             {
@@ -386,7 +372,7 @@ export default {
               starter_gpt3: "Quels .. autres",
               starter_gpt3_e: "Quels .. autres",
               subtopic: [
-                "Contrôle", "Système"
+                "Contrôle", "Système", "prop3"
               ]
             },
             {
@@ -400,7 +386,7 @@ export default {
               starter_gpt3: "Que",
               starter_gpt3_e: "Qu'est ce que/ Pourquoi",
               subtopic: [
-                "Fusée", "Navette"
+                "Fusée", "Navette", "prop3"
               ]
             },
           ]
@@ -421,7 +407,7 @@ export default {
               starter_gpt3: "Quel",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Technologie", "Futur"
+                "Technologie", "Futur", "prop3"
               ]
             },
             {
@@ -435,7 +421,7 @@ export default {
               starter_gpt3: "Quelle",
               starter_gpt3_e: "Quel",
               subtopic: [
-                "Rôle", "Robot"
+                "Rôle", "Robot", "prop3"
               ]
             },
             {
@@ -449,7 +435,7 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Intelligence", "Évoluer"
+                "Intelligence", "Évoluer", "prop3"
               ]
             },
             {
@@ -463,7 +449,7 @@ export default {
               starter_gpt3: "Quel",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Aider", "Humains"
+                "Aider", "Humains", "prop3"
               ]
             },
             {
@@ -477,7 +463,7 @@ export default {
               starter_gpt3: "Quelles",
               starter_gpt3_e: "Qu'est ce que",
               subtopic: [
-                "Robot", "Miniature"
+                "Robot", "Miniature", "prop3"
               ]
             },
           ]
@@ -502,7 +488,7 @@ export default {
           starter_gpt3: "Quels .. autres/ Comment",
           starter_gpt3_e: "Qu'est ce que",
               subtopic: [
-                "Source de nectar", "Pollen"
+                "Source de nectar", "Pollen", "prop3"
               ]
         },
         {
@@ -516,7 +502,7 @@ export default {
           starter_gpt3: "À quoi",
           starter_gpt3_e: "À quoi sert",
               subtopic: [
-                "Demi-cercle", "Danse"
+                "Demi-cercle", "Danse", "prop3"
               ]
         },
         {
@@ -530,7 +516,7 @@ export default {
           starter_gpt3: "Quels ..autres/ Y a t-il",
           starter_gpt3_e: "Quels .. autres",
               subtopic: [
-                "Vibrations", "Signaux"
+                "Vibrations", "Signaux", "prop3"
               ]
         },
         {
@@ -544,7 +530,7 @@ export default {
           starter_gpt3: "Pourquoi",
           starter_gpt3_e: "À quoi sert",
               subtopic: [
-                "Toilettage", "Nettoyage"
+                "Toilettage", "Nettoyage", "prop3"
               ]
         },
         {
@@ -558,7 +544,7 @@ export default {
           starter_gpt3: "À quoi sert",
           starter_gpt3_e: "Quelles .. autres",
               subtopic: [
-                "Communiquer"," Danses"
+                "Communiquer"," Danses", "prop3"
               ]
         },
         ]
@@ -579,7 +565,7 @@ export default {
             starter_gpt3: "Quels .. autres",
             starter_gpt3_e: "Quels .. autres",
               subtopic: [
-                "Singes", "Côte d'Ivoire"
+                "Singes", "Côte d'Ivoire", "prop3"
               ]
           },
           {
@@ -593,7 +579,7 @@ export default {
             starter_gpt3: "Quels .. autres",
             starter_gpt3_e: "Quels/ Qui",
               subtopic: [
-                "Dangers", "Ennemis"
+                "Dangers", "Ennemis", "prop3"
               ]
           },
           {
@@ -607,7 +593,7 @@ export default {
             starter_gpt3: "Quels",
             starter_gpt3_e: "Où",
               subtopic: [
-                "Côte d'Ivoire", "Afrique"
+                "Côte d'Ivoire", "Afrique", "prop3"
               ]
           },
           {
@@ -621,7 +607,7 @@ export default {
             starter_gpt3: "Qu'est ce que",
             starter_gpt3_e: "Quelle .. différence",
               subtopic: [
-                "Mone de Campbell", "Singe"
+                "Mone de Campbell", "Singe", "prop3"
               ]
           },
           {
@@ -635,7 +621,7 @@ export default {
             starter_gpt3: "Qu'est ce qui",
             starter_gpt3_e: "Quels .. autres",
               subtopic: [
-                "Sons", "Communiquer"
+                "Sons", "Communiquer", "prop3"
               ]
           },
           ]
@@ -656,7 +642,7 @@ export default {
                 starter_gpt3: "Pourquoi",
                 starter_gpt3_e: "Comment" ,
               subtopic: [
-                "Animaux domestiques", "Communication"
+                "Animaux domestiques", "Communication", "prop3"
               ]
               },
               {
@@ -670,7 +656,7 @@ export default {
                 starter_gpt3: "Avec qui d'autre",
                 starter_gpt3_e: "Comment",
               subtopic: [
-                "Comprendre", "Traduire"
+                "Comprendre", "Traduire", "prop3"
               ]
               },
               {
@@ -684,7 +670,7 @@ export default {
                 starter_gpt3: "Comment",
                 starter_gpt3_e: "Qu'est ce que/ Quels",
               subtopic: [
-                "Appareils", "Sophistiqués"
+                "Appareils", "Sophistiqués", "prop3"
               ]
               },
               {
@@ -698,7 +684,7 @@ export default {
                 starter_gpt3: "Quel",
                 starter_gpt3_e: "Quel",
               subtopic: [
-                "Langage animal", "Sens"
+                "Langage animal", "Sens", "prop3"
               ]
               },
               {
@@ -712,7 +698,7 @@ export default {
                 starter_gpt3: "Pourquoi",
                 starter_gpt3_e: "Quelle" ,
               subtopic: [
-                "Technologie", "Robots animaux"
+                "Technologie", "Robots animaux", "prop3"
               ]
               },
               ]
@@ -738,7 +724,7 @@ export default {
                     starter_gpt3: "Quelles .. autres",
                     starter_gpt3_e: "Quelles .. autres",
               subtopic: [
-                "Étoiles", "Constellations"
+                "Étoiles", "Constellations", "prop3"
               ]
                   },
                   {
@@ -752,7 +738,7 @@ export default {
                     starter_gpt3: "Comment",
                     starter_gpt3_e: "Comment",
               subtopic: [
-                "Observer", "Ciel"
+                "Observer", "Ciel", "prop3"
               ]
                   },
                   {
@@ -766,7 +752,7 @@ export default {
                     starter_gpt3: "Pourquoi",
                     starter_gpt3_e: "Pourquoi",
               subtopic: [
-                "Célèbre", "Grande Ourse"
+                "Célèbre", "Grande Ourse", "prop3"
               ]
                   },
                   {
@@ -780,7 +766,7 @@ export default {
                     starter_gpt3: "Qu'y a t-il d'autre'",
                     starter_gpt3_e: "Quelles .. autres",
               subtopic: [
-                "Constellations","'Ursa Major'"
+                "Constellations","'Ursa Major'", "prop3"
               ]
                   },
                   {
@@ -794,7 +780,7 @@ export default {
                     starter_gpt3: "Combien",
                     starter_gpt3_e: "Comment" ,
               subtopic: [
-                "Carte du ciel", "Dessiner"
+                "Carte du ciel", "Dessiner", "prop3"
               ]
                   },
                   ]
@@ -815,7 +801,7 @@ export default {
                     starter_gpt3: "What",
                     starter_gpt3_e: "What" ,
                   subtopic: [
-                    "Big Bang", "Explosion"
+                    "Big Bang", "Explosion", "prop3"
                   ]
                   },
                   {
@@ -829,7 +815,7 @@ export default {
                     starter_gpt3: "Combien",
                     starter_gpt3_e: "Quelle",
                   subtopic: [
-                    "Chaud", "Température"
+                    "Chaud", "Température", "prop3"
                   ]
                   },
                   {
@@ -843,7 +829,7 @@ export default {
                     starter_gpt3: "Quelle",
                     starter_gpt3_e: "Combien",
                   subtopic: [
-                    "Galaxies", "Étoiles"
+                    "Galaxies", "Étoiles", "prop3"
                   ]
                   },
                   {
@@ -857,7 +843,7 @@ export default {
                     starter_gpt3: "Comment",
                     starter_gpt3_e: "Comment/ Qu'est ce que",
                   subtopic: [
-                    "Expansion", "Univers"
+                    "Expansion", "Univers", "prop3"
                   ]
                   },
                   {
@@ -871,7 +857,7 @@ export default {
                     starter_gpt3: "Comment",
                     starter_gpt3_e: "Comment",
                   subtopic: [
-                    "Fusion", "Élèments"
+                    "Fusion", "Élèments", "prop3"
                   ]
                   },
                   ]
@@ -892,7 +878,7 @@ export default {
                         starter_gpt3: "Comment",
                         starter_gpt3_e: "Quelle .. différence / Qu'est ce que",
               subtopic: [
-                "Comète", "Météore"
+                "Comète", "Météore", "prop3"
               ]
                       },
                       {
@@ -920,7 +906,7 @@ export default {
                         starter_gpt3: "Que se passe-t-il",
                         starter_gpt3_e: "Quelle .. diffèrence",
               subtopic: [
-                "Astéroïde", "Planète"
+                "Astéroïde", "Planète", "prop3"
               ]
                       },
                       {
@@ -934,7 +920,7 @@ export default {
                         starter_gpt3: "Où",
                         starter_gpt3_e: "Qu'est ce que/ Quelle",
               subtopic: [
-                "Orbite", "Cercle"
+                "Orbite", "Cercle", "prop3"
               ]
                       },
                       {
@@ -948,7 +934,7 @@ export default {
                         starter_gpt3: "Quel",
                         starter_gpt3_e: "Qu'est ce que",
               subtopic: [
-                "Planète", "Naine"
+                "Planète", "Naine", "prop3"
               ]
                       },
                       ]
@@ -973,7 +959,7 @@ export default {
             starter_gpt3: "Quel",
             starter_gpt3_e: "Que veut dire",
               subtopic: [
-                "Renouvelable", "Durable"
+                "Renouvelable", "Durable", "prop3"
               ]
           },
           {
@@ -987,7 +973,7 @@ export default {
             starter_gpt3: "Quel",
             starter_gpt3_e: "Quel",
               subtopic: [
-                "Coût", "Géothermie"
+                "Coût", "Géothermie", "prop3"
               ]
           },
           {
@@ -1001,7 +987,7 @@ export default {
             starter_gpt3: "Quels",
             starter_gpt3_e: "Comment", 
               subtopic: [
-                "Produire", "Électricité", 
+                "Produire", "Électricité", "prop3"
               ]
           },
           {
@@ -1015,7 +1001,7 @@ export default {
             starter_gpt3: "Quels .. autres",
             starter_gpt3_e: "Comment",
               subtopic: [
-                "Chaleur", "Électricité"
+                "Chaleur", "Électricité", "prop3"
               ]
           },
           {
@@ -1050,7 +1036,7 @@ export default {
           starter_gpt3: "Quelles .. autre",
           starter_gpt3_e: "Pourquoi",
               subtopic: [
-                "Activité humaine", "Polluer l'eau"
+                "Activité humaine", "Polluer l'eau", "prop3"
               ]
         },
         {
@@ -1064,7 +1050,7 @@ export default {
           starter_gpt3: "Pourquoi",
           starter_gpt3_e: "Quelles",
               subtopic: [
-                "Conséquences", "Santé publique"
+                "Conséquences", "Santé publique", "prop3"
               ]
         },
         {
@@ -1078,7 +1064,7 @@ export default {
           starter_gpt3: "Pourquoi",
           starter_gpt3_e: "Où",
               subtopic: [
-                "Rivières", "Océans"
+                "Rivières", "Océans", "prop3"
               ]
         },
         {
@@ -1092,7 +1078,7 @@ export default {
           starter_gpt3: "Que se passe-t-il",
           starter_gpt3_e: "Qu'est ce que/ Que",
               subtopic: [
-                "Plancton", "Algues"
+                "Plancton", "Algues", "prop3"
               ]
         },
         {
@@ -1128,7 +1114,7 @@ export default {
         starter_gpt3: "Quels",
         starter_gpt3_e: "Quels",
               subtopic: [
-                "Dangers", "Santé humaine"
+                "Dangers", "Santé humaine", "prop3"
               ]
       },
       {
@@ -1142,7 +1128,7 @@ export default {
         starter_gpt3: "Pourquoi",
         starter_gpt3_e: "Qu'est ce que/ Comment",
               subtopic: [
-                "Ècosystème", "Perturber"
+                "Ècosystème", "Perturber", "prop3"
               ]
       },
       {
@@ -1156,7 +1142,7 @@ export default {
         starter_gpt3: "Y a t-il",
         starter_gpt3_e: "Est ce que",
               subtopic: [
-                "Conscient", "Dangers"
+                "Conscient", "Dangers", "prop3"
               ]
       },
       {
@@ -1170,7 +1156,7 @@ export default {
         starter_gpt3: "Comment",
         starter_gpt3_e: "Comment",
               subtopic: [
-                "Photopollution", "Réduire"
+                "Photopollution", "Réduire", "prop3"
               ]
       },
       {
@@ -1184,7 +1170,7 @@ export default {
         starter_gpt3: "Pourquoi",
         starter_gpt3_e: "Quels/ Où",
               subtopic: [
-                "Photopollution", "Pays"
+                "Photopollution", "Pays", "prop3"
               ]
       },
       ]
@@ -1209,7 +1195,7 @@ export default {
             starter_gpt3: "Quel",
             starter_gpt3_e: "Quel",
               subtopic: [
-                "Poids", "Femme"
+                "Poids", "Femme", "prop3"
               ]
           },
           {
@@ -1237,7 +1223,7 @@ export default {
             starter_gpt3: "Comment",
             starter_gpt3_e: "Comment",
               subtopic: [
-                "Gagner", "Points"
+                "Gagner", "Points", "prop3"
               ]
           },
           {
@@ -1251,7 +1237,7 @@ export default {
             starter_gpt3: "Quel",
             starter_gpt3_e: "Que/ Quel",
               subtopic: [
-                "Trophée", "Argent"
+                "Trophée", "Argent", "prop3"
               ]
           },
           {
@@ -1265,7 +1251,7 @@ export default {
             starter_gpt3: "Que se passe t-il",
             starter_gpt3_e: "Pourquoi",
               subtopic: [
-                "Casque"
+                "Casque", "prop3", "prop3"
               ]
           },
           ]
@@ -1286,7 +1272,7 @@ export default {
             starter_gpt3: "Quelles .. autres/ Comment",
             starter_gpt3_e: "Comment",
               subtopic: [
-                "Échec et mat", "KO"
+                "Échec et mat", "KO", "prop3"
               ]
           },
           {
@@ -1300,7 +1286,7 @@ export default {
             starter_gpt3: "Quels",
             starter_gpt3_e: "De quoi",
               subtopic: [
-                "Intelligence", "Muscles"
+                "Intelligence", "Muscles", "prop3"
               ]
           },
           {
@@ -1314,7 +1300,7 @@ export default {
             starter_gpt3: "Pourquoi",
             starter_gpt3_e: "Pourquoi",
               subtopic: [
-                "Sport", "Populaire"
+                "Sport", "Populaire", "prop3"
               ]
           },
           {
@@ -1328,7 +1314,7 @@ export default {
             starter_gpt3: "Que",
             starter_gpt3_e: "Quelle",
               subtopic: [
-                "Stratégie", "Jeu"
+                "Stratégie", "Jeu", "prop3"
               ]
           },
           {
@@ -1342,7 +1328,7 @@ export default {
             starter_gpt3: "Comment",
             starter_gpt3_e: "Quels .. autres",
               subtopic: [
-                "Pays", "Monde"
+                "Pays", "Monde", "prop3"
               ]
           },
           ]
@@ -1363,7 +1349,7 @@ export default {
             starter_gpt3: "Quelle",
             starter_gpt3_e: "Pourquoi",
               subtopic: [
-                "Palet de Hockey", "Fluorescent"
+                "Palet de Hockey", "Fluorescent", "prop3"
               ]
           },
           {
@@ -1377,7 +1363,7 @@ export default {
             starter_gpt3: "Comment",
             starter_gpt3_e: "Y a t-il .. autres",
               subtopic: [
-                "Sports", "Sous-marins"
+                "Sports", "Sous-marins", "prop3"
               ]
           },
           {
@@ -1391,7 +1377,7 @@ export default {
             starter_gpt3: "Qu'",
             starter_gpt3_e: "Comment/ Quel",
               subtopic: [
-                "Gagner", "Score"
+                "Gagner", "Score", "prop3"
               ]
           },
           {
@@ -1405,7 +1391,7 @@ export default {
             starter_gpt3: "Pourquoi",
             starter_gpt3_e: "Que" ,
               subtopic: [
-                "Masque", "Palmes"
+                "Masque", "Palmes", "prop3"
               ]
           },
           {
@@ -1419,7 +1405,7 @@ export default {
             starter_gpt3: "Quel",
             starter_gpt3_e: "Quelles .. autres",
               subtopic: [
-                "Compétences", "Nager"
+                "Compétences", "Nager", "prop3"
               ]
           },
           ]

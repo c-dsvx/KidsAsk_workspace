@@ -124,7 +124,7 @@ export default function QaPhase() {
         <ResizeHorizon width="calc(100vw / 3)">
           <ContentWrapper>
             <Typography variant="h5" className={classes.title}>
-              Agent space
+              Espace Chatty
             </Typography>
 
             { // show question if they are not shown and are fewer than 5 (starts at zero)
@@ -171,11 +171,11 @@ export default function QaPhase() {
 
                 }
 
-                {     // If user in exp condition
+                { // If user in exp condition
                   user.help &&
                   <>
                   <ChatMessage text={
-                    `Voici un mot important que j'ai trouvé dans le texte. Coche la case quand tu l'as repéré.`
+                    `Voici quelques mots importants que j'ai trouvés dans le texte. Coche la case du mot qui te rend curieux.`
                   } />
 
                     <Card variant="outlined">
