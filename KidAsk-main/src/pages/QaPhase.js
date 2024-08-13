@@ -201,37 +201,10 @@ export default function QaPhase() {
                       </CardContent>
                     </Card>
                     
-                    <ChatMessage text={
-                    `Je te propose de commencer ta question par le(s) mot(s) '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir un autre si tu veux.`
-                  } >
-                    
-                  </ChatMessage>
 
-                    <EaseUp>
-                    {
-                      <Card>
-                        <CardContent>
-                          <SubTopicList>
-                              {
-                               <div>
-                                <p>
-                                Pour rappel, voici une liste de mots interrogatifs que tu pourrais utiliser :
-                              </p>
-                              <ul>
-                                <li>Quel.s/ Quelle.s</li>
-                                <li>Pourquoi</li>
-                                <li>Comment</li>
-                                <li>Combien</li>
-                                <li>...</li>
-                                  </ul>
-                                  </div>
-                              
-                              }
-                            </SubTopicList>
-                        </CardContent>
-                      </Card>
-                    }
-                  </EaseUp>
+
+
+                    
                   
                   
                   </>
@@ -241,7 +214,7 @@ export default function QaPhase() {
                   (Object.keys(state).length > 0 ) &&
                   <>
                     <ChatMessage text={
-                      user.help ? `Super ! Tu peux maintenant formuler ta question, prends ton temps !` : `Super ! Tu peux maintenant formuler ta question, prends ton temps !`
+                      user.help ? `Super ! Tu peux maintenant formuler ta question en utilisant ton ou tes mot(s)-clé(s)` : `Super ! Tu peux maintenant formuler ta question, prends ton temps !`
                     } />
 
                     <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
@@ -249,7 +222,40 @@ export default function QaPhase() {
                     <ContentButtonWrapper>
                       <Button onClick={nextQuestion} variant="contained" disabled={!question}>Soumettre</Button>
                     </ContentButtonWrapper>
-                  </>
+
+                    <ChatMessage text={
+                    `Je te propose de commencer ta question par le(s) mot(s) '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir un autre si tu veux.`
+                    } >
+                    
+                    </ChatMessage>
+
+                      <EaseUp>
+                      {
+                        <Card>
+                          <CardContent>
+                            <SubTopicList>
+                                {
+                                <div>
+                                  <p>
+                                  Pour rappel, voici une liste de mots interrogatifs que tu pourrais utiliser :
+                                </p>
+                                <ul>
+                                  <li>Quel.s/ Quelle.s</li>
+                                  <li>Pourquoi</li>
+                                  <li>Comment</li>
+                                  <li>Combien</li>
+                                  <li>...</li>
+                                    </ul>
+                                    </div>
+                                
+                                }
+                              </SubTopicList>
+                          </CardContent>
+                        </Card>
+                      }
+                      </EaseUp>
+
+                    </>
                 }
 
               </>
