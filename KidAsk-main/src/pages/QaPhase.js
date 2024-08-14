@@ -81,12 +81,13 @@ export default function QaPhase() {
   // Submit user input and move to the next question or slide
   const nextQuestion = async () => {
     await addUserInput(user.identifiant, 'qa-phase', `${id}/slides/${topic.slides[slideIndex].text.substring(0, 40).replace(/\//g, '-')}/questions/${questionIndex}`, {
-      text: topic.slides[slideIndex].text,
-      prompt: Object.keys(stateFirst).length ? Object.keys(stateFirst)[0]: "no-prompt", //maybe add something here ??
-      question
+      text: topic.slides[slideIndex].text, // records text
+      prompt1: Object.keys(stateFirst).length ? Object.keys(stateFirst)[0]: "no-prompt", // records checked option in list 1
+      prompt2: Object.keys(stateSecond).length ? Object.keys(stateSecond)[0]: "no-prompt", // records checked option in list 2
+      question // records question typed
     })
     setStateFirst({})
-    //setStateSecond({})
+    setStateSecond({})
     setQuestion('')
     if (questionIndex + 1 < 6) {
       setQuestionIndex(questionIndex + 1)
