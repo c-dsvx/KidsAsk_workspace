@@ -40,6 +40,8 @@ export default function QaPhase() {
   const [keyword, setKeyword] = useState('') /*user-typed keyword1*/
   const[isEditable, setIsEditable] = useState(true) /*used for freezing input*/
 
+  const [help1, setHelp1] = useState(false) /* help for finding keywords set to false, true on click */
+
   const { user } = useContext(UserContext)
 
   const previousUrl = useRef(''); // Ref to track previous audio URL
@@ -80,6 +82,12 @@ export default function QaPhase() {
   const freezeWord = () => {
     setIsEditable(false) 
   }
+
+  // when button clicked help 1 becomes true
+  const showHelp1 = () => {
+    setHelp1(true)
+  } 
+
 
   // Update the question state when user types
   const handleChangeQuestion = (e) => {
@@ -395,7 +403,7 @@ export default function QaPhase() {
 
                 }
                 
-                { // for question 2
+                { // Q2 keyword
                 showQuestions && questionIndex ===1 &&
                 <>
                     <ChatMessage text={
@@ -405,12 +413,55 @@ export default function QaPhase() {
                     <TextField value={keyword} onChange={handleChangeKeyword} id="standard-basic" label="Mets ton mot ici" fullWidth disabled={!isEditable}/>
                     <ContentButtonWrapper>
                       <Button onClick={freezeWord} variant="contained" disabled={!keyword}>OK</Button>
-                    </ContentButtonWrapper>
+                    </ContentButtonWrapper>           
+                    {/*input keyword and freezed if submitted*/}
 
+                    <ChatMessage text={
+                      `Si tu n'y arrives pas, je peux t'aider !`
+                    } />
+
+                    <ContentButtonWrapper> {/* if time, change to square button (see pages at end of app)*/}
+                      <Button onClick={showHelp1} variant="contained" disabled={!isEditable}>Je veux de l'aide</Button>
+                    </ContentButtonWrapper>
                  </>   
                 }
 
-                { // Q2 If at least one FIRST checkbox checked or wirtten answer, show second list
+                { // Q2 If user asked for help 1
+                  (showQuestions && questionIndex === 1 && help1 === true)
+                   &&
+                  <>
+                <ChatMessage text={
+                    `Voici les mots que moi j'ai trouvés dans le texte. Coche celui qui te rend curieux.`
+                 } />
+
+                    <Card variant="outlined">
+                      <CardContent>
+                        <FormControl component="fieldset" className={classes.formControl}>
+                          <FormGroup>
+                            {
+                              topic.slides[slideIndex].questions[questionIndex].subtopic.map(op => {
+                                return <FormControlLabel
+                                  control={
+                                    <Checkbox
+                                      color="primary"
+                                      onChange={handleChangeFirst}
+                                      checked={!!stateFirst[op]}
+                                      name={op} />
+                                  }
+                                  label={op}
+                                />
+                              })
+                            }
+                          </FormGroup>
+                        </FormControl>
+                      </CardContent>
+                    </Card>
+
+                    </>
+                    
+                }
+
+                { // Q2 If at least one checkbox checked or wirtten answer, show second list
                  (showQuestions && questionIndex === 1 && (Object.keys(stateFirst).length > 0 || isEditable === false /*or state button = clicked*/)) &&
                   <>
                     <ChatMessage text={
@@ -443,8 +494,8 @@ export default function QaPhase() {
 
                 }
 
-                { // Q2 If at least one checkbox checked in each show input zone
-                  (showQuestions && questionIndex === 1 && Object.keys(stateFirst).length > 0 && Object.keys(stateSecond).length > 0)
+                { // Q2 If at least one answer in each show input zone
+                  (showQuestions && questionIndex === 1 && Object.keys(stateSecond).length > 0)
                    &&
                   <>
                     <ChatMessage text={
@@ -490,7 +541,7 @@ export default function QaPhase() {
                       </EaseUp>
 
                     </>
-                    
+
                 }
               
                 { // Show the final question input if the question index is 5
