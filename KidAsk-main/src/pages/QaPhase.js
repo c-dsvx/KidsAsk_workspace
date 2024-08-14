@@ -17,9 +17,12 @@ import { EaseUp } from "../components/EaseUp";
 import { SubTopicList } from "../components/ExplorationUI";
 
 export default function QaPhase() {
+  // Extract parameters from URL
   let { id, nextTopic } = useParams();
+  // Get the topic data based on the id from `quPhase` data
   const topic = quPhase[id]
 
+  // State hooks for managing slide index, question visibility, and other UI states
   const [slideIndex, setSlideIndex] = useState(0)
 
   const [showQuestions, setShowQuestions] = useState(false)
@@ -30,14 +33,17 @@ export default function QaPhase() {
 
   const [question, setQuestion] = useState('') /*user-typed question*/
 
-  const [state, setState] = React.useState({}) /* checkbox state */
+  const [stateFirst, setStateFirst] = React.useState({}) /* first checkbox state */
+
+  //const [stateSecond, setStateSecond] = React.useState({}) /* second checkbox state */
 
   const { user } = useContext(UserContext)
 
-  const previousUrl = useRef('');
-  const audioRef = useRef();
+  const previousUrl = useRef(''); // Ref to track previous audio URL
+  const audioRef = useRef(); // Ref for audio element
 
   useEffect(() => {
+    // Load new audio if URL changes
     if (topic.slides[slideIndex]) {
       if (previousUrl.current === topic.slides[slideIndex].audio) {
         return;
@@ -51,27 +57,36 @@ export default function QaPhase() {
     }
   }, [slideIndex]);
 
-  const handleChange = (event) => {
-    setState({ [event.target.name]: event.target.checked }); /*handle change in checkbox state*/
+  // Handlers for checkbox state changes
+  const handleChangeFirst = (event) => {
+    setStateFirst({ [event.target.name]: event.target.checked }); /*handle change in first checkbox state*/
   }
+
+  //const handleChangeSecond = (event) => {
+  //  setStateSecond({ [event.target.name]: event.target.checked }); /*handle change in second checkbox state*/
+  //}
 
   const classes = useStyles()
 
+  // Mark the reading as finished and show questions
   const finishedReading = () => {
     setShowQuestions(true)
   }
 
+  // Update the question state when user types
   const handleChangeQuestion = (e) => {
     setQuestion(e.target.value) /*updates user-typed question state*/
   }
 
+  // Submit user input and move to the next question or slide
   const nextQuestion = async () => {
     await addUserInput(user.identifiant, 'qa-phase', `${id}/slides/${topic.slides[slideIndex].text.substring(0, 40).replace(/\//g, '-')}/questions/${questionIndex}`, {
       text: topic.slides[slideIndex].text,
-      prompt: Object.keys(state).length ? Object.keys(state)[0]: "no-prompt",
+      prompt: Object.keys(stateFirst).length ? Object.keys(stateFirst)[0]: "no-prompt",
       question
     })
-    setState({})
+    setStateFirst({})
+    //setStateSecond({})
     setQuestion('')
     if (questionIndex + 1 < 6) {
       setQuestionIndex(questionIndex + 1)
@@ -96,18 +111,23 @@ export default function QaPhase() {
       <Resize handleWidth="5px" handleColor="#ddd">
         <ResizeHorizon width="calc(100vw / 3 * 2)">
           <ContentWrapper>
+            {/* Display the topic title */}
             <Typography variant="h5" className={classes.title}>
               Thème: {topicLabels[id]}
             </Typography>
+            {/* Display the image for the current slide */}
             <FigureWrapper>
               <img src={topic.slides[slideIndex].image} />
             </FigureWrapper>
+            {/* Display the text and audio for the current slide */}
             <StoryWrapper>
+              {/* Split the slide text by new lines and map each line to a paragraph with a line break */}
               {
                 topic.slides[slideIndex].text.split('\n').map(line => (
                   <p>{line} <br /></p>
                 ))
               }
+              {/* Audio player for the current slide */}
               <audio controls ref={audioRef}>
                 <source src={topic.slides[slideIndex].audio} type="audio/mp3"></source>
               </audio>
@@ -123,6 +143,7 @@ export default function QaPhase() {
         </ResizeHorizon  >
         <ResizeHorizon width="calc(100vw / 3)">
           <ContentWrapper>
+            {/* Display the title */}
             <Typography variant="h5" className={classes.title}>
               Espace Chatty
             </Typography>
@@ -154,8 +175,8 @@ export default function QaPhase() {
                                   control={
                                     <Checkbox
                                       color="primary"
-                                      onChange={handleChange}
-                                      checked={!!state[op]}
+                                      onChange={handleChangeFirst}
+                                      checked={!!stateFirst[op]}
                                       name={op} />
                                   }
                                   label={op}
@@ -176,7 +197,7 @@ export default function QaPhase() {
                   <>
                   <ChatMessage text={
                     `Voici quelques mots importants que j'ai trouvés dans le texte. Coche la case du mot qui te rend curieux.`
-                  } />
+                 } />
 
                     <Card variant="outlined">
                       <CardContent>
@@ -188,8 +209,8 @@ export default function QaPhase() {
                                   control={
                                     <Checkbox
                                       color="primary"
-                                      onChange={handleChange}
-                                      checked={!!state[op]}
+                                      onChange={handleChangeFirst}
+                                      checked={!!stateFirst[op]}
                                       name={op} />
                                   }
                                   label={op}
@@ -200,18 +221,48 @@ export default function QaPhase() {
                         </FormControl>
                       </CardContent>
                     </Card>
-                    
-
-
-
-                    
-                  
                   
                   </>
                 }
 
+                { // If at least one FIRST checkbox checked show second list
+                 /* (Object.keys(stateFirst).length > 0 && Object.keys(stateSecond).length === 0) &&
+                  <>
+                    <ChatMessage text={
+                    `Est-ce que ce mot te rappelle quelque-chose que tu connais déjà ? Voici à quoi, moi il me fait penser :`
+                  } />
+
+                    <Card variant="outlined">
+                      <CardContent>
+                        <FormControl component="fieldset" className={classes.formControl}>
+                          <FormGroup>
+                            {
+                              topic.slides[slideIndex]?.questions[questionIndex]?.subtopic2?.map(op => {
+                                return <FormControlLabel
+                                  control={
+                                    <Checkbox
+                                      color="primary"
+                                      onChange={handleChangeSecond}
+                                      checked={!!stateSecond[op]}
+                                      name={op} />
+                                  }
+                                  label={op}
+                                />
+                              }) || [] // fallback to empty array if undefined 
+                            }
+                          </FormGroup>
+                        </FormControl>
+                      </CardContent>
+                    </Card>
+                    </>
+                    */
+                  }
+
                 { // If at least one checkbox checked show input zone
-                  (Object.keys(state).length > 0 ) &&
+                  (
+                    /*(user.help &&*/ Object.keys(stateFirst).length > 0 /* && Object.keys(stateSecond).length > 0) ||
+                  (!user.help && Object.keys(stateFirst).length > 0 */ )
+                   &&
                   <>
                     <ChatMessage text={
                       user.help ? `Super ! Tu peux maintenant formuler ta question en utilisant ton ou tes mot(s)-clé(s)` : `Super ! Tu peux maintenant formuler ta question, prends ton temps !`
@@ -262,6 +313,7 @@ export default function QaPhase() {
             }
 
             {
+              // Show the final question input if the question index is 5
               showQuestions && questionIndex  === 5 &&
               <>
                 <ChatMessage text={

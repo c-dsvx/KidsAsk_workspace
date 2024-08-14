@@ -19,6 +19,9 @@ export default {
               subtopic: [
                 "Conserver","Vaccination","Maladie"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Où",
@@ -33,6 +36,9 @@ export default {
               subtopic: [
                 "Découvrir","Choléra","Conserver"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "C'est quoi / Qu'est ce que",
@@ -47,6 +53,9 @@ export default {
               subtopic: [
                 "Vaccination","Maladie","Découvrir"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Quel(le)",
@@ -61,6 +70,9 @@ export default {
               subtopic: [
                 "Vaccination","Choléra","Conserver"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Quel est",
@@ -75,6 +87,9 @@ export default {
               subtopic: [
                 "Choléra", "Maladie", "Vaccination"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             }
           ]
           
@@ -97,6 +112,9 @@ export default {
               subtopic: [
                 "ADN","Structure","Physiuqe"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "C'est quoi",
@@ -111,6 +129,9 @@ export default {
               subtopic: [
                 "Physique","Chimie","Prix Nobel"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Pourquoi",
@@ -125,6 +146,9 @@ export default {
               subtopic: [
                 "Cancer","Rôle","Biologie"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Qu'est ce qui",
@@ -139,6 +163,9 @@ export default {
               subtopic: [
                 "Mort","Chimie","Structure"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Que veut dire",
@@ -152,6 +179,9 @@ export default {
               subtopic: [
                 "Prix Nobel","Rôle","Physique"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
           ]
           
@@ -174,6 +204,9 @@ export default {
                    subtopic: [
                      "Premiers ordianteurs", "Génie", "Informatique"
                    ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Pourquoi",
@@ -188,6 +221,9 @@ export default {
               subtopic: [
                 "Génie", "Mathématiques", "Alliés"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Quand",
@@ -202,6 +238,9 @@ export default {
               subtopic: [
                 "Seconde guerre mondiale", "Alliés", "Informatique"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Qui",
@@ -216,6 +255,9 @@ export default {
               subtopic: [
                 "Mathématiques", "Informatique", "Premiers ordinateurs"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Comment",
@@ -230,6 +272,9 @@ export default {
               subtopic: [
                 "Informatique", "Ordinateurs", "Alliés"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
           ]
         },
@@ -255,6 +300,9 @@ export default {
               subtopic: [
                 "Ordinateur", "Processeur", "Données"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "A quoi servent",
@@ -269,6 +317,9 @@ export default {
               subtopic: [
                 "Mémoriser", "Données", "Ordinateur"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Comment",
@@ -283,6 +334,9 @@ export default {
               subtopic: [
                 "Adapter", "Corps", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Qu'est-ce que",
@@ -297,6 +351,9 @@ export default {
               subtopic: [
                 "Répondre", "Robot", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Comment",
@@ -311,6 +368,9 @@ export default {
               subtopic: [
                 "Niveaux", "Intelligence", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
           ]
         },
@@ -332,6 +392,9 @@ export default {
               subtopic: [
                 "Sécurité", "Mauvais usage", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Qu'est-ce que",
@@ -346,6 +409,9 @@ export default {
               subtopic: [
                 "Ingénieur", "Force", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Quel(le)",
@@ -360,6 +426,9 @@ export default {
               subtopic: [
                 "Composant", "Électronique", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Pourquoi",
@@ -374,6 +443,9 @@ export default {
               subtopic: [
                 "Contrôle", "Système", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Qu'est-ce que",  
@@ -388,6 +460,9 @@ export default {
               subtopic: [
                 "Fusée", "Navette", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
           ]
         },
@@ -409,6 +484,9 @@ export default {
               subtopic: [
                 "Technologie", "Futur", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Comment",
@@ -423,6 +501,9 @@ export default {
               subtopic: [
                 "Rôle", "Robot", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Quel",
@@ -437,6 +518,9 @@ export default {
               subtopic: [
                 "Intelligence", "Évoluer", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "Comment",
@@ -451,6 +535,9 @@ export default {
               subtopic: [
                 "Aider", "Humains", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
             {
               starter: "À quoi",
@@ -465,6 +552,9 @@ export default {
               subtopic: [
                 "Robot", "Miniature", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
             },
           ]
         }
@@ -490,6 +580,9 @@ export default {
               subtopic: [
                 "Source de nectar", "Pollen", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
         },
         {
           starter: "Pourquoi",
@@ -504,6 +597,9 @@ export default {
               subtopic: [
                 "Demi-cercle", "Danse", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
         },
         {
           starter: "C'est quoi",
@@ -518,6 +614,9 @@ export default {
               subtopic: [
                 "Vibrations", "Signaux", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
         },
         {
           starter: "À quoi",
@@ -532,6 +631,9 @@ export default {
               subtopic: [
                 "Toilettage", "Nettoyage", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
         },
         {
           starter: "Qu'est-ce que",
@@ -546,10 +648,13 @@ export default {
               subtopic: [
                 "Communiquer"," Danses", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
         },
         ]
-    },
-    {
+      },
+      {
       text: "Le Mone de Campbell est un petit singe de Côte d'Ivoire. En langage mone, les alertes (hok) et (krak) indiquent la présence de leurs deux ennemis. Lorsqu'on ajoute un 'oo' à la fin, il faut comprendre cette fois 'danger dans les arbres': (hok-oo), et 'danger au sol': (krak-oo). Maintenant, combinez les krak-oo avec des boom, ça donne 'attention, chute de branches ou de troncs d'arbre!': (krak-oo-boom). Ils peuvent donc construire des phrases! Aussi, les mones émettent un autre son particulier quand quelqu'un qu'ils ne connaissent pas s'approche d'eux. C'est un cri d'alerte qui signale la présence d'un humain!",
           image:'/pics-intervention-qa/Le monde des animaux/mones campbell.jpg',
           audio: "/audios/mones campbell.mp3",
@@ -567,6 +672,9 @@ export default {
               subtopic: [
                 "Singes", "Côte d'Ivoire", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Qui",
@@ -581,6 +689,9 @@ export default {
               subtopic: [
                 "Dangers", "Ennemis", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Comment",
@@ -595,6 +706,9 @@ export default {
               subtopic: [
                 "Côte d'Ivoire", "Afrique", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Pourquoi",
@@ -609,6 +723,9 @@ export default {
               subtopic: [
                 "Mone de Campbell", "Singe", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Comment",
@@ -623,9 +740,12 @@ export default {
               subtopic: [
                 "Sons", "Communiquer", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           ]
-      },
+        },
         {
           text:"Si l'on veut communiquer gentiment avec des animaux sauvages, il faut pouvoir s'approcher d'eux. Problème: cela est difficile. Pour transmettre leurs messages, les chercheurs commencent donc à utiliser des animaux robots. Un jour, il sera possible de communiquer avec un très grand nombre d'animaux. Mais pour le moment, on est loin de comprendre tous leurs messages. Même quand on les imite, on n'est pas encore sûrs de ce qu'on leur dit vraiment. Ils nous faut des appareils sophistiqués pour pouvoir comprendre leurs messages.",
           image:'/pics-intervention-qa/Le monde des animaux/parler aux animaux.jpg',
@@ -644,6 +764,9 @@ export default {
               subtopic: [
                 "Animaux domestiques", "Communication", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
               },
               {
                 starter: "Qu'est-ce que",
@@ -658,6 +781,9 @@ export default {
               subtopic: [
                 "Comprendre", "Traduire", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
               },
               {
                 starter: "Qu'est-ce que",
@@ -672,6 +798,9 @@ export default {
               subtopic: [
                 "Appareils", "Sophistiqués", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
               },
               {
                 starter: "Quel",
@@ -686,6 +815,9 @@ export default {
               subtopic: [
                 "Langage animal", "Sens", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
               },
               {
                 starter: "Pourquoi",
@@ -700,6 +832,9 @@ export default {
               subtopic: [
                 "Technologie", "Robots animaux", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
               },
               ]
           }
@@ -726,6 +861,9 @@ export default {
               subtopic: [
                 "Étoiles", "Constellations", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
                   },
                   {
                     starter: "Qu'est-ce que",
@@ -740,6 +878,9 @@ export default {
               subtopic: [
                 "Observer", "Ciel", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
                   },
                   {
                     starter: "Quand",
@@ -754,6 +895,9 @@ export default {
               subtopic: [
                 "Célèbre", "Grande Ourse", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
                   },
                   {
                     starter: "Quel",
@@ -768,6 +912,9 @@ export default {
               subtopic: [
                 "Constellations","'Ursa Major'", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
                   },
                   {
                     starter: "Que veut dire",
@@ -782,6 +929,9 @@ export default {
               subtopic: [
                 "Carte du ciel", "Dessiner", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
                   },
                   ]
             },
@@ -802,7 +952,10 @@ export default {
                     starter_gpt3_e: "What" ,
                   subtopic: [
                     "Big Bang", "Explosion", "prop3"
-                  ]
+                    ]
+                  /*subtopic2: [
+                "prop4","prop5","prop6"
+                    ],*/
                   },
                   {
                     starter: "Quand",
@@ -816,7 +969,10 @@ export default {
                     starter_gpt3_e: "Quelle",
                   subtopic: [
                     "Chaud", "Température", "prop3"
-                  ]
+                    ]
+                  /*subtopic2: [
+                "prop4","prop5","prop6"
+                    ],*/
                   },
                   {
                     starter: "C'est quoi",
@@ -830,7 +986,10 @@ export default {
                     starter_gpt3_e: "Combien",
                   subtopic: [
                     "Galaxies", "Étoiles", "prop3"
-                  ]
+                    ]
+                  /*subtopic2: [
+                "prop4","prop5","prop6"
+                    ],*/
                   },
                   {
                     starter: "Où",
@@ -845,6 +1004,9 @@ export default {
                   subtopic: [
                     "Expansion", "Univers", "prop3"
                   ]
+                  /*subtopic2: [
+                    "prop4","prop5","prop6"
+                    ],*/
                   },
                   {
                     starter: "Pourquoi",
@@ -858,7 +1020,10 @@ export default {
                     starter_gpt3_e: "Comment",
                   subtopic: [
                     "Fusion", "Élèments", "prop3"
-                  ]
+                    ]
+                  /*subtopic2: [
+                "prop4","prop5","prop6"
+                    ],*/
                   },
                   ]
               },
@@ -880,6 +1045,9 @@ export default {
               subtopic: [
                 "Comète", "Météore", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
                       },
                       {
                         starter: "Pourquoi",
@@ -891,9 +1059,12 @@ export default {
                         ],
                         starter_gpt3: "Quelle .. différence",
                         starter_gpt3_e: "Quelle/ De quoi" ,
-              subtopic: [
-                  "Composition", "Fer", "Acier"
-              ]
+                      subtopic: [
+                        "Composition", "Fer", "Acier"
+                        ]
+                      /*subtopic2: [
+                          "prop4","prop5","prop6"
+                        ],*/
                       },
                       {
                         starter: "Quel",
@@ -908,6 +1079,9 @@ export default {
               subtopic: [
                 "Astéroïde", "Planète", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
                       },
                       {
                         starter: "Que",
@@ -922,6 +1096,9 @@ export default {
               subtopic: [
                 "Orbite", "Cercle", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
                       },
                       {
                         starter: "Quel",
@@ -936,6 +1113,9 @@ export default {
               subtopic: [
                 "Planète", "Naine", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
                       },
                       ]
                   },
@@ -961,6 +1141,9 @@ export default {
               subtopic: [
                 "Renouvelable", "Durable", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Qu'est-ce que",
@@ -975,6 +1158,9 @@ export default {
               subtopic: [
                 "Coût", "Géothermie", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Quels",
@@ -989,6 +1175,9 @@ export default {
               subtopic: [
                 "Produire", "Électricité", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Pourquoi",
@@ -1003,6 +1192,9 @@ export default {
               subtopic: [
                 "Chaleur", "Électricité", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Quels",
@@ -1017,10 +1209,13 @@ export default {
               subtopic: [
                 "Solaire", "Éolienne", "Hydroélectrique"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           ]
-      }, 
-      {
+        }, 
+        {
         text: "L'eau est polluée à cause de l’activité humaine. Les causes de cette pollution sont très nombreuses. Par exemple: les bateaux qui jettent leurs déchets dans la mer. L’eau est aussi polluée par les déchets sur la plage qui sont emmenés par la marée. Cette pollution peut nuire à la santé et à la biodiversité. La pollution de l'eau affecte les fleuves, les lacs, et les océans. En Bretagne par exemple, certaines côtes ont été envahies par des algues et du plancton à cause de l’activité agricole. L'eau devient alors pauvre en dioxygène et la faune et la flore ne peuvent plus y vivre.",
         image:'/pics-intervention-qa/Protéger la nature/eau polluee.jpg',
         audio: "/audios/eaupolluee.mp3",
@@ -1038,8 +1233,11 @@ export default {
               subtopic: [
                 "Activité humaine", "Polluer l'eau", "prop3"
               ]
-        },
-        {
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
+          },
+          {
           starter: "Où",
           options:[
             "La Bretagne se trouve dans l'ouest de la France",
@@ -1052,8 +1250,11 @@ export default {
               subtopic: [
                 "Conséquences", "Santé publique", "prop3"
               ]
-        },
-        {
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
+          },
+          {
           starter: "Quel(s)",
           options:[
             "L'agriculture est dangereuse pour la mer car elle utilise des produits chimiques toxiques",
@@ -1066,8 +1267,11 @@ export default {
               subtopic: [
                 "Rivières", "Océans", "prop3"
               ]
-        },
-        {
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
+          },
+          {
           starter: "Pourquoi",
           options:[
             "Les bateaux jettent leurs déchets dans la mer car c'est le moyen le moins cher pour s'en débarasser",
@@ -1080,8 +1284,11 @@ export default {
               subtopic: [
                 "Plancton", "Algues", "prop3"
               ]
-        },
-        {
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
+          },
+          {
           starter: "Pourquoi",
           options:[
             "L'eau polluée est dangereuse car elle contient des bactéries qui causent des maladies",
@@ -1094,11 +1301,14 @@ export default {
               subtopic: [
                 "Manque", "Oxygène", "Eau"
               ]
-        },
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
+          },
         ]
-    }, 
-  
-    {
+      },
+
+      {
       text: "La pollution lumineuse, également appelée photo-pollution est la présence de lumière produite par les humains pendant la nuit. Elle trouble la faune et la flore. Lorsque les éclairages sont très nombreux, ils nuisent à l'obscurité normale de la nuit. Ainsi, à la tombée de la nuit, on trouve beaucoup de lumière (lampes allumées sans cesse dans les rues...) partout dans le monde. La pollution lumineuse a des effets néfastes sur la santé humaine et aussi sur la faune. Par exemple, elle est la cause de la disparition de certains insectes. Beaucoup de pays sont désormais conscients des dangers de la photo-pollution et essaient de la diminuer.",
       image:'/pics-intervention-qa/Protéger la nature/photopollution.jpg',
       audio: "/audios/photopollution.mp3",
@@ -1116,8 +1326,11 @@ export default {
               subtopic: [
                 "Dangers", "Santé humaine", "prop3"
               ]
-      },
-      {
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
+        },
+        {
         starter: "Comment",
         options:[
           "Pour réduire la photopollution, il faut mettre moins d'éclairage la nuit",
@@ -1130,8 +1343,11 @@ export default {
               subtopic: [
                 "Ècosystème", "Perturber", "prop3"
               ]
-      },
-      {
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
+        },
+        {
         starter: "Quels",
         options:[
           "Parmi les pays conscients des dangers de la photopollution on trouve les Etats-Unis et la France par exemple",
@@ -1144,8 +1360,11 @@ export default {
               subtopic: [
                 "Conscient", "Dangers", "prop3"
               ]
-      },
-      {
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
+        },
+        {
         starter: "Pourquoi",
         options:[
           "La lumière est dangereuse pour les animaux car elle désoriente les oiseaux migrateurs",
@@ -1158,8 +1377,11 @@ export default {
               subtopic: [
                 "Photopollution", "Réduire", "prop3"
               ]
-      },
-      {
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
+        },
+        {
         starter: "Que",
         options:[
           "La photopollution peut causer des troubles de sommeil pour les humains",
@@ -1172,9 +1394,12 @@ export default {
               subtopic: [
                 "Photopollution", "Pays", "prop3"
               ]
-      },
-      ]
-  }, 
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
+        },
+        ]
+        }, 
       ]
     },
     "sports": {
@@ -1197,6 +1422,9 @@ export default {
               subtopic: [
                 "Poids", "Femme", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Pourquoi",
@@ -1211,6 +1439,9 @@ export default {
               subtopic: [
                 "Mur", "Corde", "Boue"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "De quel",
@@ -1225,6 +1456,9 @@ export default {
               subtopic: [
                 "Gagner", "Points", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Quelle",
@@ -1239,6 +1473,9 @@ export default {
               subtopic: [
                 "Trophée", "Argent", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Combien",
@@ -1253,6 +1490,9 @@ export default {
               subtopic: [
                 "Casque", "prop3", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           ]
         }, 
@@ -1274,6 +1514,9 @@ export default {
               subtopic: [
                 "Échec et mat", "KO", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Qui",
@@ -1288,6 +1531,9 @@ export default {
               subtopic: [
                 "Intelligence", "Muscles", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Qu'est-ce que",
@@ -1302,6 +1548,9 @@ export default {
               subtopic: [
                 "Sport", "Populaire", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Combien",
@@ -1316,6 +1565,9 @@ export default {
               subtopic: [
                 "Stratégie", "Jeu", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Comment",
@@ -1330,6 +1582,9 @@ export default {
               subtopic: [
                 "Pays", "Monde", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           ]
         },
@@ -1351,6 +1606,9 @@ export default {
               subtopic: [
                 "Palet de Hockey", "Fluorescent", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Comment",
@@ -1365,6 +1623,9 @@ export default {
               subtopic: [
                 "Sports", "Sous-marins", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Combien",
@@ -1379,6 +1640,9 @@ export default {
               subtopic: [
                 "Gagner", "Score", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Pourquoi",
@@ -1393,6 +1657,9 @@ export default {
               subtopic: [
                 "Masque", "Palmes", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           {
             starter: "Où",
@@ -1407,6 +1674,9 @@ export default {
               subtopic: [
                 "Compétences", "Nager", "prop3"
               ]
+              /*subtopic2: [
+                "prop4","prop5","prop6"
+              ],*/
           },
           ]
         },
