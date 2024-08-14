@@ -37,6 +37,9 @@ export default function QaPhase() {
 
   const [stateSecond, setStateSecond] = React.useState({}) /* second checkbox state */
 
+  const [keyword, setKeyword] = useState('') /*user-typed keyword1*/
+  const[isEditable, setIsEditable] = useState(true) /*used for freezing input*/
+
   const { user } = useContext(UserContext)
 
   const previousUrl = useRef(''); // Ref to track previous audio URL
@@ -73,9 +76,19 @@ export default function QaPhase() {
     setShowQuestions(true)
   }
 
+  // when button clicked submit keyword
+  const freezeWord = () => {
+    setIsEditable(false) 
+  }
+
   // Update the question state when user types
   const handleChangeQuestion = (e) => {
     setQuestion(e.target.value) /*updates user-typed question state*/
+  }
+
+  // Update the keyword state when user types
+  const handleChangeKeyword = (e) => {
+    setKeyword(e.target.value) /*updates user-typed keyword state*/
   }
 
   // Submit user input and move to the next question or slide
@@ -83,12 +96,14 @@ export default function QaPhase() {
     await addUserInput(user.identifiant, 'qa-phase', `${id}/slides/${topic.slides[slideIndex].text.substring(0, 40).replace(/\//g, '-')}/questions/${questionIndex}`, {
       text: topic.slides[slideIndex].text, // records text
       prompt1: Object.keys(stateFirst).length ? Object.keys(stateFirst)[0]: "no-prompt", // records checked option in list 1
+      keyword,
       prompt2: Object.keys(stateSecond).length ? Object.keys(stateSecond)[0]: "no-prompt", // records checked option in list 2
       question // records question typed
     })
     setStateFirst({})
     setStateSecond({})
     setQuestion('')
+    setKeyword('')
     if (questionIndex + 1 < 6) {
       setQuestionIndex(questionIndex + 1)
     } else if (slideIndex + 1 < topic.slides.length) {
@@ -149,11 +164,11 @@ export default function QaPhase() {
               Espace Chatty
             </Typography>
 
-            { // show question if they are not shown and are fewer than 5 (starts at zero)
-              showQuestions && questionIndex < 5 &&
+            { // if user in control cond
+              !user.help &&
               <>
-                { // If user not in experimental
-                  !user.help &&
+              { // show question if they are to be shown and q less than n°5 (starts at zero)
+                  showQuestions && questionIndex < 5 &&
                   <>
                   <ChatMessage text={
                     `Tu peux explorer ce texte plus si tu poses des questions curieuses.`
@@ -190,13 +205,84 @@ export default function QaPhase() {
                     </Card>
                   </ChatMessage>
                   </>
+              }
 
-                }
+              { // If at least one checkbox checked show input zone
+                  (showQuestions && questionIndex < 5 && Object.keys(stateFirst).length > 0) &&
+                    <>
+                      <ChatMessage text={
+                        `Super ! Tu peux maintenant formuler ta question, prends ton temps !`
+                      } />
+  
+                      <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
+  
+                      <ContentButtonWrapper>
+                        <Button onClick={nextQuestion} variant="contained" disabled={!question}>Soumettre</Button>
+                      </ContentButtonWrapper>
+  
+                      <ChatMessage text={
+                      `Je te propose de commencer ta question par le(s) mot(s) '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir un autre si tu veux.`
+                      } >
+                      
+                      </ChatMessage>
+  
+                        <EaseUp>
+                        {
+                          <Card>
+                            <CardContent>
+                              <SubTopicList>
+                                  {
+                                  <div>
+                                    <p>
+                                    Pour rappel, voici une liste de mots interrogatifs que tu pourrais utiliser :
+                                  </p>
+                                  <ul>
+                                    <li>Quel.s/ Quelle.s</li>
+                                    <li>Pourquoi</li>
+                                    <li>Comment</li>
+                                    <li>Combien</li>
+                                    <li>...</li>
+                                      </ul>
+                                      </div>
+                                  
+                                  }
+                                </SubTopicList>
+                            </CardContent>
+                          </Card>
+                        }
+                        </EaseUp>
+  
+                    </>
+              }
 
-                { // If user in exp condition
-                  user.help &&
-                  <>
-                  <ChatMessage text={
+              {
+              // Show the final question input if the question index is 5
+              showQuestions && questionIndex  === 5 &&
+              <>
+                <ChatMessage text={
+                  `Maintenant essaie de formuler ta question tout seul, comme on s'est entrainés ensemble.`
+                  } />
+                <ChatMessage text={
+                  `Attention, tu ne peux pas répéter une question précédente et la réponse ne doit pas figurer dans le texte.`
+                  } />
+                        
+                  <TextField id="standard-basic" label="Mets ta question ici" fullWidth onChange={handleChangeQuestion} />
+
+                  <ContentButtonWrapper>
+                    <Button onClick={nextQuestion} variant="contained" disabled={!question}>Soumettre</Button>
+                  </ContentButtonWrapper>
+                </>
+              }
+              </>
+            }
+
+            { // If user in exp condition
+              user.help &&
+              <>
+              { // for question 1
+                showQuestions && questionIndex < 1 &&
+                <>
+                <ChatMessage text={
                     `Voici quelques mots importants que j'ai trouvés dans le texte. Coche la case du mot qui te rend curieux.`
                  } />
 
@@ -226,8 +312,8 @@ export default function QaPhase() {
                   </>
                 }
 
-                { // If at least one FIRST checkbox checked show second list
-                 (user.help && Object.keys(stateFirst).length > 0 /* && Object.keys(stateSecond).length === 0 */) &&
+                { // Q1 If at least one FIRST checkbox checked show second list
+                 (showQuestions && questionIndex < 1 && Object.keys(stateFirst).length > 0) &&
                   <>
                     <ChatMessage text={
                     `Est-ce que ce mot te rappelle quelque-chose que tu connais déjà ? Voici à quoi, moi il me fait penser :`
@@ -256,17 +342,15 @@ export default function QaPhase() {
                       </CardContent>
                     </Card>
                     </>
-                    
-                  }
 
-                { // If at least one checkbox checked show input zone
-                  (
-                    (user.help && Object.keys(stateFirst).length > 0 && Object.keys(stateSecond).length > 0) ||
-                  (!user.help && Object.keys(stateFirst).length > 0 ))
+                }
+
+                { // Q1 If at least one checkbox checked in each show input zone
+                  (showQuestions && questionIndex < 1 && Object.keys(stateFirst).length > 0 && Object.keys(stateSecond).length > 0)
                    &&
                   <>
                     <ChatMessage text={
-                      user.help ? `Super ! Tu peux maintenant formuler ta question en utilisant ton ou tes mot(s)-clé(s)` : `Super ! Tu peux maintenant formuler ta question, prends ton temps !`
+                      `Super ! Tu peux maintenant formuler ta question en utilisant ton ou tes mot(s)-clé(s)`
                     } />
 
                     <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
@@ -308,15 +392,110 @@ export default function QaPhase() {
                       </EaseUp>
 
                     </>
+
+                }
+                
+                { // for question 2
+                showQuestions && questionIndex ===1 &&
+                <>
+                    <ChatMessage text={
+                      `Tu peux maintenant essayer par toi-même. Essaye de trouver un mot du texte qui te rend curieux. Écris-le ici : `
+                    } />
+
+                    <TextField value={keyword} onChange={handleChangeKeyword} id="standard-basic" label="Mets ton mot ici" fullWidth disabled={!isEditable}/>
+                    <ContentButtonWrapper>
+                      <Button onClick={freezeWord} variant="contained" disabled={!keyword}>OK</Button>
+                    </ContentButtonWrapper>
+
+                 </>   
                 }
 
-              </>
-            }
+                { // Q2 If at least one FIRST checkbox checked or wirtten answer, show second list
+                 (showQuestions && questionIndex === 1 && (Object.keys(stateFirst).length > 0 || isEditable === false /*or state button = clicked*/)) &&
+                  <>
+                    <ChatMessage text={
+                    `Est-ce que ce mot te rappelle quelque-chose que tu connais déjà ? Voici à quoi, moi il me fait penser :`
+                  } />
 
-            {
-              // Show the final question input if the question index is 5
-              showQuestions && questionIndex  === 5 &&
-              <>
+                    <Card variant="outlined">
+                      <CardContent>
+                        <FormControl component="fieldset" className={classes.formControl}>
+                          <FormGroup>
+                            {
+                              topic.slides[slideIndex].questions[questionIndex].subtopic2.map(op => {
+                                return <FormControlLabel
+                                  control={
+                                    <Checkbox
+                                      color="primary"
+                                      onChange={handleChangeSecond}
+                                      checked={!!stateSecond[op]}
+                                      name={op} />
+                                  }
+                                  label={op}
+                                />
+                              }) 
+                            }
+                          </FormGroup>
+                        </FormControl>
+                      </CardContent>
+                    </Card>
+                    </>
+
+                }
+
+                { // Q2 If at least one checkbox checked in each show input zone
+                  (showQuestions && questionIndex === 1 && Object.keys(stateFirst).length > 0 && Object.keys(stateSecond).length > 0)
+                   &&
+                  <>
+                    <ChatMessage text={
+                      `Super ! Tu peux maintenant formuler ta question en utilisant ton ou tes mot(s)-clé(s)`
+                    } />
+
+                    <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
+
+                    <ContentButtonWrapper>
+                      <Button onClick={nextQuestion} variant="contained" disabled={!question}>Soumettre</Button>
+                    </ContentButtonWrapper>
+
+                    <ChatMessage text={
+                    `Je te propose de commencer ta question par le(s) mot(s) '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir un autre si tu veux.`
+                    } >
+                    
+                    </ChatMessage>
+
+                      <EaseUp>
+                      {
+                        <Card>
+                          <CardContent>
+                            <SubTopicList>
+                                {
+                                <div>
+                                  <p>
+                                  Pour rappel, voici une liste de mots interrogatifs que tu pourrais utiliser :
+                                </p>
+                                <ul>
+                                  <li>Quel.s/ Quelle.s</li>
+                                  <li>Pourquoi</li>
+                                  <li>Comment</li>
+                                  <li>Combien</li>
+                                  <li>...</li>
+                                    </ul>
+                                    </div>
+                                
+                                }
+                              </SubTopicList>
+                          </CardContent>
+                        </Card>
+                      }
+                      </EaseUp>
+
+                    </>
+                    
+                }
+              
+                { // Show the final question input if the question index is 5
+                showQuestions && questionIndex  === 5 &&
+                <>
                 <ChatMessage text={
                   `Maintenant essaie de formuler ta question tout seul, comme on s'est entrainés ensemble.`
                 } />
@@ -329,13 +508,14 @@ export default function QaPhase() {
                 <ContentButtonWrapper>
                   <Button onClick={nextQuestion} variant="contained" disabled={!question}>Soumettre</Button>
                 </ContentButtonWrapper>
-              </>
-            }
+                </>
+                } 
+                </>
+              }
+            
           </ContentWrapper>
         </ResizeHorizon>
       </Resize>
     </div>
   </div>
 }
-
-    
