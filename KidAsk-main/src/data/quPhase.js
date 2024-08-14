@@ -18,10 +18,10 @@ export default {
               ],
               subtopic: [
                 "Conserver","Vaccination","Maladie"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "Où",
@@ -35,10 +35,10 @@ export default {
               starter_gpt3_e : "Comment",
               subtopic: [
                 "Découvrir","Choléra","Conserver"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "C'est quoi / Qu'est ce que",
@@ -52,10 +52,10 @@ export default {
               starter_gpt3_e : "Quel",
               subtopic: [
                 "Vaccination","Maladie","Découvrir"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "Quel(le)",
@@ -69,10 +69,10 @@ export default {
               starter_gpt3_e : "Qu'est ce que/ Comment",
               subtopic: [
                 "Vaccination","Choléra","Conserver"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "Quel est",
@@ -86,10 +86,10 @@ export default {
               starter_gpt3_e : "Qu'est ce que",
               subtopic: [
                 "Choléra", "Maladie", "Vaccination"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             }
           ]
           
@@ -111,10 +111,10 @@ export default {
               starter_gpt3_e : "Quelle",
               subtopic: [
                 "ADN","Structure","Physiuqe"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "C'est quoi",
@@ -128,10 +128,10 @@ export default {
               starter_gpt3_e : "Qu'est ce que",
               subtopic: [
                 "Physique","Chimie","Prix Nobel"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "Pourquoi",
@@ -145,10 +145,10 @@ export default {
               starter_gpt3_e : "Comment/ Qu'est ce que",
               subtopic: [
                 "Cancer","Rôle","Biologie"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "Qu'est ce qui",
@@ -162,10 +162,10 @@ export default {
               starter_gpt3_e: "À quel/ Quand",
               subtopic: [
                 "Mort","Chimie","Structure"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "Que veut dire",
@@ -178,10 +178,10 @@ export default {
               starter_gpt3: "Pourquoi",
               subtopic: [
                 "Prix Nobel","Rôle","Physique"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
           ]
           
@@ -203,10 +203,10 @@ export default {
                    starter_gpt3_e: "Qu'est ce que",
                    subtopic: [
                      "Premiers ordianteurs", "Génie", "Informatique"
-                   ]
-              /*subtopic2: [
+                   ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "Pourquoi",
@@ -220,10 +220,10 @@ export default {
               starter_gpt3_e: "Quels .. autres",
               subtopic: [
                 "Génie", "Mathématiques", "Alliés"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "Quand",
@@ -237,10 +237,10 @@ export default {
               starter_gpt3_e: "Quand/ Qui",
               subtopic: [
                 "Seconde guerre mondiale", "Alliés", "Informatique"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "Qui",
@@ -254,10 +254,10 @@ export default {
               starter_gpt3_e: "Qu'est ce que",
               subtopic: [
                 "Mathématiques", "Informatique", "Premiers ordinateurs"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "Comment",
@@ -271,10 +271,10 @@ export default {
               starter_gpt3_e: "Comment",
               subtopic: [
                 "Informatique", "Ordinateurs", "Alliés"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
           ]
         },
@@ -299,10 +299,10 @@ export default {
               starter_gpt3_e: "Qu'est ce que" ,
               subtopic: [
                 "Ordinateur", "Processeur", "Données"
-              ]
-              /*subtopic2: [
+              ],
+              subtopic2: [
                 "prop4","prop5","prop6"
-              ],*/
+              ],
             },
             {
               starter: "A quoi servent",

@@ -35,7 +35,7 @@ export default function QaPhase() {
 
   const [stateFirst, setStateFirst] = React.useState({}) /* first checkbox state */
 
-  //const [stateSecond, setStateSecond] = React.useState({}) /* second checkbox state */
+  const [stateSecond, setStateSecond] = React.useState({}) /* second checkbox state */
 
   const { user } = useContext(UserContext)
 
@@ -62,9 +62,9 @@ export default function QaPhase() {
     setStateFirst({ [event.target.name]: event.target.checked }); /*handle change in first checkbox state*/
   }
 
-  //const handleChangeSecond = (event) => {
-  //  setStateSecond({ [event.target.name]: event.target.checked }); /*handle change in second checkbox state*/
-  //}
+  const handleChangeSecond = (event) => {
+    setStateSecond({ [event.target.name]: event.target.checked }); /*handle change in second checkbox state*/
+  }
 
   const classes = useStyles()
 
@@ -82,7 +82,7 @@ export default function QaPhase() {
   const nextQuestion = async () => {
     await addUserInput(user.identifiant, 'qa-phase', `${id}/slides/${topic.slides[slideIndex].text.substring(0, 40).replace(/\//g, '-')}/questions/${questionIndex}`, {
       text: topic.slides[slideIndex].text,
-      prompt: Object.keys(stateFirst).length ? Object.keys(stateFirst)[0]: "no-prompt",
+      prompt: Object.keys(stateFirst).length ? Object.keys(stateFirst)[0]: "no-prompt", //maybe add something here ??
       question
     })
     setStateFirst({})
@@ -226,7 +226,7 @@ export default function QaPhase() {
                 }
 
                 { // If at least one FIRST checkbox checked show second list
-                 /* (Object.keys(stateFirst).length > 0 && Object.keys(stateSecond).length === 0) &&
+                 (user.help && Object.keys(stateFirst).length > 0 /* && Object.keys(stateSecond).length === 0 */) &&
                   <>
                     <ChatMessage text={
                     `Est-ce que ce mot te rappelle quelque-chose que tu connais déjà ? Voici à quoi, moi il me fait penser :`
@@ -237,7 +237,7 @@ export default function QaPhase() {
                         <FormControl component="fieldset" className={classes.formControl}>
                           <FormGroup>
                             {
-                              topic.slides[slideIndex]?.questions[questionIndex]?.subtopic2?.map(op => {
+                              topic.slides[slideIndex].questions[questionIndex].subtopic2.map(op => {
                                 return <FormControlLabel
                                   control={
                                     <Checkbox
@@ -248,20 +248,20 @@ export default function QaPhase() {
                                   }
                                   label={op}
                                 />
-                              }) || [] // fallback to empty array if undefined 
+                              }) 
                             }
                           </FormGroup>
                         </FormControl>
                       </CardContent>
                     </Card>
                     </>
-                    */
+                    
                   }
 
                 { // If at least one checkbox checked show input zone
                   (
-                    /*(user.help &&*/ Object.keys(stateFirst).length > 0 /* && Object.keys(stateSecond).length > 0) ||
-                  (!user.help && Object.keys(stateFirst).length > 0 */ )
+                    (user.help && Object.keys(stateFirst).length > 0 && Object.keys(stateSecond).length > 0) ||
+                  (!user.help && Object.keys(stateFirst).length > 0 ))
                    &&
                   <>
                     <ChatMessage text={
