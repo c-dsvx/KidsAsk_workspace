@@ -428,7 +428,7 @@ export default {
               ],
               subtopic2: [
                 "Énergie","Navigation","Réparation"
-              ],*/
+              ],
             },
             {
               starter: "Pourquoi",
@@ -647,8 +647,8 @@ export default {
           starter_gpt3_e: "Quelles .. autres",
               subtopic: [
                 "Ruche"," Indiquer", "Source de nectar"
-              ]
-              /subtopic2: [
+              ],
+              subtopic2: [
                 "Polinisation","Carte","Communiquer"
               ],
         },
