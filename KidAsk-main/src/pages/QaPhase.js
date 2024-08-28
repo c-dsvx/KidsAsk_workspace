@@ -6,11 +6,10 @@ import { Redirect, useParams } from "react-router";
 import ChatMessage from "../components/ChatMessage";
 import ContentWrapper, { ContentButtonWrapper, FigureWrapper } from "../components/ContentWrapper";
 import { StoryWrapper } from "../components/StoryWrapper";
-import { ButtonsWrapper } from "../components/TopicQuiz.styled";
 import quPhase from "../data/quPhase";
 import { topicLabels } from "../data/topics";
 import useStyles from "../useStyles";
-import { Button } from "../components/Button"
+import { Button } from "../components/Button";
 import UserContext from "../context/UserContext";
 import { addUserInput } from "../services";
 import { EaseUp } from "../components/EaseUp";
@@ -158,7 +157,7 @@ export default function QaPhase() {
 
     <div style={{ position: "relative", height: '100vh' }}>
       <Resize handleWidth="5px" handleColor="#ddd">
-        <ResizeHorizon width="calc(100vw / 3 * 2)">
+        <ResizeHorizon width="calc(100vw / 3)">
           <ContentWrapper>
             {/* Display the topic title */}
             <Typography variant="h5" className={classes.title}>
@@ -190,7 +189,7 @@ export default function QaPhase() {
             }
           </ContentWrapper>
         </ResizeHorizon  >
-        <ResizeHorizon width="calc(100vw / 3)">
+        <ResizeHorizon width="calc(100vw / 3 * 2)">
           <ContentWrapper>
             {/* Display the title */}
             <Typography variant="h5" className={classes.title}>
@@ -428,36 +427,12 @@ export default function QaPhase() {
 
                 }
                 
-                { // Q2 keyword
+                { // Q2 keyword list
                 showQuestions && questionIndex ===1 &&
                 <>
                     <ChatMessage text={
-                      `Tu peux maintenant essayer par toi-même. Essaye de trouver un mot du texte qui te rend curieux. Écris-le ici : `
+                      `Voici les mots importants que j'ai trouvés cette fois. Coche la case qui te rend curieux.`
                     } />
-
-                    <TextField value={keyword} onChange={handleChangeKeyword} id="standard-basic" label="Mets ton mot ici" fullWidth disabled={!isEditable1}/>
-                    <ContentButtonWrapper>
-                      <Button onClick={freezeWord1} variant="contained" disabled={!keyword}>OK</Button>
-                    </ContentButtonWrapper>           
-                    {/*input keyword and freezed if submitted*/}
-
-                    <ChatMessage text={
-                      `Si tu n'y arrives pas, je peux t'aider !`
-                    } />
-
-                    <ContentButtonWrapper> {/* if time, change to square button (see pages at end of app)*/}
-                      <Button onClick={showHelp1} variant="contained" disabled={!isEditable1}>Je veux de l'aide</Button>
-                    </ContentButtonWrapper>
-                 </>   
-                }
-
-                { // Q2 If user asked for help 1
-                  (showQuestions && questionIndex === 1 && help1 === true)
-                   &&
-                  <>
-                <ChatMessage text={
-                    `Voici les mots que moi j'ai trouvés dans le texte. Coche celui qui te rend curieux.`
-                 } />
 
                     <Card variant="outlined">
                       <CardContent>
@@ -486,12 +461,37 @@ export default function QaPhase() {
                     
                 }
 
-                { // Q2 If at least one checkbox checked or wirtten answer, show second list
-                 (showQuestions && questionIndex === 1 && (Object.keys(stateFirst).length > 0 || isEditable1 === false /*or state button = clicked*/)) &&
+                { // Q2 If at least one checkbox checked, show linkword input
+                 (showQuestions && questionIndex === 1 && Object.keys(stateFirst).length > 0) &&
                   <>
                     <ChatMessage text={
-                    `Est-ce que ce mot te rappelle quelque-chose que tu connais déjà ? Voici à quoi, moi il me fait penser :`
+                    `Très bien ! Ce mot te fait sûrement penser à quelque-chose que tu connais déjà, non ? Écris-le ici :`
                   } />
+
+                    <TextField value={linkword} onChange={handleChangeLinkword} id="standard-basic" label="Mets ton idée ici" fullWidth disabled={!isEditable2}/>
+                    <ContentButtonWrapper>
+                      <Button onClick={freezeWord2} variant="contained" disabled={!linkword}>OK</Button>
+                    </ContentButtonWrapper>           
+                    {/*input keyword and freezed if submitted*/}
+
+                    <ChatMessage text={
+                      `Si tu n'y arrives pas, je peux t'aider !`
+                    } />
+
+                    <ContentButtonWrapper> {/* if time, change to square button (see pages at end of app)*/}
+                      <Button onClick={showHelp2} variant="contained" disabled={!isEditable2}>Je veux de l'aide</Button>
+                    </ContentButtonWrapper>
+                 </>   
+
+                }
+
+                { // Q2 If user asked for help 2
+                  (showQuestions && questionIndex === 1 && help2 === true)
+                   &&
+                  <>
+                <ChatMessage text={
+                    `Voici les choses auxquelles me font penser les mots-clés du texte. Coche celle qui te rend curieux.`
+                 } />
 
                     <Card variant="outlined">
                       <CardContent>
@@ -509,18 +509,19 @@ export default function QaPhase() {
                                   }
                                   label={op}
                                 />
-                              }) 
+                              })
                             }
                           </FormGroup>
                         </FormControl>
                       </CardContent>
                     </Card>
-                    </>
 
+                    </>
+                    
                 }
 
                 { // Q2 If at least one answer in each show input zone
-                  (showQuestions && questionIndex === 1 && Object.keys(stateSecond).length > 0)
+                  (showQuestions && questionIndex === 1 && (Object.keys(stateSecond).length > 0 || isEditable2 === false))
                    &&
                   <>
                     <ChatMessage text={
@@ -530,7 +531,7 @@ export default function QaPhase() {
                     <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
 
                     <ContentButtonWrapper>
-                      <Button onClick={nextQuestion} variant="contained" disabled={!question}>Soumettre</Button>
+                      <Button onClick={nextQuestion} variant="contained" disabled={!question}>Valider</Button>
                     </ContentButtonWrapper>
 
                     <ChatMessage text={
