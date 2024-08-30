@@ -4,12 +4,12 @@ import Resize from "react-resize-layout/dist/Resize";
 import ResizeHorizon from "react-resize-layout/dist/ResizeHorizon";
 import { Redirect, useParams } from "react-router";
 import ChatMessage from "../components/ChatMessage";
-import ContentWrapper, { ContentButtonWrapper, FigureWrapper } from "../components/ContentWrapper";
+import ContentWrapper, { ContentButtonWrapper, ContentHelpButtonWrapper, FigureWrapper } from "../components/ContentWrapper";
 import { StoryWrapper } from "../components/StoryWrapper";
 import quPhase from "../data/quPhase";
 import { topicLabels } from "../data/topics";
 import useStyles from "../useStyles";
-import { Button } from "../components/Button";
+import { Button, HelpButton } from "../components/Button";
 import UserContext from "../context/UserContext";
 import { addUserInput } from "../services";
 import { EaseUp } from "../components/EaseUp";
@@ -478,9 +478,10 @@ export default function QaPhase() {
                       `Si tu n'y arrives pas, je peux t'aider !`
                     } />
 
-                    <ContentButtonWrapper> {/* if time, change to square button (see pages at end of app)*/}
-                      <Button onClick={showHelp2} variant="contained" disabled={!isEditable2}>Je veux de l'aide</Button>
-                    </ContentButtonWrapper>
+                    <ContentHelpButtonWrapper>
+                      <HelpButton
+            onClick={showHelp2} variant="contained" disabled={!isEditable2}>Je veux de l'aide</HelpButton>
+                    </ContentHelpButtonWrapper>
                  </>   
 
                 }
@@ -587,9 +588,9 @@ export default function QaPhase() {
                       `Si tu n'y arrives pas, je peux t'aider !`
                     } />
 
-                    <ContentButtonWrapper> {/* if time, change to square button (see pages at end of app)*/}
-                      <Button onClick={showHelp1} variant="contained" disabled={!isEditable1}>Je veux de l'aide</Button>
-                    </ContentButtonWrapper>
+                    <ContentHelpButtonWrapper>
+                      <HelpButton onClick={showHelp1} variant="contained" disabled={!isEditable1}>Je veux de l'aide</HelpButton>
+                    </ContentHelpButtonWrapper>
                  </>   
                 }
 
@@ -645,9 +646,9 @@ export default function QaPhase() {
                       `Si tu n'y arrives pas, je peux t'aider !`
                     } />
 
-                    <ContentButtonWrapper> {/* if time, change to square button (see pages at end of app)*/}
-                      <Button onClick={showHelp2} variant="contained" disabled={!isEditable2}>Je veux de l'aide</Button>
-                    </ContentButtonWrapper>
+                    <ContentHelpButtonWrapper>
+                      <HelpButton onClick={showHelp2} variant="contained" disabled={!isEditable2}>Je veux de l'aide</HelpButton>
+                    </ContentHelpButtonWrapper>
                  </>   
 
                 }

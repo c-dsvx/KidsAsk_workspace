@@ -21,6 +21,13 @@ export const ContentButtonWrapper = styled.div`
   justify-content: space-around;
 `
 
+export const ContentHelpButtonWrapper = styled.div`
+  margin-top: 0px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: flex-start;
+`
+
 export const FigureWrapper = styled.div`
   display: flex;
   justify-content: center;
