@@ -7,8 +7,8 @@ const port = 3000
 
 const { MongoClient } = require('mongodb');
 
-const url = "mongodb://localhost:27017/?readPreference=primary&directConnection=true&ssl=false";
-const dbName = "kidsask-db"
+const url = "mongodb://localhost:27017";
+const dbName = "kids-link"
 
 const client = new MongoClient(url);
 
@@ -19,10 +19,10 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.post('/users', async (req, res) => {
-  await client.connect();
-  const db = client.db(dbName);
-  const collection = db.collection('users');
+app.post('/users', async (req, res) => {   // Handles POST requests to the '/users' endpoint.
+  await client.connect();  // Connects to the MongoDB database.
+  const db = client.db(dbName);  // Selects the database named "kids-link"
+  const collection = db.collection('users'); // Selects the "users" collection within the database.
 
   const { identifiant } = req.body
 
