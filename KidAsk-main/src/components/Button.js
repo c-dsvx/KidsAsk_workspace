@@ -33,5 +33,11 @@ export const Button = styled.button`
 
 export const ChatButtons = styled.div`
   margin-top: 20px;
-  margin-left: 14px;
-`
+  margin-left: 14px;`
+
+export const HelpButton = styled(Button)`
+  background: #004080;
+  padding: 7px 14px;
+  font-size: 20px;
+  border-radius: 7px;`
+  
