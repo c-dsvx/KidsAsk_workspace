@@ -49,6 +49,17 @@ export default function QaPhase() {
   const { user } = useContext(UserContext)
 
   const previousUrl = useRef(''); // Ref to track previous audio URL
+  const messagesEndRef = useRef(null); // Reference for the end of the messages (for auto-scroll)
+  // Function to scroll to the bottom
+  const scrollToBottom = () => {
+  messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+  // Auto-scroll when the messages or relevant state changes
+  scrollToBottom();}, [stateFirst, stateSecond, isEditable1, isEditable2, help1, help2]);
+
+
   const audioRef = useRef(); // Ref for audio element
 
   useEffect(() => {
@@ -785,9 +796,9 @@ export default function QaPhase() {
                 </ContentButtonWrapper>
                 </>
                 } 
+                <div ref={messagesEndRef} />
                 </>
               }
-            
           </ContentWrapper>
         </ResizeHorizon>
       </Resize>

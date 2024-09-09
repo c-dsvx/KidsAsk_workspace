@@ -8,7 +8,7 @@ const port = 3000
 const { MongoClient } = require('mongodb');
 
 const url = "mongodb://localhost:27017";
-const dbName = "kids-link"
+const dbName = "kidsask-db"
 
 const client = new MongoClient(url);
 
