@@ -42,9 +42,7 @@ export default function QaPhase() {
   const [linkword, setLinkword] = useState('') /*user-typed link word*/
   const[isEditable2, setIsEditable2] = useState(true) /*used for freezing input 2*/
 
-  const [help1, setHelp1] = useState(false) /* help for finding keywords set to false, true on click */
-
-  const [help2, setHelp2] = useState(false) /* help for finding linkwords set to false, true on click */
+  const [help, setHelp] = useState(false) /* help for finding linkwords set to false, true on click */
 
   const { user } = useContext(UserContext)
 
@@ -57,7 +55,7 @@ export default function QaPhase() {
 
   useEffect(() => {
   // Auto-scroll when the messages or relevant state changes
-  scrollToBottom();}, [stateFirst, stateSecond, isEditable1, isEditable2, help1, help2]);
+  scrollToBottom();}, [stateFirst, stateSecond, isEditable1, isEditable2, help]);
 
 
   const audioRef = useRef(); // Ref for audio element
@@ -77,14 +75,45 @@ export default function QaPhase() {
     }
   }, [slideIndex]);
 
-  // Handlers for checkbox state changes
+  // Handler for the first checklist
   const handleChangeFirst = (event) => {
-    setStateFirst({ [event.target.name]: event.target.checked }); /*handle change in first checkbox state*/
-  }
+    const selectedItem = event.target.name;
+    const isChecked = event.target.checked;
 
+    if (isChecked) {
+      // If checked, set the first checklist to only the selected item
+      setStateFirst({ [selectedItem]: true });
+    } else {
+      // If unchecked, reset the first checklist
+      setStateFirst({});
+    }
+    // Reset second options whenever the first checklist changes
+    setStateSecond({});
+  };
+
+  // Function to get second checklist options from the external mapping
+  const getSecondChecklistOptions = (firstItem) => {
+    const currentQuestion = topic.slides[slideIndex]?.questions[questionIndex];
+    
+    if (currentQuestion?.subtopic2Map) {
+      return currentQuestion.subtopic2Map[firstItem] || [];
+    }
+    return [];
+  };
+
+  // Handler for the second checklist
   const handleChangeSecond = (event) => {
-    setStateSecond({ [event.target.name]: event.target.checked }); /*handle change in second checkbox state*/
-  }
+    const selectedItem2 = event.target.name;
+    const isChecked2 = event.target.checked;
+
+    if (isChecked2) {
+      // If checked, set the first checklist to only the selected item
+      setStateSecond({ [selectedItem2]: true });
+    } else {
+      // If unchecked, reset the first checklist
+      setStateSecond({});
+    }
+  };
 
   const classes = useStyles()
 
@@ -103,14 +132,9 @@ export default function QaPhase() {
     setIsEditable2(false) 
   }
 
-  // when button clicked help 1 becomes true
-  const showHelp1 = () => {
-    setHelp1(true)
-  } 
-
   // when button clicked help 2 becomes true
-  const showHelp2 = () => {
-     setHelp2(true)
+  const showHelp = () => {
+     setHelp(true)
   } 
 
   // Update the question state when user types
@@ -145,8 +169,7 @@ export default function QaPhase() {
     setLinkword('')
     setIsEditable1(true)
     setIsEditable2(true)
-    setHelp1(false)
-    setHelp2(false)
+    setHelp(false)
     if (questionIndex + 1 < 6) {
       setQuestionIndex(questionIndex + 1)
     } else if (slideIndex + 1 < topic.slides.length) {
@@ -326,7 +349,7 @@ export default function QaPhase() {
                 showQuestions && questionIndex < 1 &&
                 <>
                 <ChatMessage text={
-                    `Voici quelques mots importants que j'ai trouvés dans le texte. Coche la case du mot qui te rend curieux.`
+                    `Voici quelques mots importants que j'ai trouvés dans le texte. On appelle ça des mots-clés. Coche la case du mot qui te rend curieux !`
                  } />
 
                     <Card variant="outlined">
@@ -359,7 +382,7 @@ export default function QaPhase() {
                  (showQuestions && questionIndex < 1 && Object.keys(stateFirst).length > 0) &&
                   <>
                     <ChatMessage text={
-                    `Est-ce que ce mot te rappelle quelque-chose que tu connais déjà ? Voici à quoi, moi il me fait penser :`
+                    `Est-ce que ce mot te fait penser à quelque-chose que tu sais déjà ? Voici à quoi moi, il me fait penser :`
                   } />
 
                     <Card variant="outlined">
@@ -367,8 +390,12 @@ export default function QaPhase() {
                         <FormControl component="fieldset" className={classes.formControl}>
                           <FormGroup>
                             {
-                              topic.slides[slideIndex].questions[questionIndex].subtopic2.map(op => {
-                                return <FormControlLabel
+                             // Loop through selected first checklist items and show corresponding second checklist
+                              Object.keys(stateFirst).filter(item => stateFirst[item]).map(selectedFirst => {
+                              const optionsForSelectedFirst = getSecondChecklistOptions(selectedFirst);
+                
+                              return optionsForSelectedFirst.map(op => (
+                                <FormControlLabel
                                   control={
                                     <Checkbox
                                       color="primary"
@@ -377,7 +404,9 @@ export default function QaPhase() {
                                       name={op} />
                                   }
                                   label={op}
+                                  key={op}  // Add a unique key for each option to avoid warnings
                                 />
+                              ));
                               }) 
                             }
                           </FormGroup>
@@ -393,7 +422,7 @@ export default function QaPhase() {
                    &&
                   <>
                     <ChatMessage text={
-                      `Super ! Tu peux maintenant formuler ta question en utilisant ton ou tes mot(s)-clé(s)`
+                      `Super ! Tu peux maintenant formuler ta question en utilisant le(s) mot(s) que tu as choisi(s)`
                     } />
 
                     <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
@@ -403,7 +432,7 @@ export default function QaPhase() {
                     </ContentButtonWrapper>
 
                     <ChatMessage text={
-                    `Je te propose de commencer ta question par le(s) mot(s) '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir un autre si tu veux.`
+                    `Je te propose de commencer ta question par '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir autre chose si tu veux.`
                     } >
                     
                     </ChatMessage>
@@ -442,7 +471,7 @@ export default function QaPhase() {
                 showQuestions && questionIndex ===1 &&
                 <>
                     <ChatMessage text={
-                      `Voici les mots importants que j'ai trouvés cette fois. Coche la case qui te rend curieux.`
+                      `Super ! Essayons encore une fois. Coche le mot qui te rend curieux.`
                     } />
 
                     <Card variant="outlined">
@@ -486,23 +515,23 @@ export default function QaPhase() {
                     {/*input keyword and freezed if submitted*/}
 
                     <ChatMessage text={
-                      `Si tu n'y arrives pas, je peux t'aider !`
+                      `Si tu n'as pas d'idée, je peux t'aider !`
                     } />
 
                     <ContentHelpButtonWrapper>
                       <HelpButton
-            onClick={showHelp2} variant="contained" disabled={!isEditable2}>Je veux de l'aide</HelpButton>
+            onClick={showHelp} variant="contained" disabled={!isEditable2}>Je veux de l'aide</HelpButton>
                     </ContentHelpButtonWrapper>
                  </>   
 
                 }
 
                 { // Q2 If user asked for help 2
-                  (showQuestions && questionIndex === 1 && help2 === true)
+                  (showQuestions && questionIndex === 1 && help === true)
                    &&
                   <>
                 <ChatMessage text={
-                    `Voici les choses auxquelles me font penser les mots-clés du texte. Coche celle qui te rend curieux.`
+                    `Voici les choses auxquelles me font penser ce mot-clé du texte. Coche celle qui t'intéresse aussi'`
                  } />
 
                     <Card variant="outlined">
@@ -510,8 +539,12 @@ export default function QaPhase() {
                         <FormControl component="fieldset" className={classes.formControl}>
                           <FormGroup>
                             {
-                              topic.slides[slideIndex].questions[questionIndex].subtopic2.map(op => {
-                                return <FormControlLabel
+                             // Loop through selected first checklist items and show corresponding second checklist
+                              Object.keys(stateFirst).filter(item => stateFirst[item]).map(selectedFirst => {
+                              const optionsForSelectedFirst = getSecondChecklistOptions(selectedFirst);
+                
+                              return optionsForSelectedFirst.map(op => (
+                                <FormControlLabel
                                   control={
                                     <Checkbox
                                       color="primary"
@@ -520,8 +553,10 @@ export default function QaPhase() {
                                       name={op} />
                                   }
                                   label={op}
+                                  key={op}  // Add a unique key for each option to avoid warnings
                                 />
-                              })
+                              ));
+                              }) 
                             }
                           </FormGroup>
                         </FormControl>
@@ -537,7 +572,7 @@ export default function QaPhase() {
                    &&
                   <>
                     <ChatMessage text={
-                      `Super ! Tu peux maintenant formuler ta question en utilisant ton ou tes mot(s)-clé(s)`
+                      `Super ! Tu peux maintenant formuler ta question en utilisant ton ou tes mot(s)`
                     } />
 
                     <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
@@ -547,7 +582,7 @@ export default function QaPhase() {
                     </ContentButtonWrapper>
 
                     <ChatMessage text={
-                    `Je te propose de commencer ta question par le(s) mot(s) '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir un autre si tu veux.`
+                    `Je te propose de commencer ta question par '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir un autre si tu veux.`
                     } >
                     
                     </ChatMessage>
@@ -586,32 +621,8 @@ export default function QaPhase() {
                 showQuestions && (questionIndex >= 2 && questionIndex <= 4) &&
                 <>
                     <ChatMessage text={
-                      `Tu peux maintenant le faire tout seul ! Essaye de trouver un mot du texte qui te rend curieux. Écris-le ici : `
+                      `En réalité, il y a plein de mots intéressant dans ce texte ! En voici quelques-uns. Choisis celui qui te rend curieux. `
                     } />
-
-                    <TextField value={keyword} onChange={handleChangeKeyword} id="standard-basic" label="Mets ton mot ici" fullWidth disabled={!isEditable1}/>
-                    <ContentButtonWrapper>
-                      <Button onClick={freezeWord1} variant="contained" disabled={!keyword}>OK</Button>
-                    </ContentButtonWrapper>           
-                    {/*input keyword and freezed if submitted*/}
-
-                    <ChatMessage text={
-                      `Si tu n'y arrives pas, je peux t'aider !`
-                    } />
-
-                    <ContentHelpButtonWrapper>
-                      <HelpButton onClick={showHelp1} variant="contained" disabled={!isEditable1}>Je veux de l'aide</HelpButton>
-                    </ContentHelpButtonWrapper>
-                 </>   
-                }
-
-                { // Q3-5 If user asked for help 1
-                  (showQuestions && (questionIndex >= 2 && questionIndex <= 4) && help1 === true)
-                   &&
-                  <>
-                <ChatMessage text={
-                    `Voici les mots que moi j'ai trouvés dans le texte. Coche celui qui te rend curieux.`
-                 } />
 
                     <Card variant="outlined">
                       <CardContent>
@@ -635,13 +646,11 @@ export default function QaPhase() {
                         </FormControl>
                       </CardContent>
                     </Card>
-
-                    </>
-                    
+                 </>   
                 }
 
-                { // Q3-5 If at least one checkbox checked or wirtten answer, show second input
-                 (showQuestions && (questionIndex >= 2 && questionIndex <= 4) && (Object.keys(stateFirst).length > 0 || isEditable1 === false /*or state button = clicked*/)) &&
+                { // Q3-5 If at least one checkbox checked, show second input
+                 (showQuestions && (questionIndex >= 2 && questionIndex <= 4) && (Object.keys(stateFirst).length > 0)) &&
                   <>
                     <ChatMessage text={
                     `Ce mot te rappelle sûrement quelque-chose que tu connais déjà ! Écris-le ici :`
@@ -658,14 +667,14 @@ export default function QaPhase() {
                     } />
 
                     <ContentHelpButtonWrapper>
-                      <HelpButton onClick={showHelp2} variant="contained" disabled={!isEditable2}>Je veux de l'aide</HelpButton>
+                      <HelpButton onClick={showHelp} variant="contained" disabled={!isEditable2}>Je veux de l'aide</HelpButton>
                     </ContentHelpButtonWrapper>
                  </>   
 
                 }
 
                 { // Q3-5 If user asked for help 2
-                  (showQuestions && (questionIndex >= 2 && questionIndex <= 4) && help2 === true)
+                  (showQuestions && (questionIndex >= 2 && questionIndex <= 4) && help === true)
                    &&
                   <>
                 <ChatMessage text={
@@ -677,8 +686,12 @@ export default function QaPhase() {
                         <FormControl component="fieldset" className={classes.formControl}>
                           <FormGroup>
                             {
-                              topic.slides[slideIndex].questions[questionIndex].subtopic2.map(op => {
-                                return <FormControlLabel
+                             // Loop through selected first checklist items and show corresponding second checklist
+                              Object.keys(stateFirst).filter(item => stateFirst[item]).map(selectedFirst => {
+                              const optionsForSelectedFirst = getSecondChecklistOptions(selectedFirst);
+                
+                              return optionsForSelectedFirst.map(op => (
+                                <FormControlLabel
                                   control={
                                     <Checkbox
                                       color="primary"
@@ -687,8 +700,10 @@ export default function QaPhase() {
                                       name={op} />
                                   }
                                   label={op}
+                                  key={op}  // Add a unique key for each option to avoid warnings
                                 />
-                              })
+                              ));
+                              }) 
                             }
                           </FormGroup>
                         </FormControl>
@@ -786,7 +801,7 @@ export default function QaPhase() {
                 showQuestions && questionIndex  === 5 && isEditable2 === false &&
                 <>
                 <ChatMessage text={
-                  `Parfait ! Tu peux maintenant formuler ta question grâce à tes mots-clés :`
+                  `Parfait ! Tu peux maintenant formuler ta question grâce à ces mots :`
                 } />
                         
                 <TextField id="standard-basic" label="Mets ta question ici" fullWidth onChange={handleChangeLinkword} />

@@ -17,11 +17,13 @@ export default {
                 "La mise en conserve et la congélation sont d'autres moyens pour préserver les aliments",
               ],
               subtopic: [
-                "Conserver","Vaccination","Maladie"
+                "conserver","vaccination","maladie"
               ],
-              subtopic2: [
-                "Rôle","Science","Médicament"
-              ],
+              subtopic2Map: {
+                "conserver" : ["option1","option2","option3"],
+                "vaccination" : ["option4", "opt 5", "opt 6"],
+                "maladie" : ["opt5", "opt7", "top"]
+              },
             },
             {
               starter: "Où",
@@ -34,11 +36,13 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e : "Comment",
               subtopic: [
-                "Découvrir","Choléra","Conserver"
+                "conserver","vaccination","maladie"
               ],
-              subtopic2: [
-                "Santé","Médicament","Laboratoire"
-              ],
+              subtopic2Map: {
+                "conserver" : ["option1","option2","option3"],
+                "vaccination" : ["option4", "opt 5", "opt 6"],
+                "maladie" : ["opt5", "opt7", "top"]
+              },
             },
             {
               starter: "C'est quoi / Qu'est ce que",
@@ -51,11 +55,15 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e : "Quel",
               subtopic: [
-                "Recherche","Maladie","Rage"
+                "conserver","vaccination","maladie","KW4","KW5"
               ],
-              subtopic2: [
-                "Médecine","Santé","Microbe"
-              ],
+              subtopic2Map: {
+                "conserver" : ["option1","option2","option3"],
+                "vaccination" : ["option4", "opt 5", "opt 6"],
+                "maladie" : ["opt5", "opt7", "top"],
+                "KW4" : ["opt5", "opt7", "top"],
+                "KW5" : ["opt5", "opt7", "top"]
+              },
             },
             {
               starter: "Quel(le)",
@@ -68,11 +76,15 @@ export default {
               starter_gpt3: "Quels .. autres",
               starter_gpt3_e : "Qu'est ce que/ Comment",
               subtopic: [
-                "Pasteurisation","Organisme","Maladie"
+                "conserver","vaccination","maladie","KW4","KW5"
               ],
-              subtopic2: [
-                "Infection","Expérience","Santé"
-              ],
+              subtopic2Map: {
+                "conserver" : ["option1","option2","option3"],
+                "vaccination" : ["option4", "opt 5", "opt 6"],
+                "maladie" : ["opt5", "opt7", "top"],
+                "KW4" : ["opt5", "opt7", "top"],
+                "KW5" : ["opt5", "opt7", "top"]
+              },
             },
             {
               starter: "Quel est",
@@ -85,11 +97,15 @@ export default {
               starter_gpt3: "Quels",
               starter_gpt3_e : "Qu'est ce que",
               subtopic: [
-                "Défendre", "Choléra", "Découvrir"
+                "conserver","vaccination","maladie","KW4","KW5"
               ],
-              subtopic2: [
-                "Microbe","Traitement","Expérience"
-              ],
+              subtopic2Map: {
+                "conserver" : ["option1","option2","option3"],
+                "vaccination" : ["option4", "opt 5", "opt 6"],
+                "maladie" : ["opt5", "opt7", "top"],
+                "KW4" : ["opt5", "opt7", "top"],
+                "KW5" : ["opt5", "opt7", "top"]
+              },
             }
           ]
           
@@ -283,7 +299,7 @@ export default {
     "robotique-ia": {
       slides: [
         {
-          text: "Un robot possède une partie ordinateur qui lui sert de cerveau. Ce 'cerveau' contient le processeur et la mémoire. Il peut contrôler le comportement du robot grâce à des capteurs : le 'cervreau' calcule comment le robot doit bouger en fonction de la situation. La partie ordinateur ne suffit pas à rendre le robot intelligent. Il lui faut aussi un corps adapté pour agir dans son environnement. Certains robots sont notamment capables de mémoriser, de résoudre des problèmes, d'apprendre ou de répondre lorsqu'on leur parle.",
+          text: "Un robot possède une partie ordinateur qui lui sert de cerveau. Ce 'cerveau' contient le processeur et la mémoire. Il peut contrôler le comportement du robot grâce à des capteurs : le 'cerveau' calcule comment le robot doit bouger en fonction de la situation. La partie ordinateur ne suffit pas à rendre le robot intelligent. Il lui faut aussi un corps adapté pour agir dans son environnement. Certains robots sont notamment capables de mémoriser, de résoudre des problèmes, d'apprendre ou de répondre lorsqu'on leur parle.",
           image: "/pics-intervention-qa/Les robots intelligentns/robot cerveau.jpg",
           audio: "/audios/robotcerveau.mp3",
           questions: [
