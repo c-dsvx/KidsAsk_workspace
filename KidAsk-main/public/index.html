@@ -29,7 +29,8 @@
     <style>
       /* disabling pull-to-refresh */
       body {
-        overscroll-behavior: none;
+        overscroll-behavior-x: none;  /* Prevent swipe-back on horizontal overscroll */
+        overscroll-behavior-y: contain; /* Allow scrolling in the y-direction but no refresh */
       }
     </style>
   </head>
