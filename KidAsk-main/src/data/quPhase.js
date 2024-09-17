@@ -20,9 +20,9 @@ export default {
                 "conserver","vaccination","maladie"
               ],
               subtopic2Map: {
-                "conserver" : ["option1","option2","option3"],
-                "vaccination" : ["option4", "opt 5", "opt 6"],
-                "maladie" : ["opt5", "opt7", "top"]
+                "conserver" : ["stocker","jeter","cuisine"],
+                "vaccination" : ["prévention", "médicament", "animal"],
+                "maladie" : ["fatigue", "douleur", "docteur"]
               },
             },
             {
@@ -36,12 +36,12 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e : "Comment",
               subtopic: [
-                "conserver","vaccination","maladie"
+                "pasteurisation","organisme","découvrir"
               ],
               subtopic2Map: {
-                "conserver" : ["option1","option2","option3"],
-                "vaccination" : ["option4", "opt 5", "opt 6"],
-                "maladie" : ["opt5", "opt7", "top"]
+                "pasteurisation" : ["stérilisation","cuisine","chaleur"],
+                "organisme" : ["corps", "organes", "cellule"],
+                "découvrir" : ["progrès", "observer", "exploration"]
               },
             },
             {
@@ -55,14 +55,14 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e : "Quel",
               subtopic: [
-                "conserver","vaccination","maladie","KW4","KW5"
+                "choléra","vaccination","rage","pasteurisation","défendre"
               ],
               subtopic2Map: {
-                "conserver" : ["option1","option2","option3"],
-                "vaccination" : ["option4", "opt 5", "opt 6"],
-                "maladie" : ["opt5", "opt7", "top"],
-                "KW4" : ["opt5", "opt7", "top"],
-                "KW5" : ["opt5", "opt7", "top"]
+                "choléra" : ["hôpital","infection","dangereux"],
+                "vaccination" : ["prévention", "médicament", "animal"],
+                "rage" : ["fièvre", "chien", "colère"],
+                "pasteurisation" : ["stérilisation","cuisine","chaleur"],
+                "défendre" : ["protéger", "bouclier", "guérir"]
               },
             },
             {
@@ -76,14 +76,14 @@ export default {
               starter_gpt3: "Quels .. autres",
               starter_gpt3_e : "Qu'est ce que/ Comment",
               subtopic: [
-                "conserver","vaccination","maladie","KW4","KW5"
+                "tester","institut","défendre","maladie","conserver"
               ],
               subtopic2Map: {
-                "conserver" : ["option1","option2","option3"],
-                "vaccination" : ["option4", "opt 5", "opt 6"],
-                "maladie" : ["opt5", "opt7", "top"],
-                "KW4" : ["opt5", "opt7", "top"],
-                "KW5" : ["opt5", "opt7", "top"]
+                "tester" : ["expérience","essai","observer"],
+                "institut" : ["laboratoire", "expérience", "chercheurs"],
+                "défendre" : ["protéger", "bouclier", "guérir"],
+                "maladie" : ["fatigue", "douleur", "docteur"],
+                "conserver" : ["stocker","jeter","cuisine"]
               },
             },
             {
@@ -97,14 +97,14 @@ export default {
               starter_gpt3: "Quels",
               starter_gpt3_e : "Qu'est ce que",
               subtopic: [
-                "conserver","vaccination","maladie","KW4","KW5"
+                "rage","tester","maladie","institut","aliments"
               ],
               subtopic2Map: {
-                "conserver" : ["option1","option2","option3"],
-                "vaccination" : ["option4", "opt 5", "opt 6"],
-                "maladie" : ["opt5", "opt7", "top"],
-                "KW4" : ["opt5", "opt7", "top"],
-                "KW5" : ["opt5", "opt7", "top"]
+                "choléra" : ["hôpital","infection","dangereux"],
+                "tester" : ["expérience","essai","observer"],
+                "découvrir" : ["progrès", "observer", "exploration"],
+                "institut" : ["laboratoire", "expérience", "chercheurs"],
+                "organisme" : ["corps", "organes", "cellule"]
               },
             }
           ]
