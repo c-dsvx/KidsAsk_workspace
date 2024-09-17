@@ -151,6 +151,7 @@ export default function QaPhase() {
   const handleChangeLinkword = (e) => {
     setLinkword(e.target.value) /*updates user-typed linkword state*/
   }
+    
 
   // Submit user input and move to the next question or slide
   const nextQuestion = async () => {
@@ -191,7 +192,7 @@ export default function QaPhase() {
 
     <div style={{ position: "relative", height: '100vh' }}>
       <Resize handleWidth="5px" handleColor="#ddd">
-        <ResizeHorizon width="calc(100vw / 3)">
+        <ResizeHorizon width="calc(100vw / 2)">
           <ContentWrapper>
             {/* Display the topic title */}
             <Typography variant="h5" className={classes.title}>
@@ -203,7 +204,7 @@ export default function QaPhase() {
             </FigureWrapper>
             {/* Display the text and audio for the current slide */}
             <StoryWrapper>
-              {/* Split the slide text by new lines and map each line to a paragraph with a line break */}
+            {/* Split the slide text by new lines and map each line to a paragraph with a line break */}
               {
                 topic.slides[slideIndex].text.split('\n').map(line => (
                   <p>{line} <br /></p>
@@ -223,7 +224,7 @@ export default function QaPhase() {
             }
           </ContentWrapper>
         </ResizeHorizon  >
-        <ResizeHorizon width="calc(100vw / 3 * 2)">
+        <ResizeHorizon width="calc(100vw / 2)">
           <ContentWrapper>
             {/* Display the title */}
             <Typography variant="h5" className={classes.title}>
@@ -345,6 +346,7 @@ export default function QaPhase() {
             { // If user in exp condition
               user.help &&
               <>
+
               { // for question 1
                 showQuestions && questionIndex < 1 &&
                 <>
