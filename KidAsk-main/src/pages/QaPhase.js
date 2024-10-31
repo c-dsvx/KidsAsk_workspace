@@ -14,7 +14,7 @@ import UserContext from "../context/UserContext";
 import { addUserInput } from "../services";
 import { EaseUp } from "../components/EaseUp";
 import { SubTopicList } from "../components/ExplorationUI";
-import HighlightedText from "../data/highlight"; //does not work because would display another text
+import HighlightedText from "../data/highlight";
 
 export default function QaPhase() {
   // Extract parameters from URL
@@ -26,6 +26,8 @@ export default function QaPhase() {
   const [slideIndex, setSlideIndex] = useState(0)
 
   const [showQuestions, setShowQuestions] = useState(false)
+
+  const [showHighlights, setShowHighlights] = useState(false);
 
   const [questionIndex, setQuestionIndex] = useState(0)
 
@@ -120,7 +122,8 @@ export default function QaPhase() {
 
   // Mark the reading as finished and show questions
   const finishedReading = () => {
-    setShowQuestions(true)
+    setShowQuestions(true);
+    setShowHighlights(true); // Set highlights to be visible
   }
 
   // when button clicked submit keyword
@@ -152,7 +155,6 @@ export default function QaPhase() {
   const handleChangeLinkword = (e) => {
     setLinkword(e.target.value) /*updates user-typed linkword state*/
   }
-    
 
   // Submit user input and move to the next question or slide
   const nextQuestion = async () => {
@@ -204,12 +206,12 @@ export default function QaPhase() {
               <img src={topic.slides[slideIndex].image} />
             </FigureWrapper>
             {/* Display the text and audio for the current slide */}
+            
             <StoryWrapper>
-            {/* Split the slide text by new lines and map each line to a paragraph with a line break */}
-              {
-                topic.slides[slideIndex].text.split('\n').map(line => (
-                <p> {line} <br /> </p> ))
-              }
+            <div>
+            <HighlightedText text={topic.slides[slideIndex].text} subtopic={topic.slides[slideIndex].questions[questionIndex].subtopic} showHighlights={showHighlights} />
+            </div>
+              
               {/* Audio player for the current slide */}
               <audio controls ref={audioRef}>
                 <source src={topic.slides[slideIndex].audio} type="audio/mp3"></source>
