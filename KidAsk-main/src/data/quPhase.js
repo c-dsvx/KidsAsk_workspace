@@ -36,12 +36,12 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e : "Comment",
               subtopic: [
-                "pasteurisation","organisme","découvrir"
+                "pasteurisation","organisme","découvre"
               ],
               subtopic2Map: {
                 "pasteurisation" : ["stérilisation","cuisine","chaleur"],
                 "organisme" : ["corps", "organes", "cellule"],
-                "découvrir" : ["école", "observer", "exploration"]
+                "découvre" : ["école", "observer", "exploration"]
               },
             },
             {
@@ -76,7 +76,7 @@ export default {
               starter_gpt3: "Quels .. autres",
               starter_gpt3_e : "Qu'est ce que/ Comment",
               subtopic: [
-                "tester","institut","défendre","maladie","conserver"
+                "organisme","recherche","défendre","maladie","conserver"
               ],
               subtopic2Map: {
                 "organisme" : ["corps","organes","cellule"],

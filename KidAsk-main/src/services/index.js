@@ -1,7 +1,7 @@
 import axios from "axios"
 
 // change to ip addres
-const apiEndpoint = "http://10.204.4.68:3000"
+const apiEndpoint = "http://192.168.1.95:3000"
 
 export const addIdentifiant = async ({identifiant, help}) => {
   const user = await axios.post(`${apiEndpoint}/users`, {identifiant, help})

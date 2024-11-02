@@ -178,8 +178,9 @@ export default function QaPhase() {
       setQuestionIndex(questionIndex + 1)
     } else if (slideIndex + 1 < topic.slides.length) {
       setShowQuestions(false)
+      setShowHighlights(false)
       setQuestionIndex(0)
-      setSlideIndex(slideIndex + 1)
+      setSlideIndex(slideIndex + 1) // goes to next text within same theme
     } else {
       setPhaseEnded(true)
     }
@@ -205,19 +206,33 @@ export default function QaPhase() {
             <FigureWrapper>
               <img src={topic.slides[slideIndex].image} />
             </FigureWrapper>
-            {/* Display the text and audio for the current slide */}
-            
-            <StoryWrapper>
-            <div>
-            <HighlightedText text={topic.slides[slideIndex].text} subtopic={topic.slides[slideIndex].questions[questionIndex].subtopic} showHighlights={showHighlights} />
-            </div>
-              
-              {/* Audio player for the current slide */}
-              <audio controls ref={audioRef}>
-                <source src={topic.slides[slideIndex].audio} type="audio/mp3"></source>
-              </audio>
+            {/* Display the text and audio for the current slide */
+            questionIndex < 5 && 
+              <StoryWrapper>
+              <div>
+              <HighlightedText text={topic.slides[slideIndex].text} subtopic={topic.slides[slideIndex].questions[questionIndex].subtopic} showHighlights={showHighlights} />
+              </div>
 
-            </StoryWrapper>
+                {/* Audio player for the current slide */}
+                <audio controls ref={audioRef}>
+                  <source src={topic.slides[slideIndex].audio} type="audio/mp3"></source>
+                </audio>
+              </StoryWrapper>
+            }
+            { questionIndex === 5 &&
+            <StoryWrapper>
+              {
+                topic.slides[slideIndex].text.split('\n').map(line => (
+                    <p>{line} <br /></p>
+                  ))
+              }
+                {/* Audio player for the current slide */}
+                 <audio controls ref={audioRef}>
+                  <source src={topic.slides[slideIndex].audio} type="audio/mp3"></source>
+                </audio>
+              </StoryWrapper>
+            }
+
             { // Show button Finished reading if questions not being shown
               !showQuestions &&
               <ContentButtonWrapper>
@@ -226,6 +241,8 @@ export default function QaPhase() {
             }
           </ContentWrapper>
         </ResizeHorizon  >
+
+
         <ResizeHorizon width="calc(100vw / 2)">
           <ContentWrapper>
             {/* Display the title */}
