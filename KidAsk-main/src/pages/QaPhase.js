@@ -14,6 +14,7 @@ import UserContext from "../context/UserContext";
 import { addUserInput } from "../services";
 import { EaseUp } from "../components/EaseUp";
 import { SubTopicList } from "../components/ExplorationUI";
+import HighlightedText from "../data/highlight";
 
 export default function QaPhase() {
   // Extract parameters from URL
@@ -25,6 +26,8 @@ export default function QaPhase() {
   const [slideIndex, setSlideIndex] = useState(0)
 
   const [showQuestions, setShowQuestions] = useState(false)
+
+  const [showHighlights, setShowHighlights] = useState(false);
 
   const [questionIndex, setQuestionIndex] = useState(0)
 
@@ -119,7 +122,8 @@ export default function QaPhase() {
 
   // Mark the reading as finished and show questions
   const finishedReading = () => {
-    setShowQuestions(true)
+    setShowQuestions(true);
+    setShowHighlights(true); // Set highlights to be visible
   }
 
   // when button clicked submit keyword
@@ -151,7 +155,6 @@ export default function QaPhase() {
   const handleChangeLinkword = (e) => {
     setLinkword(e.target.value) /*updates user-typed linkword state*/
   }
-    
 
   // Submit user input and move to the next question or slide
   const nextQuestion = async () => {
@@ -175,8 +178,9 @@ export default function QaPhase() {
       setQuestionIndex(questionIndex + 1)
     } else if (slideIndex + 1 < topic.slides.length) {
       setShowQuestions(false)
+      setShowHighlights(false)
       setQuestionIndex(0)
-      setSlideIndex(slideIndex + 1)
+      setSlideIndex(slideIndex + 1) // goes to next text within same theme
     } else {
       setPhaseEnded(true)
     }
@@ -202,20 +206,33 @@ export default function QaPhase() {
             <FigureWrapper>
               <img src={topic.slides[slideIndex].image} />
             </FigureWrapper>
-            {/* Display the text and audio for the current slide */}
+            {/* Display the text and audio for the current slide */
+            questionIndex < 5 && 
+              <StoryWrapper>
+              <div>
+              <HighlightedText text={topic.slides[slideIndex].text} subtopic={topic.slides[slideIndex].questions[questionIndex].subtopic} showHighlights={showHighlights} />
+              </div>
+
+                {/* Audio player for the current slide */}
+                <audio controls ref={audioRef}>
+                  <source src={topic.slides[slideIndex].audio} type="audio/mp3"></source>
+                </audio>
+              </StoryWrapper>
+            }
+            { questionIndex === 5 &&
             <StoryWrapper>
-            {/* Split the slide text by new lines and map each line to a paragraph with a line break */}
               {
                 topic.slides[slideIndex].text.split('\n').map(line => (
-                  <p>{line} <br /></p>
-                ))
+                    <p>{line} <br /></p>
+                  ))
               }
-              {/* Audio player for the current slide */}
-              <audio controls ref={audioRef}>
-                <source src={topic.slides[slideIndex].audio} type="audio/mp3"></source>
-              </audio>
+                {/* Audio player for the current slide */}
+                 <audio controls ref={audioRef}>
+                  <source src={topic.slides[slideIndex].audio} type="audio/mp3"></source>
+                </audio>
+              </StoryWrapper>
+            }
 
-            </StoryWrapper>
             { // Show button Finished reading if questions not being shown
               !showQuestions &&
               <ContentButtonWrapper>
@@ -224,6 +241,8 @@ export default function QaPhase() {
             }
           </ContentWrapper>
         </ResizeHorizon  >
+
+
         <ResizeHorizon width="calc(100vw / 2)">
           <ContentWrapper>
             {/* Display the title */}
@@ -425,21 +444,14 @@ export default function QaPhase() {
                   <>
                     <ChatMessage text={
                       `Super ! Tu peux maintenant formuler ta question en utilisant le(s) mot(s) que tu as choisi(s)`
-                    } />
-
-                    <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
-
-                    <ContentButtonWrapper>
-                      <Button onClick={nextQuestion} variant="contained" disabled={!question}>Soumettre</Button>
-                    </ContentButtonWrapper>
+                      } />
 
                     <ChatMessage text={
-                    `Je te propose de commencer ta question par '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir autre chose si tu veux.`
-                    } >
-                    
+                      `Je te propose de commencer ta question par '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir autre chose si tu veux.`
+                      } >
                     </ChatMessage>
 
-                      <EaseUp>
+                    <EaseUp>
                       {
                         <Card>
                           <CardContent>
@@ -463,10 +475,16 @@ export default function QaPhase() {
                           </CardContent>
                         </Card>
                       }
-                      </EaseUp>
+                      </EaseUp> 
+                      {/*add more space between these elements if possible*/}
+
+                      <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
+
+                      <ContentButtonWrapper>
+                      <Button onClick={nextQuestion} variant="contained" disabled={!question}>Soumettre</Button>
+                      </ContentButtonWrapper>
 
                     </>
-
                 }
                 
                 { // Q2 keyword list
@@ -577,12 +595,6 @@ export default function QaPhase() {
                       `Super ! Tu peux maintenant formuler ta question en utilisant ton ou tes mot(s)`
                     } />
 
-                    <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
-
-                    <ContentButtonWrapper>
-                      <Button onClick={nextQuestion} variant="contained" disabled={!question}>Valider</Button>
-                    </ContentButtonWrapper>
-
                     <ChatMessage text={
                     `Je te propose de commencer ta question par '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir un autre si tu veux.`
                     } >
@@ -614,6 +626,12 @@ export default function QaPhase() {
                         </Card>
                       }
                       </EaseUp>
+                      {/*add more space between these elements if possible*/}
+                      <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
+
+                      <ContentButtonWrapper>
+                      <Button onClick={nextQuestion} variant="contained" disabled={!question}>Valider</Button>
+                    </ContentButtonWrapper>
 
                     </>
 
@@ -623,8 +641,9 @@ export default function QaPhase() {
                 showQuestions && (questionIndex >= 2 && questionIndex <= 4) &&
                 <>
                     <ChatMessage text={
-                      `En réalité, il y a plein de mots intéressant dans ce texte ! En voici quelques-uns. Choisis celui qui te rend curieux. `
+                      `En réalité, il y a plein de mots intéressants dans ce texte ! En voici quelques-uns. Choisis celui qui te rend curieux. `
                     } />
+                    {/*3 per line not list*/}
 
                     <Card variant="outlined">
                       <CardContent>
@@ -724,12 +743,6 @@ export default function QaPhase() {
                       `Super ! Tu peux maintenant formuler ta question en utilisant ton ou tes mot(s)-clé(s)`
                     } />
 
-                    <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
-
-                    <ContentButtonWrapper>
-                      <Button onClick={nextQuestion} variant="contained" disabled={!question}>Soumettre</Button>
-                    </ContentButtonWrapper>
-
                     <ChatMessage text={
                     `Je te propose de commencer ta question par le(s) mot(s) '${topic.slides[slideIndex].questions[questionIndex].starter}'. Mais tu peux en choisir un autre si tu veux.`
                     } >
@@ -761,6 +774,12 @@ export default function QaPhase() {
                         </Card>
                       }
                       </EaseUp>
+                      {/*input keyword and freezed if submitted*/}
+                      <TextField value={question} onChange={handleChangeQuestion} id="standard-basic" label="Mets ta question ici" fullWidth />
+
+                      <ContentButtonWrapper>
+                      <Button onClick={nextQuestion} variant="contained" disabled={!question}>Soumettre</Button>
+                    </ContentButtonWrapper>
 
                     </>
 

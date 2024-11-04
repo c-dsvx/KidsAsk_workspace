@@ -36,12 +36,12 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e : "Comment",
               subtopic: [
-                "pasteurisation","organisme","découvrir"
+                "pasteurisation","organisme","découvre"
               ],
               subtopic2Map: {
                 "pasteurisation" : ["stérilisation","cuisine","chaleur"],
                 "organisme" : ["corps", "organes", "cellule"],
-                "découvrir" : ["progrès", "observer", "exploration"]
+                "découvre" : ["école", "observer", "exploration"]
               },
             },
             {
@@ -60,9 +60,9 @@ export default {
               subtopic2Map: {
                 "choléra" : ["hôpital","infection","dangereux"],
                 "vaccination" : ["prévention", "médicament", "animal"],
-                "rage" : ["fièvre", "chien", "colère"],
+                "rage" : ["infection", "animaux", "colère"],
                 "pasteurisation" : ["stérilisation","cuisine","chaleur"],
-                "défendre" : ["protéger", "bouclier", "guérir"]
+                "défendre" : ["protéger", "bouclier", "soigner"]
               },
             },
             {
@@ -76,12 +76,12 @@ export default {
               starter_gpt3: "Quels .. autres",
               starter_gpt3_e : "Qu'est ce que/ Comment",
               subtopic: [
-                "tester","institut","défendre","maladie","conserver"
+                "organisme","recherche","défendre","maladie","conserver"
               ],
               subtopic2Map: {
-                "tester" : ["expérience","essai","observer"],
-                "institut" : ["laboratoire", "expérience", "chercheurs"],
-                "défendre" : ["protéger", "bouclier", "guérir"],
+                "organisme" : ["corps","organes","cellule"],
+                "recherche" : ["laboratoire", "traitement", "science"],
+                "défendre" : ["protéger", "bouclier", "soigner"],
                 "maladie" : ["fatigue", "douleur", "docteur"],
                 "conserver" : ["stocker","jeter","cuisine"]
               },
@@ -97,14 +97,14 @@ export default {
               starter_gpt3: "Quels",
               starter_gpt3_e : "Qu'est ce que",
               subtopic: [
-                "rage","tester","maladie","institut","aliments"
+                "rage","organisme","maladie","recherche","choléra"
               ],
               subtopic2Map: {
-                "choléra" : ["hôpital","infection","dangereux"],
-                "tester" : ["expérience","essai","observer"],
-                "découvrir" : ["progrès", "observer", "exploration"],
-                "institut" : ["laboratoire", "expérience", "chercheurs"],
-                "organisme" : ["corps", "organes", "cellule"]
+                "rage" : ["infection", "animaux", "colère"],
+                "organisme" : ["corps", "organes", "cellule"],
+                "maladie" : ["fatigue", "douleur", "docteur"],
+                "recherche" : ["laboratoire", "traitement", "science"],
+                "choléra" : ["hôpital","infection","dangereux"]
               },
             }
           ]
@@ -128,9 +128,11 @@ export default {
               subtopic: [
                 "ADN","Structure","Physique"
               ],
-              subtopic2: [
-                "Génétique","Médecine","Microscope"
-              ],
+              subtopic2Map: {
+                "ADN" : ["Cellule", "Corps", "Gène"],
+                "Structure" : ["Forme", "Microscope", "Organisation"],
+                "Physique" : ["Science", "Études", "Chimie"]
+              },
             },
             {
               starter: "C'est quoi",
@@ -145,9 +147,11 @@ export default {
               subtopic: [
                 "Cancer","Rôle","Prix Nobel"
               ],
-              subtopic2: [
-                "Mort","Science","Maladie"
-              ],
+              subtopic2Map: {
+                "Cancer" : ["médecine", "maladie", "traiter"],
+                "Rôle" : ["travail", "femme", "importance"],
+                "Prix Nobel" : ["science", "récompense", "concours"]
+              },
             },
             {
               starter: "Pourquoi",
@@ -160,11 +164,15 @@ export default {
               starter_gpt3: "Quelle/ Pourquoi",
               starter_gpt3_e : "Comment/ Qu'est ce que",
               subtopic: [
-                "Rôle","Découverte","Biologie"
+                "Rôle","Découverte","Biologie","Structure","Posthume"
               ],
-              subtopic2: [
-                "Études","Science","Équipe"
-              ],
+              subtopic2Map: {
+                "Rôle" : ["travail", "femme", "importance"],
+                "Découverte" : ["expérience", "voir", "chercher"],
+                "Biologie" : ["génétique","cellule","trouver"],
+                "Structure" : ["Forme", "Microscope", "Organisation"],
+                "Posthume" : ["mort", "souvenir", "équipe"]
+              },
             },
             {
               starter: "Qu'est ce qui",
@@ -177,11 +185,15 @@ export default {
               starter_gpt3: "À quel/ Quand",
               starter_gpt3_e: "À quel/ Quand",
               subtopic: [
-                "Prix Nobel","Chimie","Structure"
+                "Prix Nobel","Chimie","Structure","ADN","Physique"
               ],
-              subtopic2: [
-                "Méthode","Équipe","Microscope"
-              ],
+              subtopic2Map: {
+                "Prix Nobel" : ["science", "récompense", "concours"],
+                "Chimie" : ["physique", "observer", "expérience"],
+                "Structure" : ["Forme", "Microscope", "Organisation"],
+                "ADN" : ["Cellule", "Corps", "Gène"],
+                "Physique" : ["Science", "Études", "Chimie"],
+              },
             },
             {
               starter: "Que veut dire",
@@ -193,11 +205,15 @@ export default {
               ],
               starter_gpt3: "Pourquoi",
               subtopic: [
-                "Posthume","Biologie","Découverte"
+                "Posthume","Biologie","Découverte","Cancer","Rôle"
               ],
-              subtopic2: [
-                "Génétique","Maladie","Expérience"
-              ],
+              subtopic2Map: {
+                "Posthume" : ["mort", "souvenir", "équipe"],
+                "Biologie" : ["génétique","cellule","trouver"],
+                "Découverte" : ["expérience", "voir", "chercher"],
+                "Cancer" : ["médecine", "maladie", "traiter"],
+                "Rôle" : ["travail", "femme", "importance"]
+              },
             },
           ]
           
@@ -215,14 +231,16 @@ export default {
               gpt3: [
                      "Il a également développé la machine de Turing, qui est un ordinateur théorique.",
                    ],
-                   starter_gpt3: "Qu'a t-il .. autre",
-                   starter_gpt3_e: "Qu'est ce que",
-                   subtopic: [
-                     "Premiers ordianteurs", "Génie", "Informatique"
+              starter_gpt3: "Qu'a t-il .. autre",
+              starter_gpt3_e: "Qu'est ce que",
+              subtopic: [
+                     "Premiers ordinateurs", "Génie", "Informatique"
                    ],
-              subtopic2: [
-                "Chiffre","Machine","Sécurité"
-              ],
+              subtopic2Map: {
+                "Premiers ordinateurs" : ["papier", "utiliser", "machine"],
+                "Génie" : ["intelligent","énigme","inventeur"],
+                "Informatique" : ["ordinateur", "logique", "énigme"]
+              },
             },
             {
               starter: "Pourquoi",
@@ -237,9 +255,11 @@ export default {
               subtopic: [
                 "Génie", "Mathématiques", "Alliés"
               ],
-              subtopic2: [
-                "Secret","Chiffre","Énigme"
-              ],
+              subtopic2Map: {
+                "Génie" : ["intelligent","énigme","inventeur"],
+                "Mathématiques" : ["calcul", "jeu", "machine"],
+                "Alliés" : ["armée", "mission", "ennemis"]
+              },
             },
             {
               starter: "Quand",
@@ -252,11 +272,15 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e: "Quand/ Qui",
               subtopic: [
-                "Seconde guerre mondiale", "Alliés", "Informatique"
+                "Seconde guerre mondiale", "Pionnier", "Informatique", "Génie", "Déchiffrement"
               ],
-              subtopic2: [
-                "Technologie","Décoder","Analyse"
-              ],
+              subtopic2Map: {
+                "Seconde guerre mondiale" : ["sécurité", "soldat", "machine"], 
+                "Pionnier" : ["premier", "créer", "domaine"], 
+                "Informatique" : ["ordinateur", "logique", "énigme"],
+                "Génie" : ["intelligent","énigme","inventeur"],
+                "Déchiffrement" : ["calcul", "papier", "clé"]
+              },
             },
             {
               starter: "Qui",
@@ -269,11 +293,15 @@ export default {
               starter_gpt3: "Qu'est ce que",
               starter_gpt3_e: "Qu'est ce que",
               subtopic: [
-                "Pionnier", "Déchiffrement", "Adversaires"
+                "Pionnier", "Déchiffrement", "Adversaires", "Surdoué", "Premiers ordinateurs"
               ],
-              subtopic2: [
-                "Calculatrice","Sécurité","Épreuve"
-              ],
+              subtopic2Map: {
+                "Pionnier" : ["premier", "créer", "domaine"], 
+                "Déchiffrement" : ["calcul", "papier", "clé"],
+                "Adversaires" : ["ennemis", "épreuve", "décoder"], 
+                "Surdoué" : ["énigme", "technologie", "intelligence"],
+                "Premiers ordinateurs" : ["papier", "utiliser", "machine"]
+              },
             },
             {
               starter: "Comment",
@@ -286,11 +314,15 @@ export default {
               starter_gpt3: "Quels",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Pionnier", "Surdoué", "Alliés"
+                "Surdoué", "Alliés", "Adversaires", "Mathématiques", "Seconde guerre mondiale"
               ],
-              subtopic2: [
-                "Épreuve","Chiffre","Énigme"
-              ],
+              subtopic2Map: {
+                "Surdoué" : ["énigme", "technologie", "intelligence"], 
+                "Alliés" : ["armée", "mission", "ennemis"],
+                "Adversaires" : ["ennemis", "épreuve", "décoder"], 
+                "Mathématiques" : ["calcul", "jeu", "machine"],
+                "Seconde guerre mondiale" : ["sécurité", "soldat", "machine"]
+              },
             },
           ]
         },
@@ -316,9 +348,11 @@ export default {
               subtopic: [
                 "Ordinateur", "Processeur", "Mémoire"
               ],
-              subtopic2: [
-                "Fonction","Niveau","Automate"
-              ],
+              subtopic2Map: {
+                "Ordinateur" : ["machine", "appareil", "action"], 
+                "Processeur" : ["calcul", "moteur", "fonction"],
+                "Mémoire" : ["cerveau", "apprendre", "calcul"]
+              },
             },
             {
               starter: "A quoi servent",
@@ -333,9 +367,11 @@ export default {
               subtopic: [
                 "Corps", "Mémoire", "Répondre"
               ],
-              subtopic2: [ 
-                "Automate","Mouvement","Réseau"
-              ],
+              subtopic2Map: {
+                "Corps" : ["humain", "machine", "contrôle"], 
+                "Mémoire" : ["cerveau", "apprendre", "calcul"],
+                "Répondre" : ["communiquer", "réseau", "erreur"]
+              },
             },
             {
               starter: "Comment",
@@ -348,11 +384,15 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Apprendre", "Corps", "Contrôler"
+                "Intelligent", "Corps", "Contrôler", "Apprendre", "Ordinateur"
               ],
-              subtopic2: [
-                "Exploration","Réseau","Machine"
-              ],
+              subtopic2Map: {
+                "Intelligent" : ["ordinateur", "penser", "puissant"], 
+                "Corps" : ["humain", "machine", "contrôle"],
+                "Contrôler" : ["régler", "pilote", "parler"], 
+                "Apprendre" : ["exploration", "niveau", "imiter"],
+                "Ordinateur" : ["machine", "appareil", "action"]
+              },
             },
             {
               starter: "Qu'est-ce que",
@@ -365,11 +405,15 @@ export default {
               starter_gpt3: "Quels",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Répondre", "Contrôler", "Intelligents"
+                "Répondre", "Contrôler", "Capteurs", "Cerveau", "Mémoire"
               ],
-              subtopic2: [
-                "Simulation","Commande","Énigme"
-              ],
+              subtopic2Map: {
+                "Répondre" : ["communiquer", "réseau", "erreur"], 
+                "Contrôler" : ["régler", "pilote", "parler"],
+                "Capteurs" : ["vision", "niveau", "détecter"], 
+                "Cerveau" : ["appareil", "cellule", "mémoire"],
+                "Mémoire" : ["cerveau", "apprendre", "calcul"]
+              },
             },
             {
               starter: "Comment",
@@ -382,11 +426,15 @@ export default {
               starter_gpt3: "Est ce que",
               starter_gpt3_e: "Quels",
               subtopic: [
-                "Capteurs", "Cerveau", "Apprendre"
+                "Capteurs", "Cerveau", "Apprendre", "Processeur","Corps"
               ],
-              subtopic2: [
-                "Énigme","Commande","Simulation"
-              ],
+              subtopic2Map: {
+                "Capteurs" : ["vision", "niveau", "détecter"], 
+                "Cerveau" : ["appareil", "cellule", "mémoire"],
+                "Apprendre" : ["exploration", "niveau", "imiter"], 
+                "Processeur" : ["calcul", "moteur", "fonction"],
+                "Corps" : ["humain", "machine", "contrôle"]
+              },
             },
           ]
         },
@@ -408,9 +456,11 @@ export default {
               subtopic: [
                 "Sécurité", "Mauvais usage", "Ingénieurs"
               ],
-              subtopic2: [
-                "Navigation","Surveillance","Réparation"
-              ],
+              subtopic2Map: {
+                "Sécurité" : ["surveiller", "piloter", "erreur"], 
+                "Mauvais usage" : ["fonction", "danger", "aider"],
+                "Ingénieurs" : ["développer", "protéger", "technique"]
+              },
             },
             {
               starter: "Qu'est-ce que",
@@ -423,11 +473,13 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e: "Qu'est ce que",
               subtopic: [
-                "Ingénieur", "Force", "Composants électroniques"
+                "Ingénieurs", "Force", "Composants électroniques"
               ],
-              subtopic2: [
-                "Danger","Réacteur","Maintenance"
-              ],
+              subtopic2Map: {
+                "Ingénieurs" : ["développer", "protéger", "technique"], 
+                "Force" : ["alerte", "puissance", "énergie"],
+                "Composants électroniques" : ["appareils", "réparation", "navigation"]
+              },
             },
             {
               starter: "Quel(le)",
@@ -440,11 +492,15 @@ export default {
               starter_gpt3: "Pourquoi",
               starter_gpt3_e: "Quels",
               subtopic: [
-                "Système de contrôle", "Fusée", "Force"
+                "Système de contrôle", "Fusée", "Force", "Sécurité", "Pannes"
               ],
-              subtopic2: [
-                "Énergie","Navigation","Réparation"
-              ],
+              subtopic2Map: {
+                "Système de contrôle" : ["surveillance", "vision", "alerte"], 
+                "Fusée" : ["vaisseau", "navigation", "danger"],
+                "Force" : ["alerte", "puissance", "énergie"], 
+                "Sécurité" : ["surveiller", "piloter", "erreur"],
+                "Pannes" : ["dépanneur", "surveillance", "réacteur"]
+              },
             },
             {
               starter: "Pourquoi",
@@ -457,11 +513,15 @@ export default {
               starter_gpt3: "Quels .. autres",
               starter_gpt3_e: "Quels .. autres",
               subtopic: [
-                "Navette", "Programme informatique", "Sécurité"
+                "Navette", "Programme informatique", "Fusée", "Pannes", "Ingénieurs"
               ],
-              subtopic2: [
-                "Pilotage","Alerte","Surveillance"
-              ],
+              subtopic2Map: {
+                "Navette" : ["transport", "contenir", "navigation"], 
+                "Programme informatique" : ["appareil", "cellule", "mémoire"],
+                "Fusée" : ["vaisseau", "navigation", "danger"],
+                "Pannes" : ["dépanneur", "surveillance", "réacteur"],
+                "Ingénieurs" : ["développer", "protéger", "technique"]
+              },
             },
             {
               starter: "Qu'est-ce que",  
@@ -474,11 +534,15 @@ export default {
               starter_gpt3: "Que",
               starter_gpt3_e: "Qu'est ce que/ Pourquoi",
               subtopic: [
-                "Pannes", "Navette", "Mauvais usage"
+                "Pannes", "Navette", "Mauvais usage", "Composants électroniques", "Sécurité"
               ],
-              subtopic2: [
-                "Erreur","Pilotage","Alerte"
-              ],
+              subtopic2Map: {
+                "Pannes" : ["dépanneur", "surveillance", "réacteur"], 
+                "Navette" : ["transport", "contenir", "navigation"],
+                "Mauvais usage" : ["fonction", "danger", "aider"],
+                "Composants électroniques" : ["appareils", "réparation", "navigation"],
+                "Sécurité" : ["surveiller", "piloter", "erreur"]
+              },
             },
           ]
         },
@@ -498,11 +562,13 @@ export default {
               starter_gpt3: "Quel",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Évoluer", "Homme", "Communiquer"
+                "Évoluer", "Hommes", "Communiquer"
               ],
-              subtopic2: [
-                "Technologie","Futur","Intelligent"
-              ],
+              subtopic2Map: {
+                "Évoluer" : ["fonctionner", "bouger", "actions"], 
+                "Hommes" : ["machines", "rôle", "intelligent"],
+                "Communiquer" : ["échanger", "parler", "chanter"]
+              },
             },
             {
               starter: "Comment",
@@ -515,11 +581,13 @@ export default {
               starter_gpt3: "Quelle",
               starter_gpt3_e: "Quel",
               subtopic: [
-                "Robot miniature", "Évoluer", "Domaines"
+                "Robots miniatures", "Évoluer", "Domaines"
               ],
-              subtopic2: [
-                "Rôle","Programmer","Machine"
-              ],
+              subtopic2Map: {
+                "Robots miniatures" : ["taille", "servir", "technologie"], 
+                "Évoluer" : ["fonctionner", "bouger", "actions"],
+                "Domaines" : ["environnement", "travail", "rôle"]
+              },
             },
             {
               starter: "Quel",
@@ -532,11 +600,15 @@ export default {
               starter_gpt3: "Comment",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Contrôler", "Homme", "Robot"
+                "Contrôler", "Hommes", "Robots","Perfectionnés", "Évoluer"
               ],
-              subtopic2: [
-                "Aider","Technologie","Assistants"
-              ],
+              subtopic2Map: {
+                "Contrôler" : ["régler", "polite", "parler"], 
+                "Hommes" : ["machines", "rôle", "intelligent"],
+                "Robots" : ["assistants", "contrôler", "automatique"],
+                "Perfectionnés" : ["technologie", "aide", "outil"],
+                "Évoluer" : ["fonctionner", "bouger", "actions"]
+              },
             },
             {
               starter: "Comment",
@@ -549,11 +621,15 @@ export default {
               starter_gpt3: "Quel",
               starter_gpt3_e: "Comment",
               subtopic: [
-                "Énorme", "Perfectionnés", "communiquer"
+                "Énorme", "Perfectionnés", "Communiquer", "Domaines", "Contrôler"
               ],
-              subtopic2: [
-                "Automate","Intelligents","Construction"
-              ],
+              subtopic2Map: {
+                "Énorme" : ["important", "évoluer", "immense"], 
+                "Perfectionnés" : ["technologie", "aide", "outil"],
+                "Communiquer" : ["échanger", "parler", "chanter"],
+                "Domaines" : ["environnement", "travail", "rôle"],
+                "Contrôler" : ["régler", "polite", "parler"]
+              },
             },
             {
               starter: "À quoi",
@@ -566,11 +642,15 @@ export default {
               starter_gpt3: "Quelles",
               starter_gpt3_e: "Qu'est ce que",
               subtopic: [
-                "Travailler", "Robot", "Miniature"
+                "Travailler", "Robots", "Robots miniatures", "Évoluer", "Domaines"
               ],
-              subtopic2: [
-                "Programmer","Aider","Machine"
-              ],
+              subtopic2Map: {
+                "Travailler" : ["intelligent", "équipe", "aider"], 
+                "Robots" : ["assistants", "contrôler", "automatique"],
+                "Robots miniatures" : ["taille", "servir", "technologie"],
+                "Évoluer" : ["fonctionner", "bouger", "actions"],
+                "Domaines" : ["environnement", "travail", "rôle"]
+              },
             },
           ]
         }
@@ -584,98 +664,114 @@ export default {
         audio: "/audios/abeille.mp3",
         questions: [
           {
-          starter: "Qu'est-ce que",
-          options:[
+            starter: "Qu'est-ce que",
+            options:[
             "C'est un produit sucré produit par les fleurs",
-          ],
-          gpt3: [
+            ],
+            gpt3: [
             "Les abeilles communiquent aussi à travers l'odeur et le goût.",
-          ],
-          starter_gpt3: "Quels .. autres/ Comment",
-          starter_gpt3_e: "Qu'est ce que",
-              subtopic: [
+            ],
+            starter_gpt3: "Quels .. autres/ Comment",
+            starter_gpt3_e: "Qu'est ce que",
+            subtopic: [
                 "Source de nectar", "Ruche", "Demi-cercle"
-              ],
-              subtopic2: [
-                "Pollen","Signaux","Communiquer"
-              ],
-        },
-        {
-          starter: "Pourquoi",
-          options:[
+            ],
+            subtopic2Map: {
+                "Source de nectar" : ["pollen", "abeille", "manger"], 
+                "Ruche" : ["abeille", "maison", "construire"],
+                "Demi-cercle" : ["formes", "position", "montrer"]
+            },
+          },
+          {
+            starter: "Pourquoi",
+            options:[
             "L'abeille a besoin du nectar pour faire du miel",
-          ],
-          gpt3: [
+            ],
+           gpt3: [
             "Les vibrations servent aussi à avertir des dangers.",
-          ],
-          starter_gpt3: "À quoi",
-          starter_gpt3_e: "À quoi sert",
-              subtopic: [
+            ],
+            starter_gpt3: "À quoi",
+            starter_gpt3_e: "À quoi sert",
+            subtopic: [
                 "Demi-cercle", "Danse", "Rayons"
-              ],
-              subtopic2: [
-                "Direction","Insectes","Signaux"
-              ],
-        },
-        {
-          starter: "C'est quoi",
-          options:[
-            "Une ruche est l'endroit où vivent les abeilles",
-          ],
-          gpt3: [
-            "Il y a des oiseaux qui utilisent la danse en huit pour voler ensemble.",
-          ],
-          starter_gpt3: "Quels ..autres/ Y a t-il",
-          starter_gpt3_e: "Quels .. autres",
-              subtopic: [
-                "Vibrations", "Rayons", "Danse"
-              ],
-              subtopic2: [
-                "Endroit","Pollen","Carte"
-              ],
-        },
-        {
-          starter: "À quoi",
-          options:[
-            "La danse de demi-cercle sert à motiver les abeilles qui ne travaillent pas",
-          ],
-          gpt3: [
-            "Les abeilles utilisent la danse en demi-cercle pour communiquer la direction dans laquelle elles doivent voler.",
-          ],
-          starter_gpt3: "Pourquoi",
-          starter_gpt3_e: "À quoi sert",
-              subtopic: [
-                "Toilettage", "Soleil", "Position"
-              ],
-              subtopic2: [
-                "Insectes","Parler","Ailes"
-              ],
-        },
-        {
-          starter: "Qu'est-ce que",
-          options:[
-            "La vibration du mendiation est la vibration pour demander à manger",
-          ],
-          gpt3: [
-            "La vibration mendiante sert à indiquer que l'abeille veut de la nourriture.",
-          ],
-          starter_gpt3: "À quoi sert",
-          starter_gpt3_e: "Quelles .. autres",
-              subtopic: [
-                "Ruche"," Indiquer", "Source de nectar"
-              ],
-              subtopic2: [
-                "Polinisation","Carte","Communiquer"
-              ],
-        },
+            ],
+            subtopic2Map: {
+                "Demi-cercle" : ["formes", "position", "montrer"], 
+                "Danse" : ["chorégraphie", "mouvements", "ailes"],
+                "Rayons" : ["soleil", "cercle", "carte"]
+            },
+          },
+          {
+            starter: "C'est quoi",
+            options:[
+              "Une ruche est l'endroit où vivent les abeilles",
+            ],
+            gpt3: [
+              "Il y a des oiseaux qui utilisent la danse en huit pour voler ensemble.",
+            ],
+            starter_gpt3: "Quels ..autres/ Y a t-il",
+            starter_gpt3_e: "Quels .. autres",
+            subtopic: [
+                "Vibrations", "Rayons", "Danse", "Toilettage", "Source de nectar"
+            ],
+            subtopic2Map: {
+                "Vibrations" : ["mouvements", "ailes", "voler"], 
+                "Rayons" : ["soleil", "cercle", "carte"],
+                "Danse" : ["chorégraphie", "mouvements", "ailes"],
+                "Toilettage" : ["nettoyage", "danse", "insectes"],
+                "Source de nectar" : ["pollen", "abeille", "manger"]
+            },
+          },
+          {
+            starter: "À quoi",
+            options:[
+              "La danse de demi-cercle sert à motiver les abeilles qui ne travaillent pas",
+            ],
+            gpt3: [
+              "Les abeilles utilisent la danse en demi-cercle pour communiquer la direction dans laquelle elles doivent voler.",
+            ],
+            starter_gpt3: "Pourquoi",
+            starter_gpt3_e: "À quoi sert",
+            subtopic: [
+              "Toilettage", "Soleil", "Position","Ruche", "Vibrations"
+            ],
+            subtopic2Map: {
+                "Toilettage" : ["nettoyage", "danse", "insectes"], 
+                "Soleil" : ["nuage", "chemin", "communiquer"],
+                "Position" : ["direction", "carte", "perdre"],
+                "Ruche" : ["abeille", "maison", "construire"],
+                "Vibrations" : ["mouvements", "ailes", "voler"]
+            },
+          },
+          {
+            starter: "Qu'est-ce que",
+            options:[
+              "La vibration du mendiation est la vibration pour demander à manger",
+            ],
+            gpt3: [
+              "La vibration mendiante sert à indiquer que l'abeille veut de la nourriture.",
+            ],
+            starter_gpt3: "À quoi sert",
+            starter_gpt3_e: "Quelles .. autres",
+            subtopic: [
+              "Rayons"," Indiquer", "Source de nectar","Soleil","Position"
+            ],
+            subtopic2Map: {
+                "Rayons" : ["soleil", "cercle", "carte"],
+                "Indiquer" : ["chercher", "montrer", "insecte"],
+                "Source de nectar" : ["pollen", "abeille", "manger"],
+                "Soleil" : ["nuage", "chemin", "communiquer"],
+                "Position" : ["direction", "carte", "perdre"]
+            },
+          },
         ]
       },
       {
-      text: "Le Mone de Campbell est un petit singe de Côte d'Ivoire. En langage mone, les alertes (hok) et (krak) indiquent la présence de leurs deux ennemis. Lorsqu'on ajoute un 'oo' à la fin, il faut comprendre cette fois 'danger dans les arbres': (hok-oo), et 'danger au sol': (krak-oo). Maintenant, combinez les krak-oo avec des boom, ça donne 'attention, chute de branches ou de troncs d'arbre!': (krak-oo-boom). Ils peuvent donc construire des phrases! Aussi, les mones émettent un autre son particulier quand quelqu'un qu'ils ne connaissent pas s'approche d'eux. C'est un cri d'alerte qui signale la présence d'un humain!",
-          image:'/pics-intervention-qa/Le monde des animaux/mones campbell.jpg',
-          audio: "/audios/mones campbell.mp3",
-          questions: [
-            {
+        text: "Le Mone de Campbell est un petit singe de Côte d'Ivoire. En langage mone, les alertes (hok) et (krak) indiquent la présence de leurs deux ennemis. Lorsqu'on ajoute un 'oo' à la fin, il faut comprendre cette fois 'danger dans les arbres': (hok-oo), et 'danger au sol': (krak-oo). Maintenant, combinez les krak-oo avec des boom, ça donne 'attention, chute de branches ou de troncs d'arbre!': (krak-oo-boom). Ils peuvent donc construire des phrases! Aussi, les mones émettent un autre son particulier quand quelqu'un qu'ils ne connaissent pas s'approche d'eux. C'est un cri d'alerte qui signale la présence d'un humain!",
+        image:'/pics-intervention-qa/Le monde des animaux/mones campbell.jpg',
+        audio: "/audios/mones campbell.mp3",
+        questions: [
+          {
             starter: "Où",
             options:[
               "Le côte d'Ivoire est un pays qui se trouve dans l'Afrique de l'ouest",
@@ -685,12 +781,14 @@ export default {
             ],
             starter_gpt3: "Quels .. autres",
             starter_gpt3_e: "Quels .. autres",
-              subtopic: [
-                "Singes", "Côte d'Ivoire", "Danger"
-              ],
-              subtopic2: [
-                "Pays","Sons","Prédateurs"
-              ],
+            subtopic: [
+              "Singe", "Côte d'Ivoire", "Danger"
+            ],
+            subtopic2Map: {
+                "Singe" : ["environnement", "primate", "chasseur"], 
+                "Côte d'Ivoire" : ["habitat", "pays", "chasseur"],
+                "Danger" : ["risques", "réduire", "protéger"]
+            },
           },
           {
             starter: "Qui",
@@ -702,12 +800,14 @@ export default {
             ],
             starter_gpt3: "Quels .. autres",
             starter_gpt3_e: "Quels/ Qui",
-              subtopic: [
+            subtopic: [
                 "Danger", "Ennemis", "Afrique"
-              ],
-              subtopic2: [
-                "Prédateurs","Signal","Groupe"
-              ],
+            ],
+            subtopic2Map: {
+                "Danger" : ["risques", "réduire", "protéger"], 
+                "Ennemis" : ["chasse", "prédateurs", "habitat"],
+                "Afrique" : ["pays", "frontière", "espèce"]
+            },
           },
           {
             starter: "Comment",
@@ -719,12 +819,16 @@ export default {
             ],
             starter_gpt3: "Quels",
             starter_gpt3_e: "Où",
-              subtopic: [
-                "Côte d'Ivoire", "Mone", "Sons"
-              ],
-              subtopic2: [
-                "Bruits","Groupe","Primate"
-              ],
+            subtopic: [
+                "Côte d'Ivoire", "Mone", "Sons","Singe","Danger"
+            ],
+            subtopic2Map: {
+                "Côte d'Ivoire" : ["habitat", "pays", "chasseur"], 
+                "Mone" : ["singe", "bruit", "animal"],
+                "Sons" : ["cris", "humain", "bruits"],
+                "Singe" : ["environnement", "primate", "chasseur"],
+                "Danger" : ["risques", "réduire", "protéger"]
+            },
           },
           {
             starter: "Pourquoi",
@@ -736,12 +840,16 @@ export default {
             ],
             starter_gpt3: "Qu'est ce que",
             starter_gpt3_e: "Quelle .. différence",
-              subtopic: [
-                "Mone", "Phrases", "Alerte"
-              ],
-              subtopic2: [
-                "Environnement","Habitat","Parler"
-              ],
+            subtopic: [
+                "Mone", "Phrases", "Alerte","Afrique","Ennemis"
+            ],
+            subtopic2Map: {
+                "Mone" : ["singe", "bruit", "animal"], 
+                "Phrases" : ["sons", "primate", "parler"],
+                "Alerte" : ["groupe", "avertir", "signal"],
+                "Afrique" : ["pays", "frontière", "espèce"],
+                "Ennemis" : ["chasse", "prédateurs", "habitat"]
+            },
           },
           {
             starter: "Comment",
@@ -754,54 +862,62 @@ export default {
             starter_gpt3: "Qu'est ce qui",
             starter_gpt3_e: "Quels .. autres",
               subtopic: [
-                "Sons", "Humain", "Danger"
+                "Sons", "Humain", "Danger","Alerte","Phrases"
               ],
-              subtopic2: [
-                "Bruits","Sons","Primate"
-              ],
-          },
+              subtopic2Map: {
+                "Sons" : ["cris", "humain", "bruits"], 
+                "Humain" : ["singe", "communiquer", "prédateur"],
+                "Danger" : ["risques", "réduire", "protéger"],
+                "Alerte" : ["groupe", "avertir", "signal"],
+                "Phrases" : ["sons", "primate", "parler"]
+              },
+            },
           ]
         },
         {
           text:"Si l'on veut communiquer gentiment avec des animaux sauvages, il faut pouvoir s'approcher d'eux. Problème: cela est difficile. Pour transmettre leurs messages, les chercheurs commencent donc à utiliser des animaux robots. Un jour, il sera possible de communiquer avec un très grand nombre d'animaux. Mais pour le moment, on est loin de comprendre tous leurs messages. Même quand on les imite, on n'est pas encore sûrs de ce qu'on leur dit vraiment. Ils nous faut des appareils sophistiqués pour pouvoir comprendre leurs messages.",
           image:'/pics-intervention-qa/Le monde des animaux/parler aux animaux.jpg',
           audio: "/audios/parler aux animaux.mp3",
-              questions: [
-                {
-                starter: "Pourquoi",
-                options:[
-                  "Il est difficile de s'approcher des animaux car ils ont peur des humains",
-                ],
-                gpt3: [
+            questions: [
+            {
+              starter: "Pourquoi",
+              options:[
+                "Il est difficile de s'approcher des animaux car ils ont peur des humains",
+              ],
+              gpt3: [
                   "Les chercheurs utilisent des animaux robots pour transmettre des messages aux animaux sauvages.",
-                ],
-                starter_gpt3: "Pourquoi",
-                starter_gpt3_e: "Comment" ,
+              ],
+              starter_gpt3: "Pourquoi",
+              starter_gpt3_e: "Comment" ,
               subtopic: [
                 "Messages", "Approcher", "Appareils"
               ],
-              subtopic2: [
-                "Nature","Traduire","Technologie"
-              ],
+              subtopic2Map: {
+                "Messages" : ["parole", "signaux", "sens"], 
+                "Approcher" : ["peur", "voir", "parler"],
+                "Appareils" : ["machine", "ordinateur", "fabriquer"]
               },
-              {
-                starter: "Qu'est-ce que",
-                options:[
-                  "Pour comprendre les animaux, il faut observer leurs comportements pendant de longues périodes",
-                ],
-                gpt3: [
-                  "Les animaux robots peuvent aussi communiquer avec les poissons et les oiseaux.",
-                ],
-                starter_gpt3: "Avec qui d'autre",
-                starter_gpt3_e: "Comment",
+            },
+            {
+              starter: "Qu'est-ce que",
+              options:[
+                "Pour comprendre les animaux, il faut observer leurs comportements pendant de longues périodes",
+              ],
+              gpt3: [
+                "Les animaux robots peuvent aussi communiquer avec les poissons et les oiseaux.",
+              ],
+              starter_gpt3: "Avec qui d'autre",
+              starter_gpt3_e: "Comment",
               subtopic: [
                 "Appareils", "Communiquer", "Comprendre"
               ],
-              subtopic2: [
-                "Animaux domestiques","Sens","Technologie"
-              ],
+              subtopic2Map: {
+                "Appareils" : ["machine", "ordinateur", "fabriquer"], 
+                "Communiquer" : ["langage", "parole", "espèce"],
+                "Comprendre" : ["traduire", "sons", "animal"]
               },
-              {
+            },
+            {
                 starter: "Qu'est-ce que",
                 options:[
                   "Un appareil sophistiqué est un appareil avec une technologie avancée",
@@ -812,13 +928,17 @@ export default {
                 starter_gpt3: "Comment",
                 starter_gpt3_e: "Qu'est ce que/ Quels",
               subtopic: [
-                "Sophistiqués", "Chercheurs", "Imiter"
+                "Sophistiqués", "Chercheurs", "Imiter","Comprendre","Messages"
               ],
-              subtopic2: [
-                "Observer","Science","Habitat"
-              ],
+              subtopic2Map: {
+                "Sophistiqués" : ["avancé", "technologie", "traduire"], 
+                "Chercheurs" : ["technologie", "science", "animaux"],
+                "Imiter" : ["animaux", "humain", "observer"],
+                "Comprendre" : ["traduire", "sons", "animal"],
+                "Messages" : ["parole", "signaux", "sens"]
               },
-              {
+            },
+            {
                 starter: "Quel",
                 options:[
                   "Un appareil sophistiqué sert à entendre les sons sous l'eau par exemple",
@@ -829,13 +949,17 @@ export default {
                 starter_gpt3: "Quel",
                 starter_gpt3_e: "Quel",
               subtopic: [
-                "Chercheurs", "Dire", "Comprendre"
+                "Chercheurs", "Dire", "Imiter","Approcher","Communiquer"
               ],
-              subtopic2: [
-                "Animaux domestiques","Espèces","Écouter"
-              ],
+              subtopic2Map: {
+                "Chercheurs" : ["technologie", "science", "animaux"], 
+                "Dire" : ["écouter", "nature", "sens"],
+                "Imiter" : ["animaux", "humain", "observer"],
+                "Approcher" : ["peur", "voir", "parler"],
+                "Communiquer" : ["environnement", "travail", "rôle"]
               },
-              {
+            },
+            {
                 starter: "Pourquoi",
                 options:[
                   "On utilise des animaux robots car ils peuvent se rapprocher des animaux vu qu'ils leur ressemblent et ne leur font pas peur",
@@ -846,299 +970,351 @@ export default {
                 starter_gpt3: "Pourquoi",
                 starter_gpt3_e: "Quelle" ,
               subtopic: [
-                "Robots animaux", "Dire", "Messages"
+                "Robots animaux", "Dire", "Messages","Comprendre","Chercheurs"
               ],
-              subtopic2: [
-                "Sens","Espèces","Science"
-              ],
+              subtopic2Map: {
+                "Robots animaux" : ["taille", "servir", "technologie"],
+                "Dire" : ["écouter", "nature", "sens"], 
+                "Messages" : ["parole", "signaux", "sens"],
+                "Comprendre" : ["traduire", "sons", "animal"],
+                "Chercheurs" : ["technologie", "science", "animaux"]
               },
-              ]
-          }
-        ]
-      },
+            },
+          ]
+        }
+      ]
+    },
   
     "univers": {
       slides: [
           {
             text: "Après plusieurs expériences, nous pensons avoir compris les premiers instants de notre univers. Il était de taille microscopique et extrêmement chaud. Il n'y avait pas de galaxies, pas d'étoiles, pas de planètes, rien. Au début, tout d'un coup, on pense qu'il y a eu une très grande explosion d'énergie. Elle a donné naissance à notre univers dans un phénomène semblable à une explosion. On appelle cela le Big Bang. Cette énergie était si importante qu'elle a créé toute la matière de l'univers. Les éléments ont fusionné petit à petit pour en créer de nouveaux : on parle d'une 'expansion de l'univers'.",
-                image:'/pics-intervention-qa/Univers/big bang.jpg',
-                audio: "/audios/bigbang.mp3",
-                questions: [
-                  {
-                    starter: "Ça veut dire quoi",
-                    options:[
-                      "Une taille microscopique est une taille extrêmement petite",
-                    ],
-                    gpt3: [
-                      "Orion, Cassiopée et Ursa Major sont d'autres constellations célèbres.",
-                    ],
-                    starter_gpt3: "Quelles .. autres",
-                    starter_gpt3_e: "Quelles .. autres",
-              subtopic: [
-                "Big Bang", "Explosion", "Chaud"
-              ],
-              subtopic2: [
-                "Éléments","Température","Astéroïde"
-              ],
-                  },
-                  {
-                    starter: "Qu'est-ce que",
-                    options:[
-                      "Une galaxie est un ensemble d'étoiles",
-                    ],
-                    gpt3: [
-                      "Nous pouvons observer les constellations avec un téléscope.",
-                    ],
-                    starter_gpt3: "Comment",
-                    starter_gpt3_e: "Comment",
-              subtopic: [
-                "Chaud", "Énergie", "Galaxies"
-              ],
-              subtopic2: [
-                "Température","Cosmos","Vide"
-              ],
-                  },
-                  {
-                    starter: "Quand",
-                    options:[
-                      "L'explosion a eu lieu il y a 13,8 milliards d'années",
-                    ],
-                    gpt3: [
-                      "La Grande Ourse est si célèbre parce qu'elle est très brillante et reconnaissable.",
-                    ],
-                    starter_gpt3: "Pourquoi",
-                    starter_gpt3_e: "Pourquoi",
-              subtopic: [
-                "Énergie", "Étoiles", "Expansion"
-              ],
-              subtopic2: [
-                "Cosmos","Éléments","Particule"
-              ],
-                  },
-                  {
-                    starter: "Quel",
-                    options:[
-                      "Le rôle d'une étoile est d'émettre de la lumière",
-                    ],
-                    gpt3: [
-                      "La carte du ciel nous montre aussi l'emplacement des diffèrentes étoiles.",
-                    ],
-                    starter_gpt3: "Qu'y a t-il d'autre'",
-                    starter_gpt3_e: "Quelles .. autres",
-              subtopic: [
-                "Univers","Fusionné", "Expansion"
-              ],
-              subtopic2: [
-                "Création","Particule","Astronaute"
-              ],
-                  },
-                  {
-                    starter: "Que veut dire",
-                    options:[
-                      "L'expansion de l'univers veut dire l'augmentation de sa taille",
-                    ],
-                    gpt3: [
-                      "Il y a 88 constellations au total.",
-                    ],
-                    starter_gpt3: "Combien",
-                    starter_gpt3_e: "Comment" ,
-              subtopic: [
-                "Matière", "Univers", "Explosion"
-              ],
-              subtopic2: [
-                "Astéroïde","Atome","Espace"
-              ],
-                  },
-                  ]
-            },
-            {
-              text: "Une constellation est un ensemble d'étoiles qui représente une forme particulière. La plus célèbre est la constellation de la Grande Ourse; elle est composée d'étoiles très brillantes qui lui donnent la forme d'une casserole. La grande Ourse est très utile pour les marins. Bien que les étoiles formant une constellation semblent être proches les unes des autres, ce n'est en général pas le cas. Les étoiles sont tellement éloignées de nous que l'on perd toute idée de perspective. Il existe une carte du ciel qui indique toutes les constellations connues.",
-                  image:'/pics-intervention-qa/Univers/constellations.jpg',
-                  audio: "/audios/constellations.mp3",
-                  questions: [
-                    {
-                    starter: "Combien",
-                    options:[
-                      "La Grande Ourse contient 7 étoiles",
-                    ],
-                    gpt3: [
-                      "At its start, the temperature of the universe was about 10 billion degrees.",
-                    ],
-                    starter_gpt3: "What",
-                    starter_gpt3_e: "What" ,
-                  subtopic: [
-                    "Étoile", "Constellation", "Marin"
-                    ],
-                  subtopic2: [
-                "Observer","Galaxie","Observatoire"
-                    ],
-                  },
-                  {
-                    starter: "Quand",
-                    options:[
-                      "On peut voir la Grande Ourse tous les soirs, si le ciel est clair",
-                    ],
-                    gpt3: [
-                      "Le Big Bang a duré environ un milliardième de milliardième de seconde.",
-                    ],
-                    starter_gpt3: "Combien",
-                    starter_gpt3_e: "Quelle",
-                  subtopic: [
-                    "Marin", "Ciel", "Célèbre"
-                    ],
-                  subtopic2: [
-                "Comètes","Se diriger","Observatoire"
-                    ],
-                  },
-                  {
-                    starter: "C'est quoi",
-                    options:[
-                      "Une carte du ciel est une carte qui montre toutes les composantes du ciel",
-                    ],
-                    gpt3: [
-                      "La cause de l'explosion du Big Bang est encore inconnue.",
-                    ],
-                    starter_gpt3: "Quelle",
-                    starter_gpt3_e: "Combien",
-                  subtopic: [
-                    "Ciel", "Grande Ourse", "Éloignées"
-                    ],
-                  subtopic2: [
-                "Galaxies","Étoile filante","Nuit"
-                    ],
-                  },
-                  {
-                    starter: "Où",
-                    options:[
-                      "L'étoile la plus proche se trouve à 40 milliards de kilomètres de la Terre",
-                    ],
-                    gpt3: [
-                      "Avant le Big Bang, l'univers était infini",
-                    ],
-                    starter_gpt3: "Comment",
-                    starter_gpt3_e: "Comment/ Qu'est ce que",
-                  subtopic: [
-                    "Éloignées", "Casserole", "Perspective"
-                  ],
-                  subtopic2: [
-                    "Se diriger","Naviguer","Planète"
-                    ],
-                  },
-                  {
-                    starter: "Pourquoi",
-                    options:[
-                      "Les marins utilisent la Grande Ourse comme repère s'ils n'ont pas de boussole",
-                    ],
-                    gpt3: [
-                      "On ne sait pas comment va évoluer l'univers dans le futur.",
-                    ],
-                    starter_gpt3: "Comment",
-                    starter_gpt3_e: "Comment",
-                  subtopic: [
-                    "Carte du ciel", "Étoile", "Constellation"
-                    ],
-                  subtopic2: [
-                "Planète","Comète","Distance"
-                    ],
-                  },
-                  ]
+              image:'/pics-intervention-qa/Univers/big bang.jpg',
+              audio: "/audios/bigbang.mp3",
+              questions: [
+              {
+                starter: "Ça veut dire quoi",
+                options:[
+                  "Une taille microscopique est une taille extrêmement petite",
+                ],
+                gpt3: [
+                  "Orion, Cassiopée et Ursa Major sont d'autres constellations célèbres.",
+                ],
+                starter_gpt3: "Quelles .. autres",
+                starter_gpt3_e: "Quelles .. autres",
+                subtopic: [
+                  "Big Bang", "Explosion", "Chaud"
+                ],
+                subtopic2Map: {
+                  "Big Bang" : ["température", "vide", "espace"],
+                  "Explosion" : ["éclater", "choc", "créer"], 
+                  "Chaud" : ["froid", "feu", "cosmos"]
+                },
               },
               {
-                text: "L'astéroïde est un corps composé de roches et de métaux. Il est de taille variée et se déplace dans l'espace. Il ne fait partie ni des planètes, ni des étoiles. Sa taille peut varier de moins d'un centimètre à plusieurs centaines de kilomètres de diamètre. Le premier astéroïde a été découvert en 1801. Il y a 65 millions d'années, c'est un astéroïde de 14 kilomètres de diamètre qui s'est écrasé sur Terre. Il est en partie responsable de la disparition des dinosaures. Les astéroides peuvent donc être dangereux et il faut éviter leurs chocs avec la terre.",
-                  image:'/pics-intervention-qa/Univers/asteroide.jpg',
-                  audio: "/audios/asteroide.mp3",
-                      questions: [
-                        {
-                        starter: "Comment",
-                        options:[
-                          "On a découvert les astéroides par hasard",
-                        ],
-                        gpt3: [
-                          "Les astéroïdes sont formés à partir des restes laissés par la formation du système solaire.",
-                        ],
-                        starter_gpt3: "Comment",
-                        starter_gpt3_e: "Quelle .. différence / Qu'est ce que",
-              subtopic: [
-                "Espace", "Étoile", "Métaux"
-              ],
-              subtopic2: [
-                "Observer","Comète","Météorite"
-              ],
-                      },
-                      {
-                        starter: "Pourquoi",
-                        options:[
-                          "L'astéroide a détruit les habitats des dinosaures car le choc avec la Terre était trés important",
-                        ],
-                        gpt3: [
-                          "Les astéroïdes sont composés de roche et de métal, tandis que les comètes sont composés de glace et de poussière.",
-                        ],
-                        starter_gpt3: "Quelle .. différence",
-                        starter_gpt3_e: "Quelle/ De quoi" ,
-                      subtopic: [
-                        "Roche", "Métaux", "Taille"
-                        ],
-                      subtopic2: [
-                          "Météorite","Acier","Fer"
-                        ],
-                      },
-                      {
-                        starter: "Quel",
-                        options:[
-                          "Le risque d'avoir un autre choc avec un astéroïde est très faible",
-                        ],
-                        gpt3: [
-                          "Un astéroïde qui frappe la Terre pourrait causer une grande destruction.",
-                        ],
-                        starter_gpt3: "Que se passe-t-il",
-                        starter_gpt3_e: "Quelle .. diffèrence",
-              subtopic: [
-                "Astéroïde", "Taille", "Planète"
-              ],
-              subtopic2: [
-                "Gravité","Comète","Collisions"
-              ],
-                      },
-                      {
-                        starter: "Que",
-                        options:[
-                          "Pour éviter les chocs avec les astéroïdes, il faut toujours surveiller leurs mouvements",
-                        ],
-                        gpt3: [
-                          "Les astéroïdes se trouvent entre Mars et Jupiter.",
-                        ],
-                        starter_gpt3: "Où",
-                        starter_gpt3_e: "Qu'est ce que/ Quelle",
-              subtopic: [
-                "Écraser", "Dinosaures", "Planète"
-              ],
-              subtopic2: [
-                "Collisions","Mort","Orbite"
-              ],
-                      },
-                      {
-                        starter: "Quel",
-                        options:[
-                          "Les chocs avec les petits astéroïdes ne sont pas dangereux, on ne risque donc pas grand chose",
-                        ],
-                        gpt3: [
-                          "Le plus gros astéroïde jamais découvert est Cérès, qui est aussi une planète naine.",
-                        ],
-                        starter_gpt3: "Quel",
-                        starter_gpt3_e: "Qu'est ce que",
-              subtopic: [
-                "Chocs", "Étoile", "Espace"
-              ],
-              subtopic2: [
-                "Observer","Orbite","Téléscope"
-              ],
-                      },
-                      ]
-                  },
-      ]
-    },
-    "proteger-nature": {
-      slides: [
+                starter: "Qu'est-ce que",
+                options:[
+                  "Une galaxie est un ensemble d'étoiles",
+                  ],
+                gpt3: [
+                  "Nous pouvons observer les constellations avec un téléscope.",
+                ],
+                starter_gpt3: "Comment",
+                starter_gpt3_e: "Comment",
+                subtopic: [
+                "Chaud", "Énergie", "Galaxies"
+                ],
+                subtopic2Map: {
+                  "Chaud" : ["froid", "feu", "cosmos"],
+                  "Énergie" : ["température", "galaxie", "particule"], 
+                  "Galaxies" : ["espace", "voir", "étoile"]
+                },
+              },
+              {
+                starter: "Quand",
+                options:[
+                  "L'explosion a eu lieu il y a 13,8 milliards d'années",
+                ],
+                 gpt3: [
+                  "La Grande Ourse est si célèbre parce qu'elle est très brillante et reconnaissable.",
+                ],
+                starter_gpt3: "Pourquoi",
+                starter_gpt3_e: "Pourquoi",
+                subtopic: [
+                  "Énergie", "Étoiles", "Expansion","Chaud","Galaxies"
+                ],
+                subtopic2Map: {
+                "Énergie" : ["température", "galaxie", "particule"],
+                "Étoiles" : ["soleil", "nuit", "astéroïdes"], 
+                "Expansion" : ["grandir", "univers", "éléments"],
+                "Chaud" : ["froid", "feu", "cosmos"],
+                "Galaxies" : ["espace", "voir", "étoile"]
+               },
+              },
+              {
+                starter: "Quel",
+                options:[
+                  "Le rôle d'une étoile est d'émettre de la lumière",
+                ],
+                gpt3: [
+                   "La carte du ciel nous montre aussi l'emplacement des diffèrentes étoiles.",
+                ],
+                starter_gpt3: "Qu'y a t-il d'autre'",
+                starter_gpt3_e: "Quelles .. autres",
+                subtopic: [
+                  "Univers","Fusionné", "Expansion","Étoiles","Big Bang"
+                ],
+                subtopic2Map: {
+                  "Univers" : ["galaxies", "particule", "planète"],
+                  "Fusionné" : ["séparer", "atome", "regrouper"], 
+                  "Expansion" : ["grandir", "univers", "éléments"],
+                  "Étoiles" : ["soleil", "nuit", "astéroïdes"],
+                  "Big Bang" : ["température", "vide", "espace"]
+                },
+              },
+              {
+                starter: "Que veut dire",
+                options:[
+                  "L'expansion de l'univers veut dire l'augmentation de sa taille",
+                ],
+                gpt3: [
+                   "Il y a 88 constellations au total.",
+                ],
+                starter_gpt3: "Combien",
+                starter_gpt3_e: "Comment" ,
+                subtopic: [
+                  "Matière", "Univers", "Explosion","Galaxies","Fusionné"
+                ],
+                subtopic2Map: {
+                  "Matière" : ["observer", "éléments", "composition"],
+                  "Univers" : ["galaxies", "particule", "planète"], 
+                  "Explosion" : ["éclater", "choc", "créer"],
+                  "Galaxies" : ["espace", "voir", "étoile"],
+                  "Fusionné" : ["séparer", "atome", "regrouper"]
+                },
+              },
+            ]
+          },
+          {
+            text: "Une constellation est un ensemble d'étoiles qui représente une forme particulière. La plus célèbre est la constellation de la Grande Ourse; elle est composée d'étoiles très brillantes qui lui donnent la forme d'une casserole. La grande Ourse est très utile pour les marins. Bien que les étoiles formant une constellation semblent être proches les unes des autres, ce n'est en général pas le cas. Les étoiles sont tellement éloignées de nous que l'on perd toute idée de perspective. Il existe une carte du ciel qui indique toutes les constellations connues.",
+            image:'/pics-intervention-qa/Univers/constellations.jpg',
+            audio: "/audios/constellations.mp3",
+            questions: [
+              {
+                starter: "Combien",
+                options:[
+                  "La Grande Ourse contient 7 étoiles",
+                ],
+                gpt3: [
+                  "At its start, the temperature of the universe was about 10 billion degrees.",
+                ],
+                starter_gpt3: "What",
+                starter_gpt3_e: "What" ,
+                subtopic: [
+                  "Étoile", "Constellation", "Marins"
+                ],
+                subtopic2Map: {
+                  "Étoile" : ["briller", "planète", "regarder"],
+                  "Constellation" : ["étoile", "forme", "dessin"], 
+                  "Marins" : ["naviguer", "bâteau", "carte"]
+                },
+              },
+              {
+                starter: "Quand",
+                options:[
+                  "On peut voir la Grande Ourse tous les soirs, si le ciel est clair",
+                ],
+                gpt3: [
+                  "Le Big Bang a duré environ un milliardième de milliardième de seconde.",
+                ],
+                starter_gpt3: "Combien",
+                starter_gpt3_e: "Quelle",
+                subtopic: [
+                  "Marins", "Ciel", "Célèbre",
+                ],
+                subtopic2Map: {
+                  "Marins" : ["naviguer", "bâteau", "carte"],
+                  "Ciel" : ["briller", "nuit", "distance"], 
+                  "Célèbre" : ["connue", "observer", "fascinant"]
+                },
+              },
+              {
+                starter: "C'est quoi",
+                options:[
+                  "Une carte du ciel est une carte qui montre toutes les composantes du ciel",
+                ],
+                gpt3: [
+                  "La cause de l'explosion du Big Bang est encore inconnue.",
+                ],
+                starter_gpt3: "Quelle",
+                starter_gpt3_e: "Combien",
+                subtopic: [
+                  "Ciel", "Grande Ourse", "Éloignées","Constellation","Étoile"
+                ],
+                subtopic2Map: {
+                  "Ciel" : ["briller", "nuit", "distance"],
+                  "Grande Ourse" : ["casserole", "étoile", "étoile filante"], 
+                  "Éloignées" : ["distance", "proche", "direction"],
+                  "Constellation" : ["étoile", "forme", "dessin"],
+                  "Étoile" : ["briller", "planète", "regarder"]
+                },
+              },
+              {
+                starter: "Où",
+                options:[
+                  "L'étoile la plus proche se trouve à 40 milliards de kilomètres de la Terre",
+                ],
+                gpt3: [
+                  "Avant le Big Bang, l'univers était infini",
+                ],
+                starter_gpt3: "Comment",
+                starter_gpt3_e: "Comment/ Qu'est ce que",
+                subtopic: [
+                  "Éloignées", "Casserole", "Perspective","Célèbre","Grande Ourse"
+                ],
+                subtopic2Map: {
+                  "Éloignées" : ["distance", "proche", "direction"],
+                  "Casserole" : ["ourse", "forme", "cuillière"], 
+                  "Perspective" : ["distance", "ciel", "vision"],
+                  "Célèbre" : ["connue", "observer", "fascinant"],
+                  "Grande Ourse" : ["casserole", "étoile", "étoile filante"]
+                },
+              },
+              {
+                starter: "Pourquoi",
+                options:[
+                  "Les marins utilisent la Grande Ourse comme repère s'ils n'ont pas de boussole",
+                ],
+                gpt3: [
+                 "On ne sait pas comment va évoluer l'univers dans le futur.",
+                ],
+                starter_gpt3: "Comment",
+                starter_gpt3_e: "Comment",
+                subtopic: [
+                  "Carte du ciel", "Étoile", "Constellation","Casserole","Perspective"
+                ],
+                subtopic2Map: {
+                  "Carte du ciel" : ["téléscope", "repère", "chemin"],
+                  "Étoile" : ["briller", "planète", "regarder"], 
+                  "Constellation" : ["étoile", "forme", "dessin"],
+                  "Casserole" : ["ourse", "forme", "cuillière"], 
+                  "Perspective" : ["distance", "ciel", "vision"]
+                },
+              },
+            ]
+          },
+          {
+            text: "L'astéroïde est un corps composé de roches et de métaux. Il est de taille variée et se déplace dans l'espace. Il ne fait partie ni des planètes, ni des étoiles. Sa taille peut varier de moins d'un centimètre à plusieurs centaines de kilomètres de diamètre. Le premier astéroïde a été découvert en 1801. Il y a 65 millions d'années, c'est un astéroïde de 14 kilomètres de diamètre qui s'est écrasé sur Terre. Il est en partie responsable de la disparition des dinosaures. Les astéroides peuvent donc être dangereux et il faut éviter leurs chocs avec la terre.",
+            image:'/pics-intervention-qa/Univers/asteroide.jpg',
+            audio: "/audios/asteroide.mp3",
+            questions: [
+              {
+                starter: "Comment",
+                options:[
+                  "On a découvert les astéroides par hasard",
+                ],
+                gpt3: [
+                  "Les astéroïdes sont formés à partir des restes laissés par la formation du système solaire.",
+                ],
+                starter_gpt3: "Comment",
+                starter_gpt3_e: "Quelle .. différence / Qu'est ce que",
+                subtopic: [
+                  "Astéroïde", "Étoile", "Métaux"
+                ],
+                subtopic2Map: {
+                  "Astéroïde" : ["météore", "acier", "observer"],
+                  "Étoile" : ["briller", "planète", "regarder"], 
+                  "Métaux" : ["fer", "composé", "lourd"]
+                },
+              },
+              {
+                starter: "Pourquoi",
+                options:[
+                  "L'astéroide a détruit les habitats des dinosaures car le choc avec la Terre était trés important",
+                ],
+                gpt3: [
+                  "Les astéroïdes sont composés de roche et de métal, tandis que les comètes sont composés de glace et de poussière.",
+                ],
+                starter_gpt3: "Quelle .. différence",
+                starter_gpt3_e: "Quelle/ De quoi" ,
+                subtopic: [
+                  "Roches", "Métaux", "Taille"
+                ],
+                subtopic2Map: {
+                  "Roches" : ["cratère", "lourd", "comète"],
+                  "Métaux" : ["fer", "composé", "lourd"],
+                  "Taille" : ["largeur", "roche", "gravité"],
+                },
+              },
+              {
+                starter: "Quel",
+                options:[
+                  "Le risque d'avoir un autre choc avec un astéroïde est très faible",
+                ],
+                gpt3: [
+                  "Un astéroïde qui frappe la Terre pourrait causer une grande destruction.",
+                ],
+                starter_gpt3: "Que se passe-t-il",
+                starter_gpt3_e: "Quelle .. diffèrence",
+                subtopic: [
+                  "Astéroïde", "Taille", "Planète","Espace","Écraser"
+                ],
+                subtopic2Map: {
+                "Astéroïde" : ["météore", "acier", "observer"],
+                "Taille" : ["largeur", "roche", "gravité"], 
+                "Planète" : ["Terre", "fer", "orbite"],
+                "Espace" : ["univers", "étoile", "téléscope"],
+                "Écraser" : ["collision", "planète", "détruire"]
+                },
+              },
+              {
+                starter: "Que",
+                options:[
+                  "Pour éviter les chocs avec les astéroïdes, il faut toujours surveiller leurs mouvements",
+                ],
+                gpt3: [
+                  "Les astéroïdes se trouvent entre Mars et Jupiter.",
+                ],
+                starter_gpt3: "Où",
+                starter_gpt3_e: "Qu'est ce que/ Quelle",
+                subtopic: [
+                  "Écraser", "Dinosaures", "Planète","Espace","Roches"
+                ],
+                subtopic2Map: {
+                  "Écraser" : ["collision", "planète", "détruire"],
+                  "Dinosaures" : ["traduire", "sons", "animal"],
+                  "Planète" : ["Terre", "fer", "orbite"],
+                  "Espace" : ["univers", "étoile", "téléscope"],
+                  "Roches" : ["cratère", "lourd", "comète"]
+                },
+              },
+              {
+                starter: "Quel",
+                options:[
+                  "Les chocs avec les petits astéroïdes ne sont pas dangereux, on ne risque donc pas grand chose",
+                ],
+                gpt3: [
+                   "Le plus gros astéroïde jamais découvert est Cérès, qui est aussi une planète naine.",
+                ],
+                starter_gpt3: "Quel",
+                starter_gpt3_e: "Qu'est ce que",
+                subtopic: [
+                  "Chocs", "Étoile", "Espace","Dinosaures","Planète"
+                ],
+                subtopic2Map: {
+                  "Chocs" : ["observer", "résistants", "cratère"],
+                  "Étoile" : ["briller", "planète", "regarder"], 
+                  "Espace" : ["univers", "étoile", "téléscope"],
+                  "Dinosaures" : ["traduire", "sons", "animal"],
+                  "Planète" : ["Terre", "fer", "orbite"]
+                },
+              },
+            ]
+          },
+        ]
+      },
+      "proteger-nature": {
+        slides: [
         {
           text: "La géothermie est l'utilisation de la chaleur des roches profondes pour récupérer de l'énergie. La température à la surface de la terre est basse mais augmente avec la profondeur. Lorsqu'elle atteint plus de 150 degrés, il est possible de produire de l'électricité à partir de cette chaleur. La géothermie est considérée comme une source d’énergie renouvelable et a beaucoup d’avantages. Mais il y a seulement vingt-et-un pays du monde qui utilisent la géothermie pour produire de l’électricité. ",
           image:'/pics-intervention-qa/Protéger la nature/geothermie.png',
@@ -1157,9 +1333,11 @@ export default {
               subtopic: [
                 "Renouvelable", "Énergie", "Température"
               ],
-              subtopic2: [
-                "Durable","Solaire","Chauffage"
-              ],
+              subtopic2Map: {
+                "Renouvelable" : ["énergie", "éolienne", "ressources"],
+                "Énergie" : ["température", "centrale", "durable"], 
+                "Température" : ["chaleur", "énergie", "terre"]
+              },
           },
           {
             starter: "Qu'est-ce que",
@@ -1174,9 +1352,11 @@ export default {
               subtopic: [
                 "Température", "Géothermie", "Produire"
               ],
-              subtopic2: [
-                "Danger","Chauffage","Éolienne"
-              ],
+              subtopic2Map: {
+                "Température" : ["chaleur", "énergie", "terre"],
+                "Géothermie" : ["terre", "usine", "source"], 
+                "Produire" : ["générer", "énergie", "durable"]
+              },
           },
           {
             starter: "Quels",
@@ -1189,11 +1369,15 @@ export default {
             starter_gpt3: "Quels",
             starter_gpt3_e: "Comment", 
               subtopic: [
-                "Produire", "Électricité", "Profondeur"
+                "Produire", "Électricité", "Profondeur","Renouvelable","Géothermie"
               ],
-              subtopic2: [
-                "Éolienne","Risque","Désavantage"
-              ],
+              subtopic2Map: {
+                "Produire" : ["générer", "énergie", "durable"],
+                "Électricité" : ["solaire", "usine", "propre"], 
+                "Profondeur" : ["creuser", "machines", "chercher"],
+                "Renouvelable" : ["énergie", "éolienne", "ressources"],
+                "Géothermie" : ["terre", "usine", "source"]
+              },
           },
           {
             starter: "Pourquoi",
@@ -1206,11 +1390,15 @@ export default {
             starter_gpt3: "Quels .. autres",
             starter_gpt3_e: "Comment",
               subtopic: [
-                "Roche", "Électricité", "Avantages"
+                "Roche", "Électricité", "Avantages","Profondeur","Énergie"
               ],
-              subtopic2: [
-                "Soalire","Centrale","Source"
-              ],
+              subtopic2Map: {
+                "Roche" : ["cratère", "chaud", "creuser"],
+                "Électricité" : ["solaire", "usine", "propre"], 
+                "Avantages" : ["risque", "dangers", "bienfaits"],
+                "Profondeur" : ["creuser", "machines", "chercher"],
+                "Énergie" : ["température", "centrale", "durable"]
+              },
           },
           {
             starter: "Quels",
@@ -1222,70 +1410,82 @@ export default {
             ],
             starter_gpt3: "Quelles .. autres",
             starter_gpt3_e: "Quelles ..autres",
-              subtopic: [
-                "Avantages", "Pays", "Énergie"
-              ],
-              subtopic2: [
-                "Centrale","Ressources","Durable"
-              ],
+            subtopic: [
+              "Avantages", "Pays", "Énergie","Roche","Produire","Renouvelable"
+            ],
+            subtopic2Map: {
+              "Avantages" : ["risque", "dangers", "bienfaits"],
+              "Pays" : ["continents", "source", "commnerce"], 
+              "Énergie" : ["température", "centrale", "durable"],
+              "Produire" : ["générer", "énergie", "durable"],
+              "Renouvelable" : ["énergie", "éolienne", "ressources"]
+            },
           },
-          ]
-        }, 
-        {
+        ]
+      }, 
+      {
         text: "L'eau est polluée à cause de l’activité humaine. Les causes de cette pollution sont très nombreuses. Par exemple: les bateaux qui jettent leurs déchets dans la mer. L’eau est aussi polluée par les déchets sur la plage qui sont emmenés par la marée. Cette pollution peut nuire à la santé et à la biodiversité. La pollution de l'eau affecte les fleuves, les lacs, et les océans. En Bretagne par exemple, certaines côtes ont été envahies par des algues et du plancton à cause de l’activité agricole. L'eau devient alors pauvre en dioxygène et la faune et la flore ne peuvent plus y vivre.",
         image:'/pics-intervention-qa/Protéger la nature/eau polluee.jpg',
         audio: "/audios/eaupolluee.mp3",
         questions: [
           {
-          starter: "Qu'est-ce que",
-          options:[
+            starter: "Qu'est-ce que",
+            options:[
             "La plancton est un organisme très petit qui vit dans la mer",
-          ],
-          gpt3: [
+            ],
+            gpt3: [
             "D'autres causes pour la pollution de l'eau sont l'agriculture et les eaux usées.",
-          ],
-          starter_gpt3: "Quelles .. autre",
-          starter_gpt3_e: "Pourquoi",
-              subtopic: [
-                "Activité humaine", "Polluer", "Déchets"
-              ],
-              subtopic2: [
-                "Écosystème","Érosion","Conséquences"
-              ],
+            ],
+            starter_gpt3: "Quelles .. autre",
+            starter_gpt3_e: "Pourquoi",
+            subtopic: [
+                "Activité humaine", "Polluée", "Déchets"
+            ],
+            subtopic2Map: {
+                "Activité humaine" : ["actions", "conséquences", "écosystème"],
+                "Polluée" : ["déchets", "océans", "terre"], 
+                "Déchets" : ["jeter", "sol", "pollution"]
+            },
           },
           {
-          starter: "Où",
-          options:[
+            starter: "Où",
+            options:[
             "La Bretagne se trouve dans l'ouest de la France",
-          ],
-          gpt3: [
+            ],
+            gpt3: [
             "L'eau polluée est dangereuse car elle rend les gens malades.",
-          ],
-          starter_gpt3: "Pourquoi",
-          starter_gpt3_e: "Quelles",
-              subtopic: [
-                "Déchets", "Santé", "Marée"
-              ],
-              subtopic2: [
-                "Mer","Érosion","Plongée"
-              ],
+            ],
+            starter_gpt3: "Pourquoi",
+            starter_gpt3_e: "Quelles",
+            subtopic: [
+              "Déchets", "Santé", "Marée"
+            ],
+            subtopic2Map: {
+                "Déchets" : ["jeter", "sol", "pollution"],
+                "Santé" : ["maladies", "écosystème", "toxique"], 
+                "Marée" : ["mer", "bâteau", "champs"]
+            },
           },
           {
-          starter: "Quel(s)",
-          options:[
+            starter: "Quel(s)",
+            options:[
             "L'agriculture est dangereuse pour la mer car elle utilise des produits chimiques toxiques",
-          ],
-          gpt3: [
+            ],
+            gpt3: [
             "Les algues et le plancton sont dangereux car ils peuvent étouffer les autres espèces marines.",
-          ],
-          starter_gpt3: "Pourquoi",
-          starter_gpt3_e: "Où",
-              subtopic: [
-                "Marée", "Océans", "Plancton"
-              ],
-              subtopic2: [
-                "Plongée","Sauvage","Toxique"
-              ],
+            ],
+            starter_gpt3: "Pourquoi",
+            starter_gpt3_e: "Où",
+            subtopic: [
+              "Marée", "Océans", "Plancton","Santé","Polluée"
+            ],
+            subtopic2Map: {
+                "Marée" : ["mer", "bâteau", "champs"],
+                "Océans" : ["bâteau", "déverser", "profondeurs"], 
+                "Plancton" : ["coraux", "poissons", "sauvage"],
+                "Santé" : ["maladies", "écosystème", "toxique"],
+                "Polluée" : ["déchets", "océans", "terre"]
+            },
           },
           {
           starter: "Pourquoi",
@@ -1298,127 +1498,150 @@ export default {
           starter_gpt3: "Que se passe-t-il",
           starter_gpt3_e: "Qu'est ce que/ Que",
               subtopic: [
-                "Plancton", "Algues", "eau"
+                "Plancton", "Algues", "Eau", "Océans","Activité humaine"
               ],
-              subtopic2: [
-                "Champs","Toxique","Sable"
-              ],
+              subtopic2Map: {
+                "Plancton" : ["coraux", "poissons", "sauvage"],
+                "Algues" : ["poisson", "plongée", "sable"], 
+                "Eau" : ["boire", "océan", "croisière"],
+                "Océans" : ["bâteau", "déverser", "profondeurs"],
+                "Activité humaine" : ["actions", "conséquences", "écosystème"]
+              },
           },
           {
-          starter: "Pourquoi",
-          options:[
+            starter: "Pourquoi",
+            options:[
             "L'eau polluée est dangereuse car elle contient des bactéries qui causent des maladies",
-          ],
-          gpt3: [
+            ],
+            gpt3: [
             "Pour nettoyer l'eau, il faut réduire les activités humaines qui polluent l'eau.",
-          ],
-          starter_gpt3: "Comment",
-          starter_gpt3_e: "Pourquoi",
-              subtopic: [
-                "Oxygène", "Polluer", "Eau"
-              ],
-              subtopic2: [
-                "Conséquences","Croisière","Sable"
-              ],
+            ],
+            starter_gpt3: "Comment",
+            starter_gpt3_e: "Pourquoi",
+            subtopic: [
+              "Oxygène", "Polluée", "Eau","Algues","Déchets"
+            ],
+            subtopic2Map: {
+              "Oxygène" : ["air", "poisson", "coraux"],
+              "Polluée" : ["déchets", "océans", "terre"], 
+              "Eau" : ["boire", "océan", "croisière"],
+              "Algues" : ["poisson", "plongée", "sable"],
+              "Déchets" : ["jeter", "sol", "pollution"]
+            },
           },
         ]
       },
-
       {
-      text: "La pollution lumineuse, également appelée photo-pollution est la présence de lumière produite par les humains pendant la nuit. Elle trouble la faune et la flore. Lorsque les éclairages sont très nombreux, ils nuisent à l'obscurité normale de la nuit. Ainsi, à la tombée de la nuit, on trouve beaucoup de lumière (lampes allumées sans cesse dans les rues...) partout dans le monde. La pollution lumineuse a des effets néfastes sur la santé humaine et aussi sur la faune. Par exemple, elle est la cause de la disparition de certains insectes. Beaucoup de pays sont désormais conscients des dangers de la photo-pollution et essaient de la diminuer.",
-      image:'/pics-intervention-qa/Protéger la nature/photopollution.jpg',
-      audio: "/audios/photopollution.mp3",
-      questions: [
-        {
-        starter: "Pourquoi",
-        options:[
-          "La lumière de la nuit est dangereuse pour les végétaux car elle perturbe leur croissance",
-        ],
-        gpt3: [
-          "Les dangers de la pollution lumineuse sont les maux de tête, la fatigue et la perte de sommeil.",
-        ],
-        starter_gpt3: "Quels",
-        starter_gpt3_e: "Quels",
-              subtopic: [
-                "Dangers", "Santé humaine", "Éclairage"
-              ],
-              subtopic2: [
-                "Campagne","Magasins","Lune"
-              ],
-        },
-        {
-        starter: "Comment",
-        options:[
-          "Pour réduire la photopollution, il faut mettre moins d'éclairage la nuit",
-        ],
-        gpt3: [
-          "La pollution lumineuse est dangereuse pour la faune et la flore car elle peut les perturber l'écosystème.",
-        ],
-        starter_gpt3: "Pourquoi",
-        starter_gpt3_e: "Qu'est ce que/ Comment",
-              subtopic: [
+        text: "La pollution lumineuse, également appelée photo-pollution est la présence de lumière produite par les humains pendant la nuit. Elle trouble la faune et la flore. Lorsque les éclairages sont très nombreux, ils nuisent à l'obscurité normale de la nuit. Ainsi, à la tombée de la nuit, on trouve beaucoup de lumière (lampes allumées sans cesse dans les rues...) partout dans le monde. La pollution lumineuse a des effets néfastes sur la santé humaine et aussi sur la faune. Par exemple, elle est la cause de la disparition de certains insectes. Beaucoup de pays sont désormais conscients des dangers de la photo-pollution et essaient de la diminuer.",
+        image:'/pics-intervention-qa/Protéger la nature/photopollution.jpg',
+        audio: "/audios/photopollution.mp3",
+        questions: [
+          {
+            starter: "Pourquoi",
+            options:[
+              "La lumière de la nuit est dangereuse pour les végétaux car elle perturbe leur croissance",
+            ],
+            gpt3: [
+              "Les dangers de la pollution lumineuse sont les maux de tête, la fatigue et la perte de sommeil.",
+            ],
+            starter_gpt3: "Quels",
+            starter_gpt3_e: "Quels",
+            subtopic: [
+              "Dangers", "Santé humaine", "Éclairage"
+            ],
+            subtopic2Map: {
+                "Dangers" : ["risques", "réduire", "protéger"],
+                "Santé humaine" : ["maladie", "écosystème", "plantes"], 
+                "Éclairage" : ["campagne", "lumière", "voir"]
+            },
+          },
+          {
+            starter: "Comment",
+            options:[
+            "Pour réduire la photopollution, il faut mettre moins d'éclairage la nuit",
+            ],
+            gpt3: [
+            "La pollution lumineuse est dangereuse pour la faune et la flore car elle peut les perturber l'écosystème.",
+            ],
+            starter_gpt3: "Pourquoi",
+            starter_gpt3_e: "Qu'est ce que/ Comment",
+            subtopic: [
                 "Conscient", "Éclairage", "Insectes"
-              ],
-              subtopic2: [
-                "Lune","Réduire","Étoiles"
-              ],
+            ],
+            subtopic2Map: {
+            "Conscient" : ["magasin", "planète", "attentif"],
+            "Éclairage" : ["campagne", "lumière", "voir"], 
+            "Insectes" : ["ville", "biodiversité", "papillon"]
+            },
         },
         {
-        starter: "Quels",
-        options:[
+          starter: "Quels",
+          options:[
           "Parmi les pays conscients des dangers de la photopollution on trouve les Etats-Unis et la France par exemple",
-        ],
-        gpt3: [
+          ],
+          gpt3: [
           "Il y a de nombreux pays qui sont conscients des dangers de la pollution lumineuse.",
-        ],
-        starter_gpt3: "Y a t-il",
-        starter_gpt3_e: "Est ce que",
-              subtopic: [
-                "Conscient", "Insectes", "Nuit"
-              ],
-              subtopic2: [
-                "Ville","Magasins","Écologie"
-              ],
+          ],
+          starter_gpt3: "Y a t-il",
+          starter_gpt3_e: "Est ce que",
+          subtopic: [
+            "Conscient", "Insectes", "Nuit","Photopollution","Dangers"
+          ],
+          subtopic2Map: {
+            "Conscient" : ["magasin", "planète", "attentif"],
+            "Insectes" : ["ville", "biodiversité", "papillon"], 
+            "Nuit" : ["écologie", "journée", "dormir"],
+            "Photopollution" : ["biodiversité", "villes", "lumière"],
+            "Dangers" : ["risques", "réduire", "protéger"]
+          },
         },
         {
-        starter: "Pourquoi",
-        options:[
+          starter: "Pourquoi",
+          options:[
           "La lumière est dangereuse pour les animaux car elle désoriente les oiseaux migrateurs",
-        ],
-        gpt3: [
+          ],
+          gpt3: [
           "Pour réduire la photopollution, on doit utiliser un éclairage économique et éteindre les lumières lorsqu'elles ne sont pas utilisées.",
-        ],
-        starter_gpt3: "Comment",
-        starter_gpt3_e: "Comment",
-              subtopic: [
-                "Photopollution", "Réduire", "prop3"
-              ],
-              subtopic2: [
-                "Rue","Photopollution","Lampes"
-              ],
+          ],
+          starter_gpt3: "Comment",
+          starter_gpt3_e: "Comment",
+          subtopic: [
+                "Photopollution", "Lampes", "Pays","Santé humaine","Nuit"
+          ],
+          subtopic2Map: {
+                "Photopollution" : ["biodiversité", "villes", "lumière"],
+                "Lampes" : ["animaux", "bougies", "lumière"], 
+                "Pays" : ["continent", "source", "frontière"],
+                "Santé humaine" : ["maladie", "écosystème", "plantes"],
+                "Nuit" : ["écologie", "journée", "dormir"]
+          },
         },
         {
-        starter: "Que",
-        options:[
+          starter: "Que",
+          options:[
           "La photopollution peut causer des troubles de sommeil pour les humains",
-        ],
-        gpt3: [
+          ],
+          gpt3: [
           "On doit réduire la pollution lumineuse pour conserver l'énergie et protéger l'environnement et la santé humaine.",
-        ],
-        starter_gpt3: "Pourquoi",
-        starter_gpt3_e: "Quels/ Où",
-              subtopic: [
-                "Photopollution", "Pays", "prop3"
-              ],
-              subtopic2: [
-                "Pays","Rue","Nuit"
-              ],
+          ],
+          starter_gpt3: "Pourquoi",
+          starter_gpt3_e: "Quels/ Où",
+          subtopic: [
+            "Lampes", "Pays", "Rue", "Dangers", "Insectes"
+          ],
+          subtopic2Map: {
+            "Lampes" : ["animaux", "bougies", "lumière"],
+            "Pays" : ["continent", "source", "frontière"], 
+            "Rue" : ["lampadaires", "route", "campagne"],
+            "Dangers" : ["risques", "réduire", "protéger"],
+            "Insectes" : ["ville", "biodiversité", "papillon"]
+          },
         },
-        ]
-        }, 
       ]
-    },
-    "sports": {
+    }, 
+  ]
+  },
+  "sports": {
       slides: [
         {
           text: "Le porter de femme est une discipline sportive qui consiste à réaliser une course d’obstacles tout en portant sa compagne. Celle-ci doit avoir un poids minimum désigné par les arbitres. Elle doit aussi porter un casque. Pour gagner, l’homme doit porter sa femme et terminer le parcours le plus rapidement possible sans laisser tomber sa compagne. La compétition accueille chaque année quelques milliers de spectateurs.",
@@ -1426,21 +1649,23 @@ export default {
           audio: "/audios/porterfemme.mp3",
           questions: [
             {
-            starter: "Quel",
-            options:[
+              starter: "Quel",
+              options:[
               "Le poids minimum de la femme est 49 kilogrammes",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "Le poids minimum requis pour la femme est de 40 kg.",
-            ],
-            starter_gpt3: "Quel",
-            starter_gpt3_e: "Quel",
+              ],
+              starter_gpt3: "Quel",
+              starter_gpt3_e: "Quel",
               subtopic: [
                 "Poids", "Femme", "Arbitres"
               ],
-              subtopic2: [
-                "Épreuve","Entraîneur","Vitesse"
-              ],
+              subtopic2Map: {
+                "Poids" : ["pèse", "lourd", "équilibre"],
+                "Femme" : ["compagnon", "homme", "force"], 
+                "Arbitres" : ["faute", "chute", "adversaires"]
+              },
           },
           {
             starter: "Pourquoi",
@@ -1455,9 +1680,11 @@ export default {
               subtopic: [
                 "Arbitres", "Tomber", "Gagner"
               ],
-              subtopic2: [
-                "Défi","Vitesse","Athlètes"
-              ],
+              subtopic2Map: {
+                "Arbitres" : ["faute", "chute", "adversaires"],
+                "Tomber" : ["chute", "perdre", "entraînement"], 
+                "Gagner" : ["remporter", "défi", "course"]
+              },
           },
           {
             starter: "De quel",
@@ -1470,11 +1697,15 @@ export default {
             starter_gpt3: "Comment",
             starter_gpt3_e: "Comment",
               subtopic: [
-                "Gagner", "Poids", "Compagne"
+                "Gagner", "Poids", "Compagne","Rapidement","Tomber"
               ],
-              subtopic2: [
-                "Athlètes","Exercice","Entraînement"
-              ],
+              subtopic2Map: {
+                "Gagner" : ["remporter", "défi", "course"],
+                "Poids" : ["pèse", "lourd", "équilibre"], 
+                "Compagne" : ["femme", "marié", "athlète"],
+                "Rapidement" : ["vitesse", "temps", "arbitre"],
+                "Tomber" : ["chute", "perdre", "entraînement"]
+              },
           },
           {
             starter: "Quelle",
@@ -1487,11 +1718,15 @@ export default {
             starter_gpt3: "Quel",
             starter_gpt3_e: "Que/ Quel",
               subtopic: [
-                "Compagne", "Rapidement", "Spectateurs"
+                "Compagne", "Rapidement", "Spectateurs","Casque","Femme"
               ],
-              subtopic2: [
-                "Pays","Entraîneur","Équipement"
-              ],
+              subtopic2Map: {
+                "Compagne" : ["femme", "marié", "athlète"],
+                "Rapidement" : ["vitesse", "temps", "arbitre"], 
+                "Spectateurs" : ["lampadaires", "route", "campagne"],
+                "Casque" : ["protection", "équipements", "arbitre"],
+                "Femme" : ["compagnon", "homme", "force"]
+              },
           },
           {
             starter: "Combien",
@@ -1504,12 +1739,16 @@ export default {
             starter_gpt3: "Que se passe t-il",
             starter_gpt3_e: "Pourquoi",
               subtopic: [
-                "Casque", "Obstacles", "Rapidement"
+                "Casque", "Obstacles", "Rapidement","Arbitres","Gagner"
               ],
-              subtopic2: [
-                "Épreuve","Équipement","Spectacles"
-              ],
-          },
+              subtopic2Map: {
+                "Casque" : ["protection", "équipements", "arbitre"],
+                "Obstacles" : ["effort", "épreuve", "vitesse"], 
+                "Rapidement" : ["vitesse", "temps", "arbitre"],
+                "Arbitres" : ["faute", "chute", "adversaires"],
+                "Gagner" : ["remporter", "défi", "course"]
+              },
+            },
           ]
         }, 
         {
@@ -1518,90 +1757,106 @@ export default {
           audio: "/audios/chessboxing.mp3",
           questions: [
             {
-            starter: "Comment",
-            options:[
+              starter: "Comment",
+              options:[
               "On commence ce jeu avec une partie d'échecs",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "D'autres façons pour gagner un match sont l'échec et mat ou le KO.",
-            ],
-            starter_gpt3: "Quelles .. autres/ Comment",
-            starter_gpt3_e: "Comment",
+              ],
+              starter_gpt3: "Quelles .. autres/ Comment",
+              starter_gpt3_e: "Comment",
               subtopic: [
-                "Pause", "Tour", "Intelligence"
+                "Échecs", "Tour", "Intelligence"
               ],
-              subtopic2: [
-                "Échec et mat","K.O.","Spectateurs"
-              ],
-          },
-          {
-            starter: "Qui",
-            options:[
+              subtopic2Map: {
+                "Échecs" : ["perdre", "tour", "stratégie"],
+                "Tour" : ["champion", "machine", "perdre"], 
+                "Intelligence" : ["réflexion", "échec et mat", "mélanger"]
+              },
+            },
+            {
+              starter: "Qui",
+              options:[
               "Un dessinateur de bandes dessinées a inventé ce sport",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "Les avantages de la boxe aux échecs est qu'elle permet d'améliorer à la fois l'intelligence et les muscles.",
-            ],
-            starter_gpt3: "Quels",
-            starter_gpt3_e: "De quoi",
+              ],
+              starter_gpt3: "Quels",
+              starter_gpt3_e: "De quoi",
               subtopic: [
                 "Intelligence", "Force", "Sport"
               ],
-              subtopic2: [
-                "Muscles","Sepctateurs","Stratégie"
-              ],
-          },
-          {
-            starter: "Qu'est-ce que",
-            options:[
+              subtopic2Map: {
+                "Intelligence" : ["réflexion", "échec et mat", "mélanger"],
+                "Force" : ["puissance", "muscle", "échecs"], 
+                "Sport" : ["muscles", "réflexion", "jeu"]
+              },
+            },
+            {
+              starter: "Qu'est-ce que",
+              options:[
               "Un jeu d'échecs rapide est un jeu d'échecs normal mais qui ne doit pas dépasser 4 minutes",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "Ce sport est devenu populaire dans différents pays grâce à son concept unique.",
-            ],
-            starter_gpt3: "Pourquoi",
-            starter_gpt3_e: "Pourquoi",
+              ],
+              starter_gpt3: "Pourquoi",
+              starter_gpt3_e: "Pourquoi",
               subtopic: [
-                "Sport", "Adversaire", "Force"
+                "Sport", "Adversaire", "Force","Gagner","Tour"
               ],
-              subtopic2: [
-                "Pays","K.O.","Durée"
-              ],
-          },
-          {
-            starter: "Combien",
-            options:[
+              subtopic2Map: {
+                "Sport" : ["muscles", "réflexion", "jeu"],
+                "Adversaire" : ["joueur", "K.O.", "entraîner"], 
+                "Force" : ["puissance", "muscle", "échecs"],
+                "Gagner" : ["remporter", "défi", "tournoi"],
+                "Tour" : ["champion", "machine", "perdre"]
+              },
+            },
+            {
+              starter: "Combien",
+              options:[
               "Il y a 11 tours au total dans un match de boxe aux échecs",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "Le jeu d'échecs demande une réflexion stratégique.",
-            ],
-            starter_gpt3: "Que",
-            starter_gpt3_e: "Quelle",
+              ],
+              starter_gpt3: "Que",
+              starter_gpt3_e: "Quelle",
               subtopic: [
-                "Adversaire", "Jeu", "Gagner"
+                "Adversaire", "Jeu", "Gagner","Matchs","Échecs"
               ],
-              subtopic2: [
-                "Monde","Mélanger","Tournoi"
-              ],
-          },
-          {
-            starter: "Comment",
-            options:[
+              subtopic2Map: {
+                "Adversaire" : ["joueur", "K.O.", "entraîner"],
+                "Jeu" : ["tournoi", "stratégie", "échec"], 
+                "Gagner" : ["remporter", "défi", "tournoi"],
+                "Matchs" : ["but", "temps", "spectateurs"],
+                "Échecs" : ["perdre", "tour", "stratégie"]
+              },
+            },
+            {
+              starter: "Comment",
+              options:[
               "On gagne un match soit avec un K-O ou un échec et mat",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "On peut améliorer ce sport avec la participation de plus de pays.",
-            ],
-            starter_gpt3: "Comment",
-            starter_gpt3_e: "Quels .. autres",
+              ],
+              starter_gpt3: "Comment",
+              starter_gpt3_e: "Quels .. autres",
               subtopic: [
-                "Match", "Rapide", "Adversaire"
+                "Matchs", "Rapide", "Jeu","Tour","Intelligence"
               ],
-              subtopic2: [
-                "Échec et mat","Tournoi","Durée"
-              ],
-          },
+              subtopic2Map: {
+                "Matchs" : ["but", "temps", "spectateurs"],
+                "Rapide" : ["continent", "source", "frontière"], 
+                "Jeu" : ["tournoi", "stratégie", "échec"],
+                "Tour" : ["champion", "machine", "perdre"],
+                "Intelligence" : ["réflexion", "échec et mat", "mélanger"]
+              },
+            },
           ]
         },
         {
@@ -1610,90 +1865,106 @@ export default {
           audio: "/audios/hockeysubmarin.mp3",
           questions: [
             {
-            starter: "Pourquoi",
-            options:[
+              starter: "Pourquoi",
+              options:[
               "Le palet doit être fluorescent pour pouvoir être visible aux joueurs sous l'eau",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "L'aire de jeu du hockey sous-marin est une piscine",
-            ],
-            starter_gpt3: "Quelle",
-            starter_gpt3_e: "Pourquoi",
+              ],
+              starter_gpt3: "Quelle",
+              starter_gpt3_e: "Pourquoi",
               subtopic: [
                 "Palet de Hockey", "Fluorescent", "Sport"
               ],
-              subtopic2: [
-                "Gagner","Score","Arbitre"
-              ],
-          },
-          {
-            starter: "Comment",
-            options:[
+              subtopic2Map: {
+                "Palet de Hockey" : ["casque", "bâton", "parler"],
+                "Fluorescent" : ["briller", "lumière", "vite"], 
+                "Sport" : ["équipe", "entraînement", "durée"]
+              },
+            },
+            {
+              starter: "Comment",
+              options:[
               "Il est possible de voir ces matchs car il y a des caméras sous l'eau pour l'enregistrer",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "Le palet fluorescent est fabriqué en plastique",
-            ],
-            starter_gpt3: "Comment",
-            starter_gpt3_e: "Y a t-il .. autres",
+              ],
+              starter_gpt3: "Comment",
+              starter_gpt3_e: "Y a t-il .. autres",
               subtopic: [
                 "Sport", "Sous-marins", "But"
               ],
-              subtopic2: [
-                "Tribunes","Règles","Score"
-              ],
-          },
-          {
-            starter: "Combien",
-            options:[
+              subtopic2Map: {
+                "Sport" : ["équipe", "entraînement", "durée"],
+                "Sous-marins" : ["plonger", "nager", "voir"], 
+                "But" : ["objectif", "règle", "cage"]
+              },
+            },
+            {
+              starter: "Combien",
+              options:[
               "Il y a six joueurs par équipe dans ce jeu",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "Les joueurs utilisent des bâtons de hockey pour déplacer le palet dans la piscine.",
-            ],
-            starter_gpt3: "Qu'",
-            starter_gpt3_e: "Comment/ Quel",
+              ],
+              starter_gpt3: "Qu'",
+              starter_gpt3_e: "Comment/ Quel",
               subtopic: [
-                "Signal", "But", "Écrans"
+                "Signal", "But", "Écrans","Sous-marins","Fluorescent"
               ],
-              subtopic2: [
-                "Parler","Arbitre","Palmes"
-              ],
-          },
-          {
-            starter: "Pourquoi",
-            options:[
+              subtopic2Map: {
+                "Signal" : ["sifflet", "arbitre", "début"],
+                "But" : ["objectif", "règle", "cage"], 
+                "Écrans" : ["spectateurs", "jeu", "palet"],
+                "Sous-marins" : ["plonger", "nager", "voir"],
+                "Fluorescent" : ["briller", "lumière", "vite"]
+              },
+            },
+            {
+              starter: "Pourquoi",
+              options:[
               "Il faut deux arbitres dans ce jeu car il faut un sous l'eau et un autre dehors",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "Le palet est de couleur fluorescente car il doit être visible sous l'eau",
-            ],
-            starter_gpt3: "Pourquoi",
-            starter_gpt3_e: "Que" ,
+              ],
+              starter_gpt3: "Pourquoi",
+              starter_gpt3_e: "Que" ,
               subtopic: [
-                "But", "Masque", "Plonger"
+                "But", "Masque", "Plonger","Signal","Écrans"
               ],
-              subtopic2: [
-                "Palmes","Tribunes","Stratégie"
-              ],
-          },
-          {
-            starter: "Où",
-            options:[
+              subtopic2Map: {
+                "But" : ["objectif", "règle", "cage"],
+                "Masque" : ["palmes", "respirer", "gagner"], 
+                "Plonger" : ["masque", "nager", "arbitre"],
+                "Signal" : ["sifflet", "arbitre", "début"],
+                "Écrans" : ["spectateurs", "jeu", "palet"]
+              },
+            },
+            {
+              starter: "Où",
+              options:[
               "Ce sport se déroule dans des piscines",
-            ],
-            gpt3: [
+              ],
+              gpt3: [
               "Le signal que les joueurs attendent est un coup de sifflet.",
-            ],
-            starter_gpt3: "Quel",
-            starter_gpt3_e: "Quelles .. autres",
+              ],
+              starter_gpt3: "Quel",
+              starter_gpt3_e: "Quelles .. autres",
               subtopic: [
-                "Palet de hockey", "Nager", "Fluorescent"
+                "Palet de hockey", "Nager", "Fluorescent","Masque",'Plonger'
               ],
-              subtopic2: [
-                "Gagner","Vitesse","Filmer"
-              ],
-          },
+              subtopic2Map: {
+                "Palet de Hockey" : ["casque", "bâton", "parler"],
+                "Nager" : ["score", "filmer", "piscine"], 
+                "Fluorescent" : ["briller", "lumière", "vite"],
+                "Masque" : ["palmes", "respirer", "gagner"], 
+                "Plonger" : ["masque", "nager", "arbitre"]
+              },
+            },
           ]
         },
       ]
